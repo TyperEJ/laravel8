@@ -15,6 +15,8 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+
+                    <div><a href="{{ route('facebook.bind') }}">Bind Facebook Account</a></div>
                 </div>
             </div>
         </div>

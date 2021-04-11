@@ -21,10 +21,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Auth::routes();
+// Facebook
+Route::get('/facebook/bind', [App\Http\Controllers\FacebookController::class, 'bind'])->name('facebook.bind');
+Route::get('/facebook/login', [App\Http\Controllers\FacebookController::class, 'login'])->name('facebook.login');
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

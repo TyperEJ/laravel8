@@ -119,6 +119,10 @@
       <path value="$PROJECT_DIR$/vendor/brick/math" />
       <path value="$PROJECT_DIR$/vendor/asm89/stack-cors" />
       <path value="$PROJECT_DIR$/vendor/laravel/ui" />
+      <path value="$PROJECT_DIR$/vendor/symfony/browser-kit" />
+      <path value="$PROJECT_DIR$/vendor/symfony/dom-crawler" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-client" />
+      <path value="$PROJECT_DIR$/vendor/fabpot/goutte" />
     </include_path>
   </component>
   <component name="ProjectId" id="1r0vg7zjFPvtWWT6ulhZ1N88IPJ" />
@@ -132,6 +136,11 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../laradock" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/Services/Contracts" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -147,7 +156,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1618125930054</updated>
-      <workItem from="1618125931141" duration="2439000" />
+      <workItem from="1618125931141" duration="16084000" />
     </task>
     <servers />
   </component>
@@ -155,13 +164,25 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2668" y="302" key="FileChooserDialogImpl" timestamp="1618126015575">
+    <state x="2668" y="302" key="FileChooserDialogImpl" timestamp="1618148430891">
       <screen x="1920" y="0" width="1920" height="1030" />
     </state>
-    <state x="2668" y="302" key="FileChooserDialogImpl/1920.0.1920.1030/0.0.1920.1040@1920.0.1920.1030" timestamp="1618126015575" />
-    <state x="2565" y="273" width="629" height="512" key="find.popup" timestamp="1618127972032">
+    <state x="2668" y="302" key="FileChooserDialogImpl/1920.0.1920.1030/0.0.1920.1040@1920.0.1920.1030" timestamp="1618148430891" />
+    <state x="2663" y="470" key="NewPhpFileDialog" timestamp="1618145821257">
       <screen x="1920" y="0" width="1920" height="1030" />
     </state>
-    <state x="2565" y="273" width="629" height="512" key="find.popup/1920.0.1920.1030/0.0.1920.1040@1920.0.1920.1030" timestamp="1618127972032" />
+    <state x="2663" y="470" key="NewPhpFileDialog/1920.0.1920.1030/0.0.1920.1040@1920.0.1920.1030" timestamp="1618145821257" />
+    <state x="2020" y="129" width="1720" height="801" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1618131849309">
+      <screen x="1920" y="0" width="1920" height="1030" />
+    </state>
+    <state x="2020" y="129" width="1720" height="801" key="com.intellij.history.integration.ui.views.FileHistoryDialog/1920.0.1920.1030/0.0.1920.1040@1920.0.1920.1030" timestamp="1618131849309" />
+    <state x="2565" y="273" width="657" height="512" key="find.popup" timestamp="1618131309079">
+      <screen x="1920" y="0" width="1920" height="1030" />
+    </state>
+    <state x="2565" y="273" width="657" height="512" key="find.popup/1920.0.1920.1030/0.0.1920.1040@1920.0.1920.1030" timestamp="1618131309079" />
+    <state x="2543" y="248" width="672" height="678" key="search.everywhere.popup" timestamp="1618142428649">
+      <screen x="1920" y="0" width="1920" height="1030" />
+    </state>
+    <state x="2543" y="248" width="672" height="678" key="search.everywhere.popup/1920.0.1920.1030/0.0.1920.1040@1920.0.1920.1030" timestamp="1618142428649" />
   </component>
 </project>
