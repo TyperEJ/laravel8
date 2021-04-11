@@ -133,7 +133,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../laradock" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../official-new" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -156,7 +156,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1618125930054</updated>
-      <workItem from="1618125931141" duration="16084000" />
+      <workItem from="1618125931141" duration="20925000" />
     </task>
     <servers />
   </component>
@@ -164,14 +164,22 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="2668" y="302" key="FileChooserDialogImpl" timestamp="1618148430891">
+    <state x="3000" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1618151442901">
       <screen x="1920" y="0" width="1920" height="1030" />
     </state>
-    <state x="2668" y="302" key="FileChooserDialogImpl/1920.0.1920.1030/0.0.1920.1040@1920.0.1920.1030" timestamp="1618148430891" />
-    <state x="2663" y="470" key="NewPhpFileDialog" timestamp="1618145821257">
+    <state x="3000" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/1920.0.1920.1030/0.0.1920.1040@1920.0.1920.1030" timestamp="1618151442901" />
+    <state x="2618" y="302" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1618152766966">
       <screen x="1920" y="0" width="1920" height="1030" />
     </state>
-    <state x="2663" y="470" key="NewPhpFileDialog/1920.0.1920.1030/0.0.1920.1040@1920.0.1920.1030" timestamp="1618145821257" />
+    <state x="2618" y="302" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.0.1920.1030/0.0.1920.1040@1920.0.1920.1030" timestamp="1618152766966" />
+    <state x="2668" y="302" key="FileChooserDialogImpl" timestamp="1618153282201">
+      <screen x="1920" y="0" width="1920" height="1030" />
+    </state>
+    <state x="2668" y="302" key="FileChooserDialogImpl/1920.0.1920.1030/0.0.1920.1040@1920.0.1920.1030" timestamp="1618153282201" />
+    <state x="2663" y="470" key="NewPhpFileDialog" timestamp="1618151411915">
+      <screen x="1920" y="0" width="1920" height="1030" />
+    </state>
+    <state x="2663" y="470" key="NewPhpFileDialog/1920.0.1920.1030/0.0.1920.1040@1920.0.1920.1030" timestamp="1618151411915" />
     <state x="2020" y="129" width="1720" height="801" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1618131849309">
       <screen x="1920" y="0" width="1920" height="1030" />
     </state>
