@@ -47,7 +47,7 @@ class FacebookController extends Controller
 
         if(!$oauthUser)
         {
-            return redirect()->route('login');
+            return redirect()->route('login')->with('error','User not found.');
         }
 
         auth()->login($oauthUser->user);
@@ -67,7 +67,7 @@ class FacebookController extends Controller
     {
         if(!auth()->check())
         {
-            return redirect()->route('login');
+            return redirect()->route('login')->with('error','Please login first.');
         }
 
         if(!$request->has('code'))
@@ -86,7 +86,7 @@ class FacebookController extends Controller
             'access_token' => $accessToken,
         ]);
 
-        return redirect()->route('home');
+        return redirect()->route('home')->with('success','Bind success.');
     }
 
     /**
