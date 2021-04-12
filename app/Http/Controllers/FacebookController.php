@@ -39,10 +39,8 @@ class FacebookController extends Controller
 
         $profile = $this->oauth->getProfile($accessToken);
 
-        $oauthUser = OauthUser::query()
+        $oauthUser = OauthUser::findFacebookUser($profile->user_id)
             ->with('user')
-            ->where('service_id','=',$profile->user_id)
-            ->where('service','=',OauthUser::FACEBOOK)
             ->first();
 
         if(!$oauthUser)

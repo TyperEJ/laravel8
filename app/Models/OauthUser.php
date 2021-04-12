@@ -26,4 +26,15 @@ class OauthUser extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    /**
+     * @param  \Illuminate\Database\Eloquent\Builder  $query
+     * @param  mixed  $serviceId
+     * @return \Illuminate\Database\Eloquent\Builder
+     */
+    public function scopeFindFacebookUser($query, $serviceId)
+    {
+        return $query->where('service','=',self::FACEBOOK)
+            ->where('service_id','=', $serviceId);
+    }
 }
