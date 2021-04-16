@@ -1,18 +1,10 @@
 # Start up
 ```
-docker-compose up -d
-
 cp .env.example .env
 
-// set facebook service config
-FACEBOOK_CLIENT_ID=
-FACEBOOK_CLIENT_SECRET=
-FACEBOOK_CLIENT_TOKEN=
+composer install
 
-php artisan migrate
-```
+artisan k:g
 
-# Run corn job
-```
-php artisan schedule:run
+artisan a:g
 ```
