@@ -1,0 +1,1325 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Reference</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/all.js"></script>
+
+
+          <script>
+        $(function() {
+            setupLanguages(["bash","javascript"]);
+        });
+      </script>
+      </head>
+
+  <body class="">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" />
+      </span>
+    </a>
+    <div class="tocify-wrapper">
+        <img src="images/logo.png" />
+                    <div class="lang-selector">
+                                  <a href="#" data-language-name="bash">bash</a>
+                                  <a href="#" data-language-name="javascript">javascript</a>
+                            </div>
+                            <div class="search">
+              <input type="text" class="search" id="input-search" placeholder="Search">
+            </div>
+            <ul class="search-results"></ul>
+              <div id="toc">
+      </div>
+                    <ul class="toc-footer">
+                                  <li><a href='http://github.com/mpociot/documentarian'>Documentation Powered by Documentarian</a></li>
+                            </ul>
+            </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+          <!-- START_INFO -->
+<h1>Info</h1>
+<p>Welcome to the generated API reference.
+<a href="http://localhost/docs/collection.json">Get Postman Collection</a></p>
+<!-- END_INFO -->
+<h1>Counseling Profile</h1>
+<!-- START_ac4cee75b9957dd48cbd8b931f50462b -->
+<h2>Store counseling profile</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://localhost/api-doc/example" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"first_name":"error","middle_name":"non","last_name":"debitis","used_any_other_names":true,"sex":true,"birth_date":"exercitationem","country":"facere","city":"dolores","state":"est","address_line_1":"nulla","address_line_2":"odio","zip":"ut","mobile_number":"animi","birth_country":"quia","birth_city":"voluptate","lived_in_us_number":18,"lived_outside_us_number":10,"languages":[{"language":"illo","proficiency":"labore"}],"citizenship_status":"et","list_citizenship":[],"parents_marital_status":"et","whom_make_your_permanent_home":"assumenda","parents":[{"type":"consequatur","is_living":true,"deceased_date":"et","first_name":"est","middle_name":"maxime","last_name":"perspiciatis","address_is":"aliquam","country":"nesciunt","state":"sed","address_line_1":"voluptas","address_line_2":"doloribus","zip":"odio","education_level":"id"}],"siblings":[{"first_name":"sit","middle_name":"dignissimos","last_name":"molestiae","education_level":"vel"}],"high_school_name":"assumenda","is_boarding_high_school":true,"is_graduate_from_school":false,"high_school_name_date_started":"dicta","high_school_name_date_ended":"eligendi","graduate_status":[{"status":"qui","reason":"deserunt"}],"other_high_schools":[{"name":"accusantium","date_started":"officiis","date_ended":"totam"}],"why_leave_other_high_school":"repudiandae","colleges":[{"name":"corporis","date_started":"fugit","date_ended":"placeat"}],"graduating_class_size":"id","class_rank":3,"year_courses_scheduling_system":"occaecati","year_courses":[{"title":"omnis","level":"explicabo","schedule":"aut"}],"honors":[{"title":"veritatis","level":[],"level_recognition":[]}],"community_based_organizations":[{"organization_name":"doloribus","mentor_prefix":"esse","mentor_first_name":"repellat","mentor_last_name":"necessitatibus","mentor_email":"unde","mentor_phone":"consequatur"}],"career_interest":"enim","sats":[{"taken_date":"qui","subject":"voluptatem","score":9}],"acts":[{"taken_date":"sit","highest_composite_score":20,"composite_date":"reiciendis","highest_english_score":16,"english_date":"est","highest_math_score":19,"math_date":"totam","highest_reading_score":9,"reading_date":"aut","highest_science_score":6,"science_date":"unde"}],"aps":[{"taken_date":"sit","subject":"aspernatur","score":12}],"ibs":[{"taken_date":"esse","subject":"quas","level":"qui","score":5}],"toefls":[{"total_score":6,"total_score_date":"aut","highest_reading_score":5,"reading_date":"voluptatem","highest_speaking_score":18,"speaking_date":"optio","highest_listening_score":14,"listening_date":"fugiat","highest_writing_score":19,"writing_date":"mollitia"}],"ielts":[{"total_score":16,"total_score_date":"ut","highest_reading_score":13,"reading_date":"quia","highest_speaking_score":15,"speaking_date":"consequatur","highest_listening_score":15,"listening_date":"doloribus","highest_writing_score":12,"writing_date":"itaque"}],"activities":[{"type":"laborum","position_des":"alias","activity_des":"omnis","grade_levels":"ad","participation_time":[],"hours_spent_per_week":17,"hours_spent_per_year":18,"intend_to_participate":false}]}'
+</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api-doc/example"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "first_name": "error",
+    "middle_name": "non",
+    "last_name": "debitis",
+    "used_any_other_names": true,
+    "sex": true,
+    "birth_date": "exercitationem",
+    "country": "facere",
+    "city": "dolores",
+    "state": "est",
+    "address_line_1": "nulla",
+    "address_line_2": "odio",
+    "zip": "ut",
+    "mobile_number": "animi",
+    "birth_country": "quia",
+    "birth_city": "voluptate",
+    "lived_in_us_number": 18,
+    "lived_outside_us_number": 10,
+    "languages": [
+        {
+            "language": "illo",
+            "proficiency": "labore"
+        }
+    ],
+    "citizenship_status": "et",
+    "list_citizenship": [],
+    "parents_marital_status": "et",
+    "whom_make_your_permanent_home": "assumenda",
+    "parents": [
+        {
+            "type": "consequatur",
+            "is_living": true,
+            "deceased_date": "et",
+            "first_name": "est",
+            "middle_name": "maxime",
+            "last_name": "perspiciatis",
+            "address_is": "aliquam",
+            "country": "nesciunt",
+            "state": "sed",
+            "address_line_1": "voluptas",
+            "address_line_2": "doloribus",
+            "zip": "odio",
+            "education_level": "id"
+        }
+    ],
+    "siblings": [
+        {
+            "first_name": "sit",
+            "middle_name": "dignissimos",
+            "last_name": "molestiae",
+            "education_level": "vel"
+        }
+    ],
+    "high_school_name": "assumenda",
+    "is_boarding_high_school": true,
+    "is_graduate_from_school": false,
+    "high_school_name_date_started": "dicta",
+    "high_school_name_date_ended": "eligendi",
+    "graduate_status": [
+        {
+            "status": "qui",
+            "reason": "deserunt"
+        }
+    ],
+    "other_high_schools": [
+        {
+            "name": "accusantium",
+            "date_started": "officiis",
+            "date_ended": "totam"
+        }
+    ],
+    "why_leave_other_high_school": "repudiandae",
+    "colleges": [
+        {
+            "name": "corporis",
+            "date_started": "fugit",
+            "date_ended": "placeat"
+        }
+    ],
+    "graduating_class_size": "id",
+    "class_rank": 3,
+    "year_courses_scheduling_system": "occaecati",
+    "year_courses": [
+        {
+            "title": "omnis",
+            "level": "explicabo",
+            "schedule": "aut"
+        }
+    ],
+    "honors": [
+        {
+            "title": "veritatis",
+            "level": [],
+            "level_recognition": []
+        }
+    ],
+    "community_based_organizations": [
+        {
+            "organization_name": "doloribus",
+            "mentor_prefix": "esse",
+            "mentor_first_name": "repellat",
+            "mentor_last_name": "necessitatibus",
+            "mentor_email": "unde",
+            "mentor_phone": "consequatur"
+        }
+    ],
+    "career_interest": "enim",
+    "sats": [
+        {
+            "taken_date": "qui",
+            "subject": "voluptatem",
+            "score": 9
+        }
+    ],
+    "acts": [
+        {
+            "taken_date": "sit",
+            "highest_composite_score": 20,
+            "composite_date": "reiciendis",
+            "highest_english_score": 16,
+            "english_date": "est",
+            "highest_math_score": 19,
+            "math_date": "totam",
+            "highest_reading_score": 9,
+            "reading_date": "aut",
+            "highest_science_score": 6,
+            "science_date": "unde"
+        }
+    ],
+    "aps": [
+        {
+            "taken_date": "sit",
+            "subject": "aspernatur",
+            "score": 12
+        }
+    ],
+    "ibs": [
+        {
+            "taken_date": "esse",
+            "subject": "quas",
+            "level": "qui",
+            "score": 5
+        }
+    ],
+    "toefls": [
+        {
+            "total_score": 6,
+            "total_score_date": "aut",
+            "highest_reading_score": 5,
+            "reading_date": "voluptatem",
+            "highest_speaking_score": 18,
+            "speaking_date": "optio",
+            "highest_listening_score": 14,
+            "listening_date": "fugiat",
+            "highest_writing_score": 19,
+            "writing_date": "mollitia"
+        }
+    ],
+    "ielts": [
+        {
+            "total_score": 16,
+            "total_score_date": "ut",
+            "highest_reading_score": 13,
+            "reading_date": "quia",
+            "highest_speaking_score": 15,
+            "speaking_date": "consequatur",
+            "highest_listening_score": 15,
+            "listening_date": "doloribus",
+            "highest_writing_score": 12,
+            "writing_date": "itaque"
+        }
+    ],
+    "activities": [
+        {
+            "type": "laborum",
+            "position_des": "alias",
+            "activity_des": "omnis",
+            "grade_levels": "ad",
+            "participation_time": [],
+            "hours_spent_per_week": 17,
+            "hours_spent_per_year": 18,
+            "intend_to_participate": false
+        }
+    ]
+}
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+    body: body
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">null</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET api-doc/example</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>first_name</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>middle_name</code></td>
+<td>string</td>
+<td>optional</td>
+<td>optional</td>
+</tr>
+<tr>
+<td><code>last_name</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>used_any_other_names</code></td>
+<td>boolean</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>sex</code></td>
+<td>boolean</td>
+<td>required</td>
+<td>0:male 1:female</td>
+</tr>
+<tr>
+<td><code>birth_date</code></td>
+<td>date</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>country</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>city</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>state</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>address_line_1</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>address_line_2</code></td>
+<td>string</td>
+<td>optional</td>
+<td>optional</td>
+</tr>
+<tr>
+<td><code>zip</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>mobile_number</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>birth_country</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>birth_city</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>lived_in_us_number</code></td>
+<td>integer</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>lived_outside_us_number</code></td>
+<td>integer</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>languages.*.language</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>languages.*.proficiency</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>citizenship_status</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>list_citizenship</code></td>
+<td>array</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>parents_marital_status</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>whom_make_your_permanent_home</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>parents.*.type</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>parents.*.is_living</code></td>
+<td>boolean</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>parents.*.deceased_date</code></td>
+<td>date</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>parents.*.first_name</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>parents.*.middle_name</code></td>
+<td>string</td>
+<td>optional</td>
+<td>optional</td>
+</tr>
+<tr>
+<td><code>parents.*.last_name</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>parents.*.address_is</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>parents.*.country</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>parents.*.state</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>parents.*.address_line_1</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>parents.*.address_line_2</code></td>
+<td>string</td>
+<td>optional</td>
+<td>optional</td>
+</tr>
+<tr>
+<td><code>parents.*.zip</code></td>
+<td>string</td>
+<td>optional</td>
+<td>optional</td>
+</tr>
+<tr>
+<td><code>parents.*.education_level</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>siblings.*.first_name</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>siblings.*.middle_name</code></td>
+<td>string</td>
+<td>optional</td>
+<td>optional</td>
+</tr>
+<tr>
+<td><code>siblings.*.last_name</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>siblings.*.education_level</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>high_school_name</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>is_boarding_high_school</code></td>
+<td>boolean</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>is_graduate_from_school</code></td>
+<td>boolean</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>high_school_name_date_started</code></td>
+<td>date</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>high_school_name_date_ended</code></td>
+<td>date</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>graduate_status.*.status</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>graduate_status.*.reason</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>other_high_schools.*.name</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>other_high_schools.*.date_started</code></td>
+<td>date</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>other_high_schools.*.date_ended</code></td>
+<td>date</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>why_leave_other_high_school</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>colleges.*.name</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>colleges.*.date_started</code></td>
+<td>date</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>colleges.*.date_ended</code></td>
+<td>date</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>graduating_class_size</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>class_rank</code></td>
+<td>integer</td>
+<td>required</td>
+<td>1:weighted 2:unweighted</td>
+</tr>
+<tr>
+<td><code>year_courses_scheduling_system</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>year_courses.*.title</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>year_courses.*.level</code></td>
+<td>string</td>
+<td>optional</td>
+<td>optional</td>
+</tr>
+<tr>
+<td><code>year_courses.*.schedule</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>honors.*.title</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>honors.*.level</code></td>
+<td>array</td>
+<td>optional</td>
+<td>optional</td>
+</tr>
+<tr>
+<td><code>honors.*.level_recognition</code></td>
+<td>array</td>
+<td>optional</td>
+<td>optional</td>
+</tr>
+<tr>
+<td><code>community_based_organizations.*.organization_name</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>community_based_organizations.*.mentor_prefix</code></td>
+<td>string</td>
+<td>optional</td>
+<td>optional</td>
+</tr>
+<tr>
+<td><code>community_based_organizations.*.mentor_first_name</code></td>
+<td>string</td>
+<td>optional</td>
+<td>optional</td>
+</tr>
+<tr>
+<td><code>community_based_organizations.*.mentor_last_name</code></td>
+<td>string</td>
+<td>optional</td>
+<td>optional</td>
+</tr>
+<tr>
+<td><code>community_based_organizations.*.mentor_email</code></td>
+<td>string</td>
+<td>optional</td>
+<td>optional</td>
+</tr>
+<tr>
+<td><code>community_based_organizations.*.mentor_phone</code></td>
+<td>string</td>
+<td>optional</td>
+<td>optional</td>
+</tr>
+<tr>
+<td><code>career_interest</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>sats.*.taken_date</code></td>
+<td>date</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>sats.*.subject</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>sats.*.score</code></td>
+<td>integer</td>
+<td>optional</td>
+<td>optional</td>
+</tr>
+<tr>
+<td><code>acts.*.taken_date</code></td>
+<td>date</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>acts.*.highest_composite_score</code></td>
+<td>integer</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>acts.*.composite_date</code></td>
+<td>date</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>acts.*.highest_english_score</code></td>
+<td>integer</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>acts.*.english_date</code></td>
+<td>date</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>acts.*.highest_math_score</code></td>
+<td>integer</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>acts.*.math_date</code></td>
+<td>date</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>acts.*.highest_reading_score</code></td>
+<td>integer</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>acts.*.reading_date</code></td>
+<td>date</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>acts.*.highest_science_score</code></td>
+<td>integer</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>acts.*.science_date</code></td>
+<td>date</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>aps.*.taken_date</code></td>
+<td>date</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>aps.*.subject</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>aps.*.score</code></td>
+<td>integer</td>
+<td>optional</td>
+<td>optional</td>
+</tr>
+<tr>
+<td><code>ibs.*.taken_date</code></td>
+<td>date</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>ibs.*.subject</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>ibs.*.level</code></td>
+<td>string</td>
+<td>required</td>
+<td>1:high level 0:standard level</td>
+</tr>
+<tr>
+<td><code>ibs.*.score</code></td>
+<td>integer</td>
+<td>optional</td>
+<td>optional</td>
+</tr>
+<tr>
+<td><code>toefls.*.total_score</code></td>
+<td>integer</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>toefls.*.total_score_date</code></td>
+<td>date</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>toefls.*.highest_reading_score</code></td>
+<td>integer</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>toefls.*.reading_date</code></td>
+<td>date</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>toefls.*.highest_speaking_score</code></td>
+<td>integer</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>toefls.*.speaking_date</code></td>
+<td>date</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>toefls.*.highest_listening_score</code></td>
+<td>integer</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>toefls.*.listening_date</code></td>
+<td>date</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>toefls.*.highest_writing_score</code></td>
+<td>integer</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>toefls.*.writing_date</code></td>
+<td>date</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>ielts.*.total_score</code></td>
+<td>integer</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>ielts.*.total_score_date</code></td>
+<td>date</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>ielts.*.highest_reading_score</code></td>
+<td>integer</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>ielts.*.reading_date</code></td>
+<td>date</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>ielts.*.highest_speaking_score</code></td>
+<td>integer</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>ielts.*.speaking_date</code></td>
+<td>date</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>ielts.*.highest_listening_score</code></td>
+<td>integer</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>ielts.*.listening_date</code></td>
+<td>date</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>ielts.*.highest_writing_score</code></td>
+<td>integer</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>ielts.*.writing_date</code></td>
+<td>date</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>activities.*.type</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>activities.*.position_des</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>activities.*.activity_des</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>activities.*.grade_levels</code></td>
+<td>string</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>activities.*.participation_time</code></td>
+<td>array</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>activities.*.hours_spent_per_week</code></td>
+<td>integer</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>activities.*.hours_spent_per_year</code></td>
+<td>integer</td>
+<td>required</td>
+</tr>
+<tr>
+<td><code>activities.*.intend_to_participate</code></td>
+<td>boolean</td>
+<td>required</td>
+</tr>
+</tbody>
+</table>
+<!-- END_ac4cee75b9957dd48cbd8b931f50462b -->
+<h1>general</h1>
+<!-- START_66e08d3cc8222573018fed49e121e96d -->
+<h2>Show the application&#039;s login form.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://localhost/login" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/login"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">null</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET login</code></p>
+<!-- END_66e08d3cc8222573018fed49e121e96d -->
+<!-- START_ba35aa39474cb98cfb31829e70eb8b74 -->
+<h2>Handle a login request to the application.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://localhost/login" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/login"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST login</code></p>
+<!-- END_ba35aa39474cb98cfb31829e70eb8b74 -->
+<!-- START_e65925f23b9bc6b93d9356895f29f80c -->
+<h2>Log the user out of the application.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://localhost/logout" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/logout"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST logout</code></p>
+<!-- END_e65925f23b9bc6b93d9356895f29f80c -->
+<!-- START_ff38dfb1bd1bb7e1aa24b4e1792a9768 -->
+<h2>Show the application registration form.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://localhost/register" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/register"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">null</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET register</code></p>
+<!-- END_ff38dfb1bd1bb7e1aa24b4e1792a9768 -->
+<!-- START_d7aad7b5ac127700500280d511a3db01 -->
+<h2>Handle a registration request for the application.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://localhost/register" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/register"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST register</code></p>
+<!-- END_d7aad7b5ac127700500280d511a3db01 -->
+<!-- START_d72797bae6d0b1f3a341ebb1f8900441 -->
+<h2>Display the form to request a password reset link.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://localhost/password/reset" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/password/reset"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">null</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET password/reset</code></p>
+<!-- END_d72797bae6d0b1f3a341ebb1f8900441 -->
+<!-- START_feb40f06a93c80d742181b6ffb6b734e -->
+<h2>Send a reset link to the given user.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://localhost/password/email" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/password/email"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST password/email</code></p>
+<!-- END_feb40f06a93c80d742181b6ffb6b734e -->
+<!-- START_e1605a6e5ceee9d1aeb7729216635fd7 -->
+<h2>Display the password reset view for the given token.</h2>
+<p>If no token is present, display the link request form.</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://localhost/password/reset/1" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/password/reset/1"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">null</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET password/reset/{token}</code></p>
+<!-- END_e1605a6e5ceee9d1aeb7729216635fd7 -->
+<!-- START_cafb407b7a846b31491f97719bb15aef -->
+<h2>Reset the given user&#039;s password.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://localhost/password/reset" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/password/reset"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST password/reset</code></p>
+<!-- END_cafb407b7a846b31491f97719bb15aef -->
+<!-- START_b77aedc454e9471a35dcb175278ec997 -->
+<h2>Display the password confirmation view.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://localhost/password/confirm" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/password/confirm"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (401):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "message": "Unauthenticated."
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET password/confirm</code></p>
+<!-- END_b77aedc454e9471a35dcb175278ec997 -->
+<!-- START_54462d3613f2262e741142161c0e6fea -->
+<h2>Confirm the given user&#039;s password.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X POST \
+    "http://localhost/password/confirm" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/password/confirm"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<h3>HTTP Request</h3>
+<p><code>POST password/confirm</code></p>
+<!-- END_54462d3613f2262e741142161c0e6fea -->
+<!-- START_cb859c8e84c35d7133b6a6c8eac253f8 -->
+<h2>Show the application dashboard.</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://localhost/home" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/home"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (401):</p>
+</blockquote>
+<pre><code class="language-json">{
+    "message": "Unauthenticated."
+}</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET home</code></p>
+<!-- END_cb859c8e84c35d7133b6a6c8eac253f8 -->
+<!-- START_bebeab1cacfefde0ff0fdd3bbbcf2f6f -->
+<h2>Bind facebook account to user</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://localhost/facebook/bind" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/facebook/bind"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (302):</p>
+</blockquote>
+<pre><code class="language-json">null</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET facebook/bind</code></p>
+<!-- END_bebeab1cacfefde0ff0fdd3bbbcf2f6f -->
+<!-- START_01e3fa7ada689d295e212467fdfc3df7 -->
+<h2>Facebook login</h2>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET \
+    -G "http://localhost/facebook/login" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"</code></pre>
+<pre><code class="language-javascript">const url = new URL(
+    "http://localhost/facebook/login"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response =&gt; response.json())
+    .then(json =&gt; console.log(json));</code></pre>
+<blockquote>
+<p>Example response (302):</p>
+</blockquote>
+<pre><code class="language-json">null</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET facebook/login</code></p>
+<!-- END_01e3fa7ada689d295e212467fdfc3df7 -->
+      </div>
+      <div class="dark-box">
+                        <div class="lang-selector">
+                                    <a href="#" data-language-name="bash">bash</a>
+                                    <a href="#" data-language-name="javascript">javascript</a>
+                              </div>
+                </div>
+    </div>
+  </body>
+</html>

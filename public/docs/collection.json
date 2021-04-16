@@ -1,0 +1,443 @@
+{
+    "variables": [],
+    "info": {
+        "name": "Laravel-8 API",
+        "_postman_id": "84f1d1db-64d5-4788-bf4f-2a56a8eb472f",
+        "description": "",
+        "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
+    },
+    "item": [
+        {
+            "name": "Counseling Profile",
+            "description": "",
+            "item": [
+                {
+                    "name": "Store counseling profile",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "api-doc\/example",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"first_name\": \"error\",\n    \"middle_name\": \"non\",\n    \"last_name\": \"debitis\",\n    \"used_any_other_names\": true,\n    \"sex\": true,\n    \"birth_date\": \"exercitationem\",\n    \"country\": \"facere\",\n    \"city\": \"dolores\",\n    \"state\": \"est\",\n    \"address_line_1\": \"nulla\",\n    \"address_line_2\": \"odio\",\n    \"zip\": \"ut\",\n    \"mobile_number\": \"animi\",\n    \"birth_country\": \"quia\",\n    \"birth_city\": \"voluptate\",\n    \"lived_in_us_number\": 18,\n    \"lived_outside_us_number\": 10,\n    \"languages\": [\n        {\n            \"language\": \"illo\",\n            \"proficiency\": \"labore\"\n        }\n    ],\n    \"citizenship_status\": \"et\",\n    \"list_citizenship\": [],\n    \"parents_marital_status\": \"et\",\n    \"whom_make_your_permanent_home\": \"assumenda\",\n    \"parents\": [\n        {\n            \"type\": \"consequatur\",\n            \"is_living\": true,\n            \"deceased_date\": \"et\",\n            \"first_name\": \"est\",\n            \"middle_name\": \"maxime\",\n            \"last_name\": \"perspiciatis\",\n            \"address_is\": \"aliquam\",\n            \"country\": \"nesciunt\",\n            \"state\": \"sed\",\n            \"address_line_1\": \"voluptas\",\n            \"address_line_2\": \"doloribus\",\n            \"zip\": \"odio\",\n            \"education_level\": \"id\"\n        }\n    ],\n    \"siblings\": [\n        {\n            \"first_name\": \"sit\",\n            \"middle_name\": \"dignissimos\",\n            \"last_name\": \"molestiae\",\n            \"education_level\": \"vel\"\n        }\n    ],\n    \"high_school_name\": \"assumenda\",\n    \"is_boarding_high_school\": true,\n    \"is_graduate_from_school\": false,\n    \"high_school_name_date_started\": \"dicta\",\n    \"high_school_name_date_ended\": \"eligendi\",\n    \"graduate_status\": [\n        {\n            \"status\": \"qui\",\n            \"reason\": \"deserunt\"\n        }\n    ],\n    \"other_high_schools\": [\n        {\n            \"name\": \"accusantium\",\n            \"date_started\": \"officiis\",\n            \"date_ended\": \"totam\"\n        }\n    ],\n    \"why_leave_other_high_school\": \"repudiandae\",\n    \"colleges\": [\n        {\n            \"name\": \"corporis\",\n            \"date_started\": \"fugit\",\n            \"date_ended\": \"placeat\"\n        }\n    ],\n    \"graduating_class_size\": \"id\",\n    \"class_rank\": 3,\n    \"year_courses_scheduling_system\": \"occaecati\",\n    \"year_courses\": [\n        {\n            \"title\": \"omnis\",\n            \"level\": \"explicabo\",\n            \"schedule\": \"aut\"\n        }\n    ],\n    \"honors\": [\n        {\n            \"title\": \"veritatis\",\n            \"level\": [],\n            \"level_recognition\": []\n        }\n    ],\n    \"community_based_organizations\": [\n        {\n            \"organization_name\": \"doloribus\",\n            \"mentor_prefix\": \"esse\",\n            \"mentor_first_name\": \"repellat\",\n            \"mentor_last_name\": \"necessitatibus\",\n            \"mentor_email\": \"unde\",\n            \"mentor_phone\": \"consequatur\"\n        }\n    ],\n    \"career_interest\": \"enim\",\n    \"sats\": [\n        {\n            \"taken_date\": \"qui\",\n            \"subject\": \"voluptatem\",\n            \"score\": 9\n        }\n    ],\n    \"acts\": [\n        {\n            \"taken_date\": \"sit\",\n            \"highest_composite_score\": 20,\n            \"composite_date\": \"reiciendis\",\n            \"highest_english_score\": 16,\n            \"english_date\": \"est\",\n            \"highest_math_score\": 19,\n            \"math_date\": \"totam\",\n            \"highest_reading_score\": 9,\n            \"reading_date\": \"aut\",\n            \"highest_science_score\": 6,\n            \"science_date\": \"unde\"\n        }\n    ],\n    \"aps\": [\n        {\n            \"taken_date\": \"sit\",\n            \"subject\": \"aspernatur\",\n            \"score\": 12\n        }\n    ],\n    \"ibs\": [\n        {\n            \"taken_date\": \"esse\",\n            \"subject\": \"quas\",\n            \"level\": \"qui\",\n            \"score\": 5\n        }\n    ],\n    \"toefls\": [\n        {\n            \"total_score\": 6,\n            \"total_score_date\": \"aut\",\n            \"highest_reading_score\": 5,\n            \"reading_date\": \"voluptatem\",\n            \"highest_speaking_score\": 18,\n            \"speaking_date\": \"optio\",\n            \"highest_listening_score\": 14,\n            \"listening_date\": \"fugiat\",\n            \"highest_writing_score\": 19,\n            \"writing_date\": \"mollitia\"\n        }\n    ],\n    \"ielts\": [\n        {\n            \"total_score\": 16,\n            \"total_score_date\": \"ut\",\n            \"highest_reading_score\": 13,\n            \"reading_date\": \"quia\",\n            \"highest_speaking_score\": 15,\n            \"speaking_date\": \"consequatur\",\n            \"highest_listening_score\": 15,\n            \"listening_date\": \"doloribus\",\n            \"highest_writing_score\": 12,\n            \"writing_date\": \"itaque\"\n        }\n    ],\n    \"activities\": [\n        {\n            \"type\": \"laborum\",\n            \"position_des\": \"alias\",\n            \"activity_des\": \"omnis\",\n            \"grade_levels\": \"ad\",\n            \"participation_time\": [],\n            \"hours_spent_per_week\": 17,\n            \"hours_spent_per_year\": 18,\n            \"intend_to_participate\": false\n        }\n    ]\n}"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        },
+        {
+            "name": "general",
+            "description": "",
+            "item": [
+                {
+                    "name": "Show the application's login form.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "login",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Handle a login request to the application.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "login",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Log the user out of the application.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "logout",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Show the application registration form.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "register",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Handle a registration request for the application.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "register",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Display the form to request a password reset link.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "password\/reset",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Send a reset link to the given user.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "password\/email",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Display the password reset view for the given token.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "password\/reset\/:token",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "If no token is present, display the link request form.",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Reset the given user's password.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "password\/reset",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Display the password confirmation view.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "password\/confirm",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Confirm the given user's password.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "password\/confirm",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Show the application dashboard.",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "home",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Bind facebook account to user",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "facebook\/bind",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "Facebook login",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "localhost",
+                            "path": "facebook\/login",
+                            "query": []
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "[]"
+                        },
+                        "description": "",
+                        "response": []
+                    }
+                }
+            ]
+        }
+    ]
+}
