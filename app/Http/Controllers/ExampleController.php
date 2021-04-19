@@ -23,16 +23,38 @@ class ExampleController extends Controller
      * @bodyParam sex boolean required 0:male 1:female
      * @bodyParam sex_descr string optional
      * @bodyParam birth_date date required e.g."07/17/2003"
-     * @bodyParam address object required e.g.{"county":"Overton","countryCode":"0","countryValue":"United States of America","address1":"102 Www Ln","address2":"","address3":"","city":"Allons","stateValue":"TN","zip":"38541-6781","state":"52"}
+     * @bodyParam address.*.county string required
+     * @bodyParam address.*.country_code integer required 0:United States of America
+     * @bodyParam address.*.country_value string required e.g."United States of America"
+     * @bodyParam address.*.address_line_1 string required
+     * @bodyParam address.*.address_line_2 string optional
+     * @bodyParam address.*.address_line_3 string optional
+     * @bodyParam address.*.city string required e.g."Overton"
+     * @bodyParam address.*.state integer required 52:TN
+     * @bodyParam address.*.state_value string required e.g."TN"
+     * @bodyParam address.*.zip string required e.g."38541-6781"
      * @bodyParam used_mailing_address boolean required 0:no 1:yes
-     * @bodyParam mailing_address object required e.g.{"county":"Overton","countryCode":"0","countryValue":"United States of America","address1":"102 Www Ln","address2":"","address3":"","city":"Allons","stateValue":"TN","zip":"38541-6781","state":"52"}
+     * @bodyParam mailing_address.*.county string required
+     * @bodyParam mailing_address.*.country_code integer required 0:United States of America
+     * @bodyParam mailing_address.*.country_value string required e.g."United States of America"
+     * @bodyParam mailing_address.*.address_line_1 string required
+     * @bodyParam mailing_address.*.address_line_2 string optional
+     * @bodyParam mailing_address.*.address_line_3 string optional
+     * @bodyParam mailing_address.*.city string required e.g."Overton"
+     * @bodyParam mailing_address.*.state integer required 52:TN
+     * @bodyParam mailing_address.*.state_value string required e.g."TN"
+     * @bodyParam mailing_address.*.zip string required e.g."38541-6781"
      * @bodyParam is_temporary_mailing_address boolean required 0:yes 1:no
-     * @bodyParam temporary_mailing_address_from_date string required
-     * @bodyParam temporary_mailing_address_to_date string required
+     * @bodyParam temporary_mailing_address_from_date date required if 'is_temporary_mailing_address' is true
+     * @bodyParam temporary_mailing_address_to_date date required if 'is_temporary_mailing_address' is true
      * @bodyParam preferred_phone boolean required 0:home 1:mobile
-     * @bodyParam preferred_phone_number object required e.g.{"countryCode":"+886","phoneNumber":"970824452","extension":""}
-     * @bodyParam alternate_phone boolean required 0:no 1:home 2:mobile
-     * @bodyParam alternate_phone_number object required e.g.{"countryCode":"+886","phoneNumber":"970824452","extension":""}
+     * @bodyParam preferred_phone_number.*.country_code string required e.g."+886"
+     * @bodyParam preferred_phone_number.*.phone_number string required e.g."970824452"
+     * @bodyParam preferred_phone_number.*.extension string optional
+     * @bodyParam used_alternate_phone boolean required 0:no 1:home 2:mobile
+     * @bodyParam alternate_phone_number.*.country_code string required if 'used_alternate_phone' is true, e.g."+886"
+     * @bodyParam alternate_phone_number.*.phone_number string required if 'used_alternate_phone' is true, e.g."970824452"
+     * @bodyParam alternate_phone_number.*.extension string optional if 'used_alternate_phone' is true
      * @bodyParam birth_country string required
      * @bodyParam birth_city string required
      * @bodyParam lived_in_us_number integer required
