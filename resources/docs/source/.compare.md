@@ -26,6 +26,8 @@ Welcome to the generated API reference.
 <!-- START_ac4cee75b9957dd48cbd8b931f50462b -->
 ## Store counseling profile
 
+Personal Information
+
 > Example request:
 
 ```bash
@@ -33,7 +35,7 @@ curl -X GET \
     -G "http://localhost/api-doc/example" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"first_name":"error","middle_name":"non","last_name":"debitis","used_any_other_names":true,"sex":true,"birth_date":"exercitationem","country":"facere","city":"dolores","state":"est","address_line_1":"nulla","address_line_2":"odio","zip":"ut","mobile_number":"animi","birth_country":"quia","birth_city":"voluptate","lived_in_us_number":18,"lived_outside_us_number":10,"languages":[{"language":"illo","proficiency":"labore"}],"citizenship_status":"et","list_citizenship":[],"parents_marital_status":"et","whom_make_your_permanent_home":"assumenda","parents":[{"type":"consequatur","is_living":true,"deceased_date":"et","first_name":"est","middle_name":"maxime","last_name":"perspiciatis","address_is":"aliquam","country":"nesciunt","state":"sed","address_line_1":"voluptas","address_line_2":"doloribus","zip":"odio","education_level":"id"}],"siblings":[{"first_name":"sit","middle_name":"dignissimos","last_name":"molestiae","education_level":"vel"}],"high_school_name":"assumenda","is_boarding_high_school":true,"is_graduate_from_school":false,"high_school_name_date_started":"dicta","high_school_name_date_ended":"eligendi","graduate_status":[{"status":"qui","reason":"deserunt"}],"other_high_schools":[{"name":"accusantium","date_started":"officiis","date_ended":"totam"}],"why_leave_other_high_school":"repudiandae","colleges":[{"name":"corporis","date_started":"fugit","date_ended":"placeat"}],"graduating_class_size":"id","class_rank":3,"year_courses_scheduling_system":"occaecati","year_courses":[{"title":"omnis","level":"explicabo","schedule":"aut"}],"honors":[{"title":"veritatis","level":[],"level_recognition":[]}],"community_based_organizations":[{"organization_name":"doloribus","mentor_prefix":"esse","mentor_first_name":"repellat","mentor_last_name":"necessitatibus","mentor_email":"unde","mentor_phone":"consequatur"}],"career_interest":"enim","sats":[{"taken_date":"qui","subject":"voluptatem","score":9}],"acts":[{"taken_date":"sit","highest_composite_score":20,"composite_date":"reiciendis","highest_english_score":16,"english_date":"est","highest_math_score":19,"math_date":"totam","highest_reading_score":9,"reading_date":"aut","highest_science_score":6,"science_date":"unde"}],"aps":[{"taken_date":"sit","subject":"aspernatur","score":12}],"ibs":[{"taken_date":"esse","subject":"quas","level":"qui","score":5}],"toefls":[{"total_score":6,"total_score_date":"aut","highest_reading_score":5,"reading_date":"voluptatem","highest_speaking_score":18,"speaking_date":"optio","highest_listening_score":14,"listening_date":"fugiat","highest_writing_score":19,"writing_date":"mollitia"}],"ielts":[{"total_score":16,"total_score_date":"ut","highest_reading_score":13,"reading_date":"quia","highest_speaking_score":15,"speaking_date":"consequatur","highest_listening_score":15,"listening_date":"doloribus","highest_writing_score":12,"writing_date":"itaque"}],"activities":[{"type":"laborum","position_des":"alias","activity_des":"omnis","grade_levels":"ad","participation_time":[],"hours_spent_per_week":17,"hours_spent_per_year":18,"intend_to_participate":false}]}'
+    -d '{"first_name":"fuga","middle_name":"sed","last_name":"alias","suffix":1,"preferred_name":"exercitationem","used_any_other_names":false,"former_first_name":"iusto","former_middle_name":"eos","former_last_name":"ut","sex":true,"sex_descr":"et","birth_date":"nihil","address":[{"county":"fugit","country_code":14,"country_value":"reiciendis","address_line_1":"qui","address_line_2":"reiciendis","address_line_3":"consequuntur","city":"deleniti","state":8,"state_value":"beatae","zip":"quas"}],"used_mailing_address":false,"mailing_address":[{"county":"itaque","country_code":18,"country_value":"asperiores","address_line_1":"dolorum","address_line_2":"molestias","address_line_3":"voluptatibus","city":"qui","state":1,"state_value":"praesentium","zip":"quidem"}],"is_temporary_mailing_address":false,"temporary_mailing_address_from_date":"quae","temporary_mailing_address_to_date":"odio","preferred_phone":true,"preferred_phone_number":[{"country_code":"id","phone_number":"quo","extension":"unde"}],"used_alternate_phone":false,"alternate_phone_number":[{"country_code":"expedita","phone_number":"magnam","extension":"voluptates"}],"religion":10,"us_armed_forces_status":1,"us_military_anticipated_status":19,"us_military_experience_1_branch":"perferendis","us_military_experience_1_from_month":"fugiat","us_military_experience_1_to_month":"et","us_military_experience_2_branch":"vel","us_military_experience_2_from_month":"qui","us_military_experience_2_to_month":"rem","us_military_experience_3_branch":"qui","us_military_experience_3_from_month":"modi","us_military_experience_3_to_month":"consequatur","is_hispanic_or_latino":false,"hispanic_or_latino_identities":[],"hispanic_or_latino_descr":"enim","other_identities":[],"is_federally_recognized_tribe":true,"tribe":19,"tribal_enrollment_number":"autem","asian_background":[],"asian_descr":"id","african_american_backgrounds":[],"african_american_descr":"iure","native_hawaiian_or_other_pacific_islander_backgrounds":[],"native_hawaiian_or_other_pacific_islander_descr":"sit","white_backgrounds":[],"white_descr":[],"agreed_terms_demographics":false,"birth_country":13,"birth_city":"omnis","birth_state":8,"lived_in_us_yr":20,"lived_outside_us_yr":13,"languages":[{"language":"dicta","proficiency":"nihil"}],"citizenship_status":"odit","list_citizenship":[],"parents_marital_status":"delectus","whom_make_your_permanent_home":"dolorem","parents":[{"type":"adipisci","is_living":false,"deceased_date":"quo","first_name":"deserunt","middle_name":"facere","last_name":"pariatur","address_is":"modi","country":"tempora","state":"reprehenderit","address_line_1":"quis","address_line_2":"occaecati","zip":"non","education_level":"commodi"}],"siblings":[{"first_name":"ab","middle_name":"cumque","last_name":"aliquam","education_level":"et"}],"high_school_name":"veniam","is_boarding_high_school":true,"is_graduate_from_school":false,"high_school_name_date_started":"iusto","high_school_name_date_ended":"aut","graduate_status":[{"status":"debitis","reason":"non"}],"other_high_schools":[{"name":"voluptatum","date_started":"ea","date_ended":"quia"}],"why_leave_other_high_school":"minus","colleges":[{"name":"odit","date_started":"sunt","date_ended":"aliquid"}],"graduating_class_size":"ut","class_rank":10,"year_courses_scheduling_system":"ratione","year_courses":[{"title":"aut","level":"iure","schedule":"neque"}],"honors":[{"title":"laudantium","level":[],"level_recognition":[]}],"community_based_organizations":[{"organization_name":"et","mentor_prefix":"est","mentor_first_name":"laudantium","mentor_last_name":"sed","mentor_email":"dolor","mentor_phone":"commodi"}],"career_interest":"praesentium","sats":[{"taken_date":"cupiditate","subject":"veritatis","score":5}],"acts":[{"taken_date":"distinctio","highest_composite_score":1,"composite_date":"aut","highest_english_score":13,"english_date":"quia","highest_math_score":6,"math_date":"voluptas","highest_reading_score":9,"reading_date":"ad","highest_science_score":14,"science_date":"et"}],"aps":[{"taken_date":"possimus","subject":"molestias","score":13}],"ibs":[{"taken_date":"ab","subject":"facilis","level":"ullam","score":16}],"toefls":[{"total_score":7,"total_score_date":"quia","highest_reading_score":8,"reading_date":"quo","highest_speaking_score":8,"speaking_date":"iure","highest_listening_score":20,"listening_date":"et","highest_writing_score":16,"writing_date":"nostrum"}],"ielts":[{"total_score":4,"total_score_date":"enim","highest_reading_score":1,"reading_date":"laudantium","highest_speaking_score":8,"speaking_date":"nam","highest_listening_score":2,"listening_date":"a","highest_writing_score":20,"writing_date":"non"}],"activities":[{"type":"molestiae","position_des":"corporis","activity_des":"recusandae","grade_levels":"ut","participation_time":[],"hours_spent_per_week":9,"hours_spent_per_year":6,"intend_to_participate":false}]}'
 
 ```
 
@@ -48,186 +50,262 @@ let headers = {
 };
 
 let body = {
-    "first_name": "error",
-    "middle_name": "non",
-    "last_name": "debitis",
-    "used_any_other_names": true,
+    "first_name": "fuga",
+    "middle_name": "sed",
+    "last_name": "alias",
+    "suffix": 1,
+    "preferred_name": "exercitationem",
+    "used_any_other_names": false,
+    "former_first_name": "iusto",
+    "former_middle_name": "eos",
+    "former_last_name": "ut",
     "sex": true,
-    "birth_date": "exercitationem",
-    "country": "facere",
-    "city": "dolores",
-    "state": "est",
-    "address_line_1": "nulla",
-    "address_line_2": "odio",
-    "zip": "ut",
-    "mobile_number": "animi",
-    "birth_country": "quia",
-    "birth_city": "voluptate",
-    "lived_in_us_number": 18,
-    "lived_outside_us_number": 10,
-    "languages": [
+    "sex_descr": "et",
+    "birth_date": "nihil",
+    "address": [
         {
-            "language": "illo",
-            "proficiency": "labore"
+            "county": "fugit",
+            "country_code": 14,
+            "country_value": "reiciendis",
+            "address_line_1": "qui",
+            "address_line_2": "reiciendis",
+            "address_line_3": "consequuntur",
+            "city": "deleniti",
+            "state": 8,
+            "state_value": "beatae",
+            "zip": "quas"
         }
     ],
-    "citizenship_status": "et",
+    "used_mailing_address": false,
+    "mailing_address": [
+        {
+            "county": "itaque",
+            "country_code": 18,
+            "country_value": "asperiores",
+            "address_line_1": "dolorum",
+            "address_line_2": "molestias",
+            "address_line_3": "voluptatibus",
+            "city": "qui",
+            "state": 1,
+            "state_value": "praesentium",
+            "zip": "quidem"
+        }
+    ],
+    "is_temporary_mailing_address": false,
+    "temporary_mailing_address_from_date": "quae",
+    "temporary_mailing_address_to_date": "odio",
+    "preferred_phone": true,
+    "preferred_phone_number": [
+        {
+            "country_code": "id",
+            "phone_number": "quo",
+            "extension": "unde"
+        }
+    ],
+    "used_alternate_phone": false,
+    "alternate_phone_number": [
+        {
+            "country_code": "expedita",
+            "phone_number": "magnam",
+            "extension": "voluptates"
+        }
+    ],
+    "religion": 10,
+    "us_armed_forces_status": 1,
+    "us_military_anticipated_status": 19,
+    "us_military_experience_1_branch": "perferendis",
+    "us_military_experience_1_from_month": "fugiat",
+    "us_military_experience_1_to_month": "et",
+    "us_military_experience_2_branch": "vel",
+    "us_military_experience_2_from_month": "qui",
+    "us_military_experience_2_to_month": "rem",
+    "us_military_experience_3_branch": "qui",
+    "us_military_experience_3_from_month": "modi",
+    "us_military_experience_3_to_month": "consequatur",
+    "is_hispanic_or_latino": false,
+    "hispanic_or_latino_identities": [],
+    "hispanic_or_latino_descr": "enim",
+    "other_identities": [],
+    "is_federally_recognized_tribe": true,
+    "tribe": 19,
+    "tribal_enrollment_number": "autem",
+    "asian_background": [],
+    "asian_descr": "id",
+    "african_american_backgrounds": [],
+    "african_american_descr": "iure",
+    "native_hawaiian_or_other_pacific_islander_backgrounds": [],
+    "native_hawaiian_or_other_pacific_islander_descr": "sit",
+    "white_backgrounds": [],
+    "white_descr": [],
+    "agreed_terms_demographics": false,
+    "birth_country": 13,
+    "birth_city": "omnis",
+    "birth_state": 8,
+    "lived_in_us_yr": 20,
+    "lived_outside_us_yr": 13,
+    "languages": [
+        {
+            "language": "dicta",
+            "proficiency": "nihil"
+        }
+    ],
+    "citizenship_status": "odit",
     "list_citizenship": [],
-    "parents_marital_status": "et",
-    "whom_make_your_permanent_home": "assumenda",
+    "parents_marital_status": "delectus",
+    "whom_make_your_permanent_home": "dolorem",
     "parents": [
         {
-            "type": "consequatur",
-            "is_living": true,
-            "deceased_date": "et",
-            "first_name": "est",
-            "middle_name": "maxime",
-            "last_name": "perspiciatis",
-            "address_is": "aliquam",
-            "country": "nesciunt",
-            "state": "sed",
-            "address_line_1": "voluptas",
-            "address_line_2": "doloribus",
-            "zip": "odio",
-            "education_level": "id"
+            "type": "adipisci",
+            "is_living": false,
+            "deceased_date": "quo",
+            "first_name": "deserunt",
+            "middle_name": "facere",
+            "last_name": "pariatur",
+            "address_is": "modi",
+            "country": "tempora",
+            "state": "reprehenderit",
+            "address_line_1": "quis",
+            "address_line_2": "occaecati",
+            "zip": "non",
+            "education_level": "commodi"
         }
     ],
     "siblings": [
         {
-            "first_name": "sit",
-            "middle_name": "dignissimos",
-            "last_name": "molestiae",
-            "education_level": "vel"
+            "first_name": "ab",
+            "middle_name": "cumque",
+            "last_name": "aliquam",
+            "education_level": "et"
         }
     ],
-    "high_school_name": "assumenda",
+    "high_school_name": "veniam",
     "is_boarding_high_school": true,
     "is_graduate_from_school": false,
-    "high_school_name_date_started": "dicta",
-    "high_school_name_date_ended": "eligendi",
+    "high_school_name_date_started": "iusto",
+    "high_school_name_date_ended": "aut",
     "graduate_status": [
         {
-            "status": "qui",
-            "reason": "deserunt"
+            "status": "debitis",
+            "reason": "non"
         }
     ],
     "other_high_schools": [
         {
-            "name": "accusantium",
-            "date_started": "officiis",
-            "date_ended": "totam"
+            "name": "voluptatum",
+            "date_started": "ea",
+            "date_ended": "quia"
         }
     ],
-    "why_leave_other_high_school": "repudiandae",
+    "why_leave_other_high_school": "minus",
     "colleges": [
         {
-            "name": "corporis",
-            "date_started": "fugit",
-            "date_ended": "placeat"
+            "name": "odit",
+            "date_started": "sunt",
+            "date_ended": "aliquid"
         }
     ],
-    "graduating_class_size": "id",
-    "class_rank": 3,
-    "year_courses_scheduling_system": "occaecati",
+    "graduating_class_size": "ut",
+    "class_rank": 10,
+    "year_courses_scheduling_system": "ratione",
     "year_courses": [
         {
-            "title": "omnis",
-            "level": "explicabo",
-            "schedule": "aut"
+            "title": "aut",
+            "level": "iure",
+            "schedule": "neque"
         }
     ],
     "honors": [
         {
-            "title": "veritatis",
+            "title": "laudantium",
             "level": [],
             "level_recognition": []
         }
     ],
     "community_based_organizations": [
         {
-            "organization_name": "doloribus",
-            "mentor_prefix": "esse",
-            "mentor_first_name": "repellat",
-            "mentor_last_name": "necessitatibus",
-            "mentor_email": "unde",
-            "mentor_phone": "consequatur"
+            "organization_name": "et",
+            "mentor_prefix": "est",
+            "mentor_first_name": "laudantium",
+            "mentor_last_name": "sed",
+            "mentor_email": "dolor",
+            "mentor_phone": "commodi"
         }
     ],
-    "career_interest": "enim",
+    "career_interest": "praesentium",
     "sats": [
         {
-            "taken_date": "qui",
-            "subject": "voluptatem",
-            "score": 9
+            "taken_date": "cupiditate",
+            "subject": "veritatis",
+            "score": 5
         }
     ],
     "acts": [
         {
-            "taken_date": "sit",
-            "highest_composite_score": 20,
-            "composite_date": "reiciendis",
-            "highest_english_score": 16,
-            "english_date": "est",
-            "highest_math_score": 19,
-            "math_date": "totam",
+            "taken_date": "distinctio",
+            "highest_composite_score": 1,
+            "composite_date": "aut",
+            "highest_english_score": 13,
+            "english_date": "quia",
+            "highest_math_score": 6,
+            "math_date": "voluptas",
             "highest_reading_score": 9,
-            "reading_date": "aut",
-            "highest_science_score": 6,
-            "science_date": "unde"
+            "reading_date": "ad",
+            "highest_science_score": 14,
+            "science_date": "et"
         }
     ],
     "aps": [
         {
-            "taken_date": "sit",
-            "subject": "aspernatur",
-            "score": 12
+            "taken_date": "possimus",
+            "subject": "molestias",
+            "score": 13
         }
     ],
     "ibs": [
         {
-            "taken_date": "esse",
-            "subject": "quas",
-            "level": "qui",
-            "score": 5
+            "taken_date": "ab",
+            "subject": "facilis",
+            "level": "ullam",
+            "score": 16
         }
     ],
     "toefls": [
         {
-            "total_score": 6,
-            "total_score_date": "aut",
-            "highest_reading_score": 5,
-            "reading_date": "voluptatem",
-            "highest_speaking_score": 18,
-            "speaking_date": "optio",
-            "highest_listening_score": 14,
-            "listening_date": "fugiat",
-            "highest_writing_score": 19,
-            "writing_date": "mollitia"
+            "total_score": 7,
+            "total_score_date": "quia",
+            "highest_reading_score": 8,
+            "reading_date": "quo",
+            "highest_speaking_score": 8,
+            "speaking_date": "iure",
+            "highest_listening_score": 20,
+            "listening_date": "et",
+            "highest_writing_score": 16,
+            "writing_date": "nostrum"
         }
     ],
     "ielts": [
         {
-            "total_score": 16,
-            "total_score_date": "ut",
-            "highest_reading_score": 13,
-            "reading_date": "quia",
-            "highest_speaking_score": 15,
-            "speaking_date": "consequatur",
-            "highest_listening_score": 15,
-            "listening_date": "doloribus",
-            "highest_writing_score": 12,
-            "writing_date": "itaque"
+            "total_score": 4,
+            "total_score_date": "enim",
+            "highest_reading_score": 1,
+            "reading_date": "laudantium",
+            "highest_speaking_score": 8,
+            "speaking_date": "nam",
+            "highest_listening_score": 2,
+            "listening_date": "a",
+            "highest_writing_score": 20,
+            "writing_date": "non"
         }
     ],
     "activities": [
         {
-            "type": "laborum",
-            "position_des": "alias",
-            "activity_des": "omnis",
-            "grade_levels": "ad",
+            "type": "molestiae",
+            "position_des": "corporis",
+            "activity_des": "recusandae",
+            "grade_levels": "ut",
             "participation_time": [],
-            "hours_spent_per_week": 17,
-            "hours_spent_per_year": 18,
+            "hours_spent_per_week": 9,
+            "hours_spent_per_year": 6,
             "intend_to_participate": false
         }
     ]
@@ -258,20 +336,80 @@ Parameter | Type | Status | Description
     `first_name` | string |  required  | 
         `middle_name` | string |  optional  | optional
         `last_name` | string |  required  | 
-        `used_any_other_names` | boolean |  required  | 
+        `suffix` | integer |  optional  | optional 0:Jr. 9:Sr. 1:II 2:III 3:IV 4:V
+        `preferred_name` | string |  optional  | optional
+        `used_any_other_names` | boolean |  required  | 0:yes 1:no
+        `former_first_name` | string |  optional  | optional if 'used_any_other_names' is true
+        `former_middle_name` | string |  optional  | optional if 'used_any_other_names' is true
+        `former_last_name` | string |  optional  | optional if 'used_any_other_names' is true
         `sex` | boolean |  required  | 0:male 1:female
-        `birth_date` | date |  required  | 
-        `country` | string |  required  | 
-        `city` | string |  required  | 
-        `state` | string |  required  | 
-        `address_line_1` | string |  required  | 
-        `address_line_2` | string |  optional  | optional
-        `zip` | string |  required  | 
-        `mobile_number` | string |  required  | 
-        `birth_country` | string |  required  | 
+        `sex_descr` | string |  optional  | optional
+        `birth_date` | date |  required  | e.g."07/17/2003"
+        `address.*.county` | string |  required  | 
+        `address.*.country_code` | integer |  required  | 0:United States of America
+        `address.*.country_value` | string |  required  | e.g."United States of America"
+        `address.*.address_line_1` | string |  required  | 
+        `address.*.address_line_2` | string |  optional  | optional
+        `address.*.address_line_3` | string |  optional  | optional
+        `address.*.city` | string |  required  | e.g."Overton"
+        `address.*.state` | integer |  required  | 52:TN
+        `address.*.state_value` | string |  required  | e.g."TN"
+        `address.*.zip` | string |  required  | e.g."38541-6781"
+        `used_mailing_address` | boolean |  required  | 0:no 1:yes
+        `mailing_address.*.county` | string |  required  | if 'used_mailing_address' is true
+        `mailing_address.*.country_code` | integer |  required  | if 'used_mailing_address' is true, e.g.0:United States of America
+        `mailing_address.*.country_value` | string |  required  | if 'used_mailing_address' is true, e.g."United States of America"
+        `mailing_address.*.address_line_1` | string |  required  | if 'used_mailing_address' is true
+        `mailing_address.*.address_line_2` | string |  optional  | optional if 'used_mailing_address' is true
+        `mailing_address.*.address_line_3` | string |  optional  | optional if 'used_mailing_address' is true
+        `mailing_address.*.city` | string |  required  | if 'used_mailing_address' is true, e.g."Overton"
+        `mailing_address.*.state` | integer |  required  | if 'used_mailing_address' is true, e.g.52:TN
+        `mailing_address.*.state_value` | string |  required  | if 'used_mailing_address' is true, e.g."TN"
+        `mailing_address.*.zip` | string |  required  | if 'used_mailing_address' is true, e.g."38541-6781"
+        `is_temporary_mailing_address` | boolean |  required  | if 'used_mailing_address' is true, e.g.0:yes 1:no
+        `temporary_mailing_address_from_date` | date |  required  | if 'is_temporary_mailing_address' is true
+        `temporary_mailing_address_to_date` | date |  required  | if 'is_temporary_mailing_address' is true
+        `preferred_phone` | boolean |  required  | 0:home 1:mobile
+        `preferred_phone_number.*.country_code` | string |  required  | e.g."+886"
+        `preferred_phone_number.*.phone_number` | string |  required  | e.g."970824452"
+        `preferred_phone_number.*.extension` | string |  optional  | optional
+        `used_alternate_phone` | boolean |  required  | 0:no 1:home 2:mobile
+        `alternate_phone_number.*.country_code` | string |  required  | if 'used_alternate_phone' is true, e.g."+886"
+        `alternate_phone_number.*.phone_number` | string |  required  | if 'used_alternate_phone' is true, e.g."970824452"
+        `alternate_phone_number.*.extension` | string |  optional  | if 'used_alternate_phone' is true
+        `religion` | integer |  optional  | optional 40:Agnostic 3:Buddhist
+        `us_armed_forces_status` | integer |  required  | 0:none 1:currently serving 2:previously served 3:current dependent
+        `us_military_anticipated_status` | integer |  required  | if "1" or "2" is selected in 'us_armed_forces_status', e.g.0:On active duty U.S. military 1:Veteran of U.S. Armed Forces 2:U.S. Reserves or National Guard
+        `us_military_experience_1_branch` | required |  optional  | if "1" or "2" is selected in 'us_armed_forces_status', e.g.3:Air Force 0:Army 4: Coast Guard 1:Marine Corps 2:Navy
+        `us_military_experience_1_from_month` | string |  required  | if "1" or "2" is selected in 'us_armed_forces_status', e.g."11/2016"
+        `us_military_experience_1_to_month` | string |  optional  | if "1" or "2" is selected in 'us_armed_forces_status', e.g.null, "12/2016"
+        `us_military_experience_2_branch` | required |  optional  | if "1" or "2" is selected in 'us_armed_forces_status', e.g.3:Air Force 0:Army 4: Coast Guard 1:Marine Corps 2:Navy
+        `us_military_experience_2_from_month` | string |  required  | if "1" or "2" is selected in 'us_armed_forces_status', e.g."11/2016"
+        `us_military_experience_2_to_month` | string |  optional  | if "1" or "2" is selected in 'us_armed_forces_status', e.g.null, "12/2016"
+        `us_military_experience_3_branch` | required |  optional  | if "1" or "2" is selected in 'us_armed_forces_status', e.g.3:Air Force 0:Army 4: Coast Guard 1:Marine Corps 2:Navy
+        `us_military_experience_3_from_month` | string |  required  | if "1" or "2" is selected in 'us_armed_forces_status', e.g."11/2016"
+        `us_military_experience_3_to_month` | string |  optional  | if "1" or "2" is selected in 'us_armed_forces_status', e.g.null, "12/2016"
+        `is_hispanic_or_latino` | boolean |  required  | 0:yes 1:no
+        `hispanic_or_latino_identities` | array |  optional  | if 'is_hispanic_or_latino' is true, e.g.["0"(Central America), "1"(Cuba), "2"(Mexico), "3"(Puerto Rico), "4"(South America), "5"(Spain), "6"(Other)]
+        `hispanic_or_latino_descr` | string |  optional  | optional
+        `other_identities` | array |  optional  | optional e.g.["0"(American Indian or Alaska Native), "1"(Asian), "2"(Black or African American), "3"(Native Hawaiian or Other Pacific Islander), "4"(White)]
+        `is_federally_recognized_tribe` | boolean |  required  | if "0"(American Indian or Alaska Native) is selected in 'other_identities', e.g.0:yes 1:no
+        `tribe` | integer |  optional  | if 'is_federally_recognized_tribe' is true, e.g.null, 0:AK-Agdaagux
+        `tribal_enrollment_number` | string |  optional  | if 'is_federally_recognized_tribe' is true
+        `asian_background` | array |  optional  | if "1"(Asian) is selected in 'other_identities', e.g.["7"(Other East Asia)]
+        `asian_descr` | string |  optional  | if "1"(Asian) is selected in 'other_identities'
+        `african_american_backgrounds` | array |  optional  | if "2"(Black or African American) is selected in 'other_identities', e.g.["0"(U.S.)]
+        `african_american_descr` | string |  optional  | if "2"(Black or African American) is selected in 'other_identities'
+        `native_hawaiian_or_other_pacific_islander_backgrounds` | array |  optional  | if "3"(Native Hawaiian or Other Pacific Islander) is selected in 'other_identities'
+        `native_hawaiian_or_other_pacific_islander_descr` | string |  optional  | if "3"(Native Hawaiian or Other Pacific Islander) is selected in 'other_identities'
+        `white_backgrounds` | array |  optional  | if "4"(White) is selected in 'other_identities'
+        `white_descr` | array |  optional  | if "4"(White) is selected in 'other_identities'
+        `agreed_terms_demographics` | boolean |  required  | 1:yes
+        `birth_country` | integer |  required  | 0:United States of America
         `birth_city` | string |  required  | 
-        `lived_in_us_number` | integer |  required  | 
-        `lived_outside_us_number` | integer |  required  | 
+        `birth_state` | integer |  required  | 3:Alabama
+        `lived_in_us_yr` | integer |  required  | 
+        `lived_outside_us_yr` | integer |  required  | 
         `languages.*.language` | string |  required  | 
         `languages.*.proficiency` | string |  required  | 
         `citizenship_status` | string |  required  | 
