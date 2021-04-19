@@ -57,21 +57,31 @@ class ExampleController extends Controller
      * @bodyParam alternate_phone_number.*.extension string optional if 'used_alternate_phone' is true
      * @bodyParam religion integer optional 40:Agnostic 3:Buddhist
      * @bodyParam us_armed_forces_status integer required 0:none 1:currently serving 2:previously served 3:current dependent
+     * @bodyParam us_military_anticipated_status integer required if "1" or "2" is selected in 'us_armed_forces_status', e.g.0:On active duty U.S. military 1:Veteran of U.S. Armed Forces 2:U.S. Reserves or National Guard
+     * @bodyParam us_military_experience_1_branch required  if "1" or "2" is selected in 'us_armed_forces_status', e.g.3:Air Force 0:Army 4: Coast Guard 1:Marine Corps 2:Navy
+     * @bodyParam us_military_experience_1_from_month string required if "1" or "2" is selected in 'us_armed_forces_status', e.g."11/2016"
+     * @bodyParam us_military_experience_1_to_month string optional if "1" or "2" is selected in 'us_armed_forces_status', e.g.null, "12/2016"
+     * @bodyParam us_military_experience_2_branch required  if "1" or "2" is selected in 'us_armed_forces_status', e.g.3:Air Force 0:Army 4: Coast Guard 1:Marine Corps 2:Navy
+     * @bodyParam us_military_experience_2_from_month string required if "1" or "2" is selected in 'us_armed_forces_status', e.g."11/2016"
+     * @bodyParam us_military_experience_2_to_month string optional if "1" or "2" is selected in 'us_armed_forces_status', e.g.null, "12/2016"
+     * @bodyParam us_military_experience_3_branch required  if "1" or "2" is selected in 'us_armed_forces_status', e.g.3:Air Force 0:Army 4: Coast Guard 1:Marine Corps 2:Navy
+     * @bodyParam us_military_experience_3_from_month string required if "1" or "2" is selected in 'us_armed_forces_status', e.g."11/2016"
+     * @bodyParam us_military_experience_3_to_month string optional if "1" or "2" is selected in 'us_armed_forces_status', e.g.null, "12/2016"
      * @bodyParam is_hispanic_or_latino boolean required 0:yes 1:no
      * @bodyParam hispanic_or_latino_identities array optional if 'is_hispanic_or_latino' is true, e.g.["0"(Central America), "1"(Cuba), "2"(Mexico), "3"(Puerto Rico), "4"(South America), "5"(Spain), "6"(Other)]
      * @bodyParam hispanic_or_latino_descr string optional
      * @bodyParam other_identities array optional e.g.["0"(American Indian or Alaska Native), "1"(Asian), "2"(Black or African American), "3"(Native Hawaiian or Other Pacific Islander), "4"(White)]
-     * @bodyParam is_federally_recognized_tribe boolean required if "0"(American Indian or Alaska Native) is selected in 'identity', e.g.0:yes, 1:no
+     * @bodyParam is_federally_recognized_tribe boolean required if "0"(American Indian or Alaska Native) is selected in 'other_identities', e.g.0:yes 1:no
      * @bodyParam tribe integer optional if 'is_federally_recognized_tribe' is true, e.g.null, 0:AK-Agdaagux
      * @bodyParam tribal_enrollment_number string optional if 'is_federally_recognized_tribe' is true
-     * @bodyParam asian_background array optional if "1"(Asian) is selected in 'identity', e.g.["7"(Other East Asia)]
-     * @bodyParam asian_descr string optional if "1"(Asian) is selected in 'identity'
-     * @bodyParam african_american_backgrounds array optional if "2"(Black or African American) is selected in 'identity', e.g.["0"(U.S.)]
-     * @bodyParam african_american_descr string optional if "2"(Black or African American) is selected in 'identity'
-     * @bodyParam native_hawaiian_or_other_pacific_islander_backgrounds array optional if "3"(Native Hawaiian or Other Pacific Islander) is selected in 'identity'
-     * @bodyParam native_hawaiian_or_other_pacific_islander_descr string optional if "3"(Native Hawaiian or Other Pacific Islander) is selected in 'identity'
-     * @bodyParam white_backgrounds array optional if "4"(White) is selected in 'identity'
-     * @bodyParam white_descr array optional if "4"(White) is selected in 'identity'
+     * @bodyParam asian_background array optional if "1"(Asian) is selected in 'other_identities', e.g.["7"(Other East Asia)]
+     * @bodyParam asian_descr string optional if "1"(Asian) is selected in 'other_identities'
+     * @bodyParam african_american_backgrounds array optional if "2"(Black or African American) is selected in 'other_identities', e.g.["0"(U.S.)]
+     * @bodyParam african_american_descr string optional if "2"(Black or African American) is selected in 'other_identities'
+     * @bodyParam native_hawaiian_or_other_pacific_islander_backgrounds array optional if "3"(Native Hawaiian or Other Pacific Islander) is selected in 'other_identities'
+     * @bodyParam native_hawaiian_or_other_pacific_islander_descr string optional if "3"(Native Hawaiian or Other Pacific Islander) is selected in 'other_identities'
+     * @bodyParam white_backgrounds array optional if "4"(White) is selected in 'other_identities'
+     * @bodyParam white_descr array optional if "4"(White) is selected in 'other_identities'
      * @bodyParam agreed_terms_demographics boolean required 1:yes
      * @bodyParam birth_country string required
      * @bodyParam birth_city string required
