@@ -23,12 +23,12 @@ class ExampleController extends Controller
      * @bodyParam sex boolean required 0:male 1:female
      * @bodyParam sex_descr string optional
      * @bodyParam birth_date date required e.g."07/17/2003"
-     * @bodyParam country string required
-     * @bodyParam city string required
-     * @bodyParam state string required
-     * @bodyParam address_line_1 string required
-     * @bodyParam address_line_2 string optional
-     * @bodyParam zip string required
+     * @bodyParam address object required e.g.{"county":"Overton","countryCode":"0","countryValue":"United States of America","address1":"102 Www Ln","address2":"","address3":"","city":"Allons","stateValue":"TN","zip":"38541-6781","state":"52"}
+     * @bodyParam used_mailing_address boolean required 0:no 1:yes
+     * @bodyParam mailing_address object required e.g.{"county":"Overton","countryCode":"0","countryValue":"United States of America","address1":"102 Www Ln","address2":"","address3":"","city":"Allons","stateValue":"TN","zip":"38541-6781","state":"52"}
+     * @bodyParam is_temporary_mailing_address boolean required 0:yes 1:no
+     * @bodyParam temporary_mailing_address_from_date string required
+     * @bodyParam temporary_mailing_address_to_date string required
      * @bodyParam mobile_number string required
      * @bodyParam birth_country string required
      * @bodyParam birth_city string required
