@@ -55,6 +55,24 @@ class ExampleController extends Controller
      * @bodyParam alternate_phone_number.*.country_code string required if 'used_alternate_phone' is true, e.g."+886"
      * @bodyParam alternate_phone_number.*.phone_number string required if 'used_alternate_phone' is true, e.g."970824452"
      * @bodyParam alternate_phone_number.*.extension string optional if 'used_alternate_phone' is true
+     * @bodyParam religion integer optional 40:Agnostic 3:Buddhist
+     * @bodyParam us_armed_forces_status integer required 0:none 1:currently serving 2:previously served 3:current dependent
+     * @bodyParam is_hispanic_or_latino boolean required 0:yes 1:no
+     * @bodyParam hispanic_or_latino_identities array optional if 'is_hispanic_or_latino' is true, e.g.["0"(Central America), "1"(Cuba), "2"(Mexico), "3"(Puerto Rico), "4"(South America), "5"(Spain), "6"(Other)]
+     * @bodyParam hispanic_or_latino_descr string optional
+     * @bodyParam other_identities array optional e.g.["0"(American Indian or Alaska Native), "1"(Asian), "2"(Black or African American), "3"(Native Hawaiian or Other Pacific Islander), "4"(White)]
+     * @bodyParam is_federally_recognized_tribe boolean required if "0"(American Indian or Alaska Native) is selected in 'identity', e.g.0:yes, 1:no
+     * @bodyParam tribe integer optional if 'is_federally_recognized_tribe' is true, e.g.null, 0:AK-Agdaagux
+     * @bodyParam tribal_enrollment_number string optional if 'is_federally_recognized_tribe' is true
+     * @bodyParam asian_background array optional if "1"(Asian) is selected in 'identity', e.g.["7"(Other East Asia)]
+     * @bodyParam asian_descr string optional if "1"(Asian) is selected in 'identity'
+     * @bodyParam african_american_backgrounds array optional if "2"(Black or African American) is selected in 'identity', e.g.["0"(U.S.)]
+     * @bodyParam african_american_descr string optional if "2"(Black or African American) is selected in 'identity'
+     * @bodyParam native_hawaiian_or_other_pacific_islander_backgrounds array optional if "3"(Native Hawaiian or Other Pacific Islander) is selected in 'identity'
+     * @bodyParam native_hawaiian_or_other_pacific_islander_descr string optional if "3"(Native Hawaiian or Other Pacific Islander) is selected in 'identity'
+     * @bodyParam white_backgrounds array optional if "4"(White) is selected in 'identity'
+     * @bodyParam white_descr array optional if "4"(White) is selected in 'identity'
+     * @bodyParam agreed_terms_demographics boolean required 1:yes
      * @bodyParam birth_country string required
      * @bodyParam birth_city string required
      * @bodyParam lived_in_us_number integer required
