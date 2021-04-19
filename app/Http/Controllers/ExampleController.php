@@ -17,9 +17,12 @@ class ExampleController extends Controller
      * @bodyParam first_name string required
      * @bodyParam middle_name string optional
      * @bodyParam last_name string required
-     * @bodyParam used_any_other_names boolean required
+     * @bodyParam suffix integer optional 0:Jr. 9:Sr. 1:II 2:III 3:IV 4:V
+     * @bodyParam preferred_name string optional
+     * @bodyParam used_any_other_names boolean required 0:yes 1:no
      * @bodyParam sex boolean required 0:male 1:female
-     * @bodyParam birth_date date required
+     * @bodyParam sex_descr string optional
+     * @bodyParam birth_date date required e.g."07/17/2003"
      * @bodyParam country string required
      * @bodyParam city string required
      * @bodyParam state string required
