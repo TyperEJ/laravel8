@@ -29,7 +29,10 @@ class ExampleController extends Controller
      * @bodyParam is_temporary_mailing_address boolean required 0:yes 1:no
      * @bodyParam temporary_mailing_address_from_date string required
      * @bodyParam temporary_mailing_address_to_date string required
-     * @bodyParam mobile_number string required
+     * @bodyParam preferred_phone boolean required 0:home 1:mobile
+     * @bodyParam preferred_phone_number object required e.g.{"countryCode":"+886","phoneNumber":"970824452","extension":""}
+     * @bodyParam alternate_phone boolean required 0:no 1:home 2:mobile
+     * @bodyParam alternate_phone_number object required e.g.{"countryCode":"+886","phoneNumber":"970824452","extension":""}
      * @bodyParam birth_country string required
      * @bodyParam birth_city string required
      * @bodyParam lived_in_us_number integer required
