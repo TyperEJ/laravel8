@@ -20,10 +20,13 @@ class ExampleController extends Controller
      * @bodyParam last_name string required question-id-175
      * @bodyParam suffix integer question-id-176, e.g.0:Jr. 9:Sr. 1:II 2:III 3:IV 4:V
      * @bodyParam preferred_name string question-id-179
+     *
      * @bodyParam used_any_other_names boolean required question-id-177, e.g.0:yes 1:no
+     * if 'used_any_other_names' is true:
      * @bodyParam former_first_name string question-id-1950, if 'used_any_other_names' is true
      * @bodyParam former_middle_name string question-id-1951, if 'used_any_other_names' is true
      * @bodyParam former_last_name string question-id-178, if 'used_any_other_names' is true
+     *
      * @bodyParam sex boolean required question-id-180, e.g.0:male 1:female
      * @bodyParam sex_descr string question-id-1901
      * @bodyParam birth_date date required question-id-181, e.g."07/17/2003"
@@ -43,7 +46,7 @@ class ExampleController extends Controller
      * @bodyParam address.*.zip string required e.g."38541-6781"
      *
      * @bodyParam used_mailing_address boolean required question-id-183, e.g.0:no 1:yes
-     *
+     * if 'used_mailing_address' is true:
      * mailing_address e.g.{"county":"Belknap","countryCode":"0","countryValue":"United States of America","address1":"2 Test St","address2":"","address3":"","city":"Belmont","stateValue":"NH","zip":"03220-4052","state":"38"}
      * @bodyParam mailing_address.*.county string required question-id-186, if 'used_mailing_address' is true
      * @bodyParam mailing_address.*.country_code integer required if 'used_mailing_address' is true, e.g.0:United States of America
@@ -57,6 +60,7 @@ class ExampleController extends Controller
      * @bodyParam mailing_address.*.zip string required if 'used_mailing_address' is true, e.g."38541-6781"
      *
      * @bodyParam is_temporary_mailing_address boolean required question-id-1042, if 'used_mailing_address' is true, e.g.0:yes 1:no
+     * if 'is_temporary_mailing_address' is true:
      * @bodyParam temporary_mailing_address_from_date date required question-id-184, if 'is_temporary_mailing_address' is true
      * @bodyParam temporary_mailing_address_to_date date required question-id-185, if 'is_temporary_mailing_address' is true
      *
@@ -69,7 +73,7 @@ class ExampleController extends Controller
      * @bodyParam preferred_phone_number.*.extension string
      *
      * @bodyParam used_alternate_phone boolean required question-id-190, e.g.0:no 1:home 2:mobile
-     *
+     * if 'used_alternate_phone' is true:
      * alternate_phone_number e.g.{"countryCode":"+886","phoneNumber":"970824452","extension":""}
      * @bodyParam alternate_phone_number.*.country_code string required question-id-191, if 'used_alternate_phone' is true, e.g."+886"
      * @bodyParam alternate_phone_number.*.phone_number string required if 'used_alternate_phone' is true, e.g."970824452"
@@ -81,20 +85,26 @@ class ExampleController extends Controller
      * @bodyParam religion_descr string question-id-193
      *
      * @bodyParam us_armed_forces_status integer required question-id-194, e.g.0:none 1:currently serving 2:previously served 3:current dependent
+     * if "1" or "2" is selected in 'us_armed_forces_status':
      * @bodyParam us_military_anticipated_status integer required question-id-195, if "1" or "2" is selected in 'us_armed_forces_status', e.g.0:On active duty U.S. military 1:Veteran of U.S. Armed Forces 2:U.S. Reserves or National Guard
-     * @bodyParam us_military_experience_1_branch integer required question-id-196, if "1" or "2" is selected in 'us_armed_forces_status', e.g.3:Air Force 0:Army 4: Coast Guard 1:Marine Corps 2:Navy
-     * @bodyParam us_military_experience_1_from_month string required question-id-197, if "1" or "2" is selected in 'us_armed_forces_status', e.g."11/2016"
-     * @bodyParam us_military_experience_1_to_month string question-id-198, if "1" or "2" is selected in 'us_armed_forces_status', e.g.null, "12/2016"
-     * @bodyParam us_military_experience_2_branch integer question-id-1902, if "1" or "2" is selected in 'us_armed_forces_status', e.g.3:Air Force 0:Army 4: Coast Guard 1:Marine Corps 2:Navy
-     * @bodyParam us_military_experience_2_from_month string question-id-1903, if "1" or "2" is selected in 'us_armed_forces_status', e.g."11/2016"
-     * @bodyParam us_military_experience_2_to_month string question-id-1904, if "1" or "2" is selected in 'us_armed_forces_status', e.g.null, "12/2016"
-     * @bodyParam us_military_experience_3_branch integer question-id-1905, if "1" or "2" is selected in 'us_armed_forces_status', e.g.3:Air Force 0:Army 4: Coast Guard 1:Marine Corps 2:Navy
-     * @bodyParam us_military_experience_3_from_month string question-id-1906, if "1" or "2" is selected in 'us_armed_forces_status', e.g."11/2016"
-     * @bodyParam us_military_experience_3_to_month string question-id-1907, if "1" or "2" is selected in 'us_armed_forces_status', e.g.null, "12/2016"
+     * us_military_experience_1_branch integer required question-id-196, e.g.3:Air Force 0:Army 4: Coast Guard 1:Marine Corps 2:Navy
+     * us_military_experience_1_from_month string required question-id-197, e.g."11/2016"
+     * us_military_experience_1_to_month string question-id-198, e.g.null, "12/2016"
+     * us_military_experience_2_branch integer question-id-1902, e.g.3:Air Force 0:Army 4: Coast Guard 1:Marine Corps 2:Navy
+     * us_military_experience_2_from_month string question-id-1903, e.g."11/2016"
+     * us_military_experience_2_to_month string question-id-1904, e.g.null, "12/2016"
+     * us_military_experience_3_branch integer question-id-1905, e.g.3:Air Force 0:Army 4: Coast Guard 1:Marine Corps 2:Navy
+     * us_military_experience_3_from_month string question-id-1906, e.g."11/2016"
+     * us_military_experience_3_to_month string question-id-1907, e.g.null, "12/2016"
+     * @bodyParam us_military_experiences.*.branch integer required The min length of 'us_military_experiences' is 1 and the max length is 3 if "1" or "2" is selected in 'us_armed_forces_status', e.g.3:Air Force 0:Army 4: Coast Guard 1:Marine Corps 2:Navy
+     * @bodyParam us_military_experiences.*.from_month string required if "1" or "2" is selected in 'us_armed_forces_status', e.g."11/2016"
+     * @bodyParam us_military_experiences.*.to_month string if "1" or "2" is selected in 'us_armed_forces_status', e.g.null, "12/2016"
      * @bodyParam ever_received_discharge boolean question-id-199, if "1" or "2" is selected in 'us_armed_forces_status', e.g.0:yes 1:no
-     * @bodyParam discharge_descr string question-id-1044, if 'ever_receive_discharge' is true, e.g."<p>test<i>xxxxx<u>oooo</u></i></p>"
+     * if 'ever_receive_discharge' is true:
+     * @bodyParam discharge_descr string question-id-1044, if 'ever_receive_discharge' is true, e.g."<p\>test<i\>xxxxx<u\>oooo</u\></i\></p\>"
      *
      * @bodyParam is_hispanic_or_latino boolean required question-id-200, 0:yes 1:no
+     * if 'is_hispanic_or_latino' is true:
      * @bodyParam hispanic_or_latino_identities array question-id-201, if 'is_hispanic_or_latino' is true, e.g.["0"(Central America), "1"(Cuba), "2"(Mexico), "3"(Puerto Rico), "4"(South America), "5"(Spain), "6"(Other)]
      * @bodyParam hispanic_or_latino_descr string question-id-202
      *
@@ -103,13 +113,17 @@ class ExampleController extends Controller
      * if "0"(American Indian or Alaska Native) is selected in 'other_identities':
      * @bodyParam tribal_identity string question-id-205, if "0"(American Indian or Alaska Native) is selected in 'other_identities'
      * @bodyParam is_federally_recognized_tribe boolean required question-id-205, if "0"(American Indian or Alaska Native) is selected in 'other_identities', e.g.0:yes 1:no
+     * if 'is_federally_recognized_tribe' is true:
      * @bodyParam tribe integer question-id-1069, if 'is_federally_recognized_tribe' is true, e.g.null, 0:AK-Agdaagux
      * @bodyParam tribal_enrollment_number string question-id-207, if 'is_federally_recognized_tribe' is true
      *
      * if "1"(Asian) is selected in 'other_identities:
      * @bodyParam asian_backgrounds array question-id-208, if "1"(Asian) is selected in 'other_identities', e.g.["7"(Other East Asia), "8"(Other South Asia), "9"(Other Southeast Asia)]
+     * if "7"(Other East Asia) is selected in 'asian_backgrounds':
      * @bodyParam east_asian_descr string question-id-209, if "7"(Other East Asia) is selected in 'asian_backgrounds'
+     * if "8"(Other South Asia) is selected in 'asian_backgrounds':
      * @bodyParam south_asian_descr string question-id-210, if "8"(Other South Asia) is selected in 'asian_backgrounds'
+     * if "9"(Other Southeast Asia) is selected in 'asian_backgrounds':
      * @bodyParam southeast_asian_descr string question-id-211, if "9"(Other Southeast Asia) is selected in 'asian_backgrounds'
      *
      * if "2"(Black or African American) is selected in 'other_identities':
@@ -124,18 +138,35 @@ class ExampleController extends Controller
      * @bodyParam white_backgrounds array question-id-216, if "4"(White) is selected in 'other_identities'
      * @bodyParam white_descr array question-id-217, if "4"(White) is selected in 'other_identities'
      *
-     * @bodyParam agreed_terms_demographics boolean required  question-id-1782, 1:yes
+     * @bodyParam agreed_terms_demographics boolean required question-id-1782, 1:yes
      *
      *
      * == Geography ==
-     * @bodyParam birth_country integer required 0:United States of America
-     * @bodyParam birth_city string required
-     * @bodyParam birth_state integer required 3:Alabama
-     * @bodyParam lived_in_us_yr integer required
-     * @bodyParam lived_outside_us_yr integer required
+     * @bodyParam birth_country integer required question-id-218, e.g.0:United States of America
+     * @bodyParam birth_city string required question-id-219
+     * @bodyParam birth_state integer required question-id-220, e.g.3:Alabama
+     * @bodyParam lived_in_us_yr integer required  question-id-221
+     * @bodyParam lived_outside_us_yr integer required question-id-222
      *
-     * @bodyParam languages.*.language string required
-     * @bodyParam languages.*.proficiency string required
+     *
+     * == Language ==
+     * languages_length integer required question-id-223, min:1 max:5
+     * language_1 integer required question-id-224, e.g.0:English 1:Spanish 2:Aceh
+     * proficiency_1 array required question-id-225, e.g.3:First Language 0:Speak 1:Read 2:Write 4:Spoken at Home
+     * language_2 integer required question-id-226
+     * proficiency_2 array required question-id-227
+     * language_3 integer required question-id-228
+     * proficiency_3 array required question-id-229
+     * language_4 integer required question-id-230
+     * proficiency_4 array required question-id-231
+     * language_5 integer required question-id-232
+     * proficiency_5 array required question-id-233
+     *
+     * @bodyParam languages.*.lang integer required The min length of 'languages' is 1, while the max length is 5 with at least 1 language as first language required, e.g.0:English 1:Spanish 2:Aceh
+     * @bodyParam languages.*.proficiency array required 3:First Language 0:Speak 1:Read 2:Write 4:Spoken at Home
+     *
+     *
+     * == Citizenship ==
      * @bodyParam citizenship_status string required
      * @bodyParam list_citizenship array required
      * @bodyParam parents_marital_status string required
