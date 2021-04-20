@@ -167,8 +167,36 @@ class ExampleController extends Controller
      *
      *
      * == Citizenship ==
-     * @bodyParam citizenship_status string required
-     * @bodyParam list_citizenship array required
+     * @bodyParam citizenship_status integer required question-id-234, e.g.0:U.S. Citizen or U.S. National 1:U.S. Dual Citizen 5:U.S. Permanent Resident 4:U.S. Refugee or Asylee 3:Other (Non-US)
+     * @bodyParam ssn_number string question-id-235, e.g."222-11-1111"
+     * if "1", "5", "4" or "3" is selected in 'citizenship_status':
+     * @bodyParam list_citizenship array required question-id-236, if "1", "5", "4" or "3" is selected in 'citizenship_status', e.g.["0"(Canada), "241"(Taiwan)]
+     * if "5" is selected in 'citizenship_status':
+     * @bodyParam green_card_file file question-id-237, if "5" is selected in 'citizenship_status',
+     * @bodyParam arn_number string question-id-238, if "5" is selected in 'citizenship_status',
+     * @bodyParam arn_expiration_date date question-id-239, if "5" is selected in 'citizenship_status', e.g."11/27/2025"
+     * if "3" is selected in 'citizenship_status':
+     * @bodyParam hold_us_visa boolean required question-id-1836, e.g.0:yes 1:no
+     * if 'hold_us_visa' is true:
+     * @bodyParam held_visa integer required question-id-240, if 'hold_us_visa' is true, e.g.1:A-1 2:A-2 3:A-3 4:B-2 5:E-2 6:F-1 7:F-2 8:G-1 9:G-2 10:G-3 11:G-4 12:H-4 13:J-1 14:J-2 15:L-2 16:other 17:R-2
+     * @bodyParam visa_number string required question-id-242, if 'hold_us_visa' is true
+     * @bodyParam visa_date_issued date required question-id-243, if 'hold_us_visa' is true, e.g."11/27/2025"
+     * if "16' is selected in 'held_visa':
+     * @bodyParam other_visa_type_descr string required question-id-241, if "16' is selected in 'held_visa'
+     *
+     * @bodyParam want_to_apply_us_visa integer question-id-1837, noticed that "4" is skipped in the options, e.g.null, 21:I do not intend to apply for a U.S. visa 20:I do not know which visa I will hold 1:A-1 2:A-2 3:A-3 5:B-2 6:E-2 7:F-1 8:F-2 9:G-1 10:G-2 11:G-3 12:G-4 13:H-4 14:J-1 15:J-2 16:L-2 17:other 18:R-2
+     * if "17" is selected in 'want_to_apply_us_visa':
+     * @bodyParam want_to_apply_other_visa_descr string question-id-1838, if "17" is selected in 'want_to_apply_us_visa'
+     *
+     *
+     * == Common App Fee Waiver ==
+     * @bodyParam apply_fee_waiver boolean required question-id-1021, e.g.0:yes 1:no
+     * if 'apply_fee_waiver' is true:
+     * @bodyParam fee_waiver_indicators array required question-id-1805, if 'apply_fee_waiver' is true, e.g.["0"(I have received or am eligible to receive an ACT or SAT testing fee waiver), "1"(I am enrolled in or am eligible to participate in the Federal Free or Reduced Price Lunch program (FRPL))]
+     * @bodyParam fee_waiver_signature string required question-id-1022, if 'apply_fee_waiver' is true, e.g."name"
+     * @bodyParam want_info_from_strive_for_college boolean question-id-1911, if 'apply_fee_waiver' is true, e.g."", 0:yes 1:no
+     *
+     *
      * @bodyParam parents_marital_status string required
      * @bodyParam whom_make_your_permanent_home string required
      * @bodyParam parents.*.type string required
