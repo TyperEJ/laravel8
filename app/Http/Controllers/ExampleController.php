@@ -103,7 +103,7 @@ class ExampleController extends Controller
      * if 'ever_receive_discharge' is true:
      * @bodyParam discharge_descr string question-id-1044, if 'ever_receive_discharge' is true, e.g."<p\>test<i\>xxxxx<u\>oooo</u\></i\></p\>"
      *
-     * @bodyParam is_hispanic_or_latino boolean required question-id-200, 0:yes 1:no
+     * @bodyParam is_hispanic_or_latino boolean required question-id-200, e.g.0:yes 1:no
      * if 'is_hispanic_or_latino' is true:
      * @bodyParam hispanic_or_latino_identities array question-id-201, if 'is_hispanic_or_latino' is true, e.g.["0"(Central America), "1"(Cuba), "2"(Mexico), "3"(Puerto Rico), "4"(South America), "5"(Spain), "6"(Other)]
      * @bodyParam hispanic_or_latino_descr string question-id-202
@@ -197,8 +197,23 @@ class ExampleController extends Controller
      * @bodyParam want_info_from_strive_for_college boolean question-id-1911, if 'apply_fee_waiver' is true, e.g."", 0:yes 1:no
      *
      *
-     * @bodyParam parents_marital_status string required
-     * @bodyParam whom_make_your_permanent_home string required
+     * == Household ==
+     * @bodyParam parents_marital_status integer required question-id-364, e.g.0:Married 1:Separated 2:Divorced 3:Never Married 4:Widowed 5:Civil Union/Domestic Partners
+     * if "2"(Divorced), "3"(Never Married) or "4"(Widowed) is selected in 'parents_marital_status':
+     * @bodyParam divorced_yr string required question-id-365, if "2"(Divorced), "3"(Never Married) or "4"(Widowed) is selected in 'parents_marital_status', e.g."2021"
+     * @bodyParam want_to_list_step_parents boolean required question-id-367, if "2"(Divorced), "3"(Never Married) or "4"(Widowed) is selected in 'parents_marital_status', e.g.0:yes 1:no
+     * @bodyParam step_parents_number integer required question-id-368, if "2"(Divorced), "3"(Never Married) or "4"(Widowed) is selected in 'parents_marital_status', e.g.1 or 2
+     *
+     * @bodyParam whom_make_your_permanent_home integer required question-id-366, e.g.0:Parent-1 1:Parent-2 2:Both 3:Legal Guardian 4:Other 5:Ward of the Court/State
+     * if "4"(Other) is selected in 'whom_make_your_permanent_home':
+     * @bodyParam living_situation_descr string question-id-1921, if "4"(Other) is selected in 'whom_make_your_permanent_home', maxlength:100
+     *
+     * @bodyParam has_children boolean question-id-369, e.g."", 0:yes 1:no
+     * if 'has_children' is true:
+     * @bodyParam children_number integer required question-id-370, if 'has_children' is true, min:0 max:99
+     *
+     *
+     *
      * @bodyParam parents.*.type string required
      * @bodyParam parents.*.is_living boolean required
      * @bodyParam parents.*.deceased_date date required
