@@ -213,20 +213,100 @@ class ExampleController extends Controller
      * @bodyParam children_number integer required question-id-370, if 'has_children' is true, min:0 max:99
      *
      *
+     * == Parent 1/2 ==
+     * parent_1_type integer required question-id-371, e.g.0:Mother 1:Father 2: I have limited information about this parent
+     * parent_1_is_living boolean required question-id-372, e.g.0:yes 1:no
+     * if 'parent_1_is_living' is false:
+     * parent_1_deceased_date date required question-id-373, if 'parent_1_is_living' is false, e.g."02/2003"
      *
-     * @bodyParam parents.*.type string required
-     * @bodyParam parents.*.is_living boolean required
-     * @bodyParam parents.*.deceased_date date required
+     * parent_1_prefix integer required question-id-374, e.g.0:Dr. 1:Mr. 2:Ms. 3:Mrs.
+     * parent_1_first_name string question-id-375
+     * parent_1_middle_name string question-id-376
+     * parent_1_last_name string question-id-377
+     * parent_1_former_last_name string question-id-1023
+     * parent_1_suffix integer question-id-378, e.g.null, 0:Jr. 9:Sr. 1:II 2:III 3:IV 4:V
+     * parent_1_birth_country integer question-id-379, e.g.null, 0:United States of America 1:Canada
+     * parent_1_occupation integer question-id-385
+     * e.g.null
+     *  0:Accountant or actuary
+     *  1:Actor or entertainer
+     *  2:Architect or urban planner
+     *  3:Artist 4:Business (clerical)
+     *  5:Business executive (management, administrator)
+     *  6:Business owner or proprietor
+     *  7:Business salesperson or buyer
+     *  8:Clergy (minister, priest)
+     *  9:Clergy (other religious)
+     *  ...an so on.
+     *  44:Other
+     * if "144"(Other) is selected in 'parent_1_occupation':
+     * parent_1_occupation_descr string question-id-1783, if "144"(Other) is selected in 'parent_1_occupation'
+     *
+     * parent_1_education_level string question-id-391
+     * e.g.null, 0:none 1:Some grade/primary school 2:Completed grade/primary school 3:Some high/secondary school 4:Graduated from high/secondary school (or equivalent) 10:Some trade school or community college 11:Graduated from trade school or community college 7:Some college/university 8:Graduated from college/university 9:Graduate school
+     * if "10", "11", "7", "8" or "9" is selected as 'education_level':
+     * parent_1_attended_institutions_number integer required question-id-392, if "10", "11", "7", "8" or "9" is selected as 'education_level', min:1 max:5
+     * parent_1_college_1 object required question-id-393, if "10", "11", "7", "8" or "9" is selected as 'education_level', e.g.{"ceebCode":"1700","name":"Aalto University","schoolTypeCode":"4-year college or university","address":{"city":"Aalto","state":"","zip":"FI-00076","countryValue":"FIN","address1":"PO Box 21210","address2":"","address3":"","countryCode":"73","stateValue":""}}
+     * parent_1_college_1_degrees_number integer required question-id-394, if "10", "11", "7", "8" or "9" is selected as 'education_level', min.0 max.5
+     * parent_1_college_1_degree_received_1 integer required question-id-395 if "10", "11", "7", "8" or "9" is selected as 'education_level', e.g.0:Associate's (AA, AS) 1:Bachelor's (BA, BS) 2:Master's (MA, MS) 3:Business (MBA, MAcc) 4:Law (JD, LLM) 5:Medicine (MD, DO, DVM, DDS)
+     * parent_1_college_1_degree_received_yr_1 string required question-id-396 if "10", "11", "7", "8" or "9" is selected as 'education_level', e.g."2021"
+     * parent_1_college_1_degree_received_2 integer required question-id-397, if "10", "11", "7", "8" or "9" is selected as 'education_level' and 'attended_institutions_number' is larger than 1, e.g.0:Associate's (AA, AS) 1:Bachelor's (BA, BS) 2:Master's (MA, MS) 3:Business (MBA, MAcc) 4:Law (JD, LLM) 5:Medicine (MD, DO, DVM, DDS)
+     * parent_1_college_1_degree_received_yr_2 string required question-id-398, if "10", "11", "7", "8" or "9" is selected as 'education_level' and 'attended_institutions_number' is larger than 1, e.g."2021"
+     * parent_1_college_1_degree_received_3 integer required question-id-399, if "10", "11", "7", "8" or "9" is selected as 'education_level' and 'attended_institutions_number' is larger than 1, e.g.0:Associate's (AA, AS) 1:Bachelor's (BA, BS) 2:Master's (MA, MS) 3:Business (MBA, MAcc) 4:Law (JD, LLM) 5:Medicine (MD, DO, DVM, DDS)
+     * parent_1_college_1_degree_received_yr_3 string required question-id-400, if "10", "11", "7", "8" or "9" is selected as 'education_level' and 'attended_institutions_number' is larger than 1, e.g."2021"
+     * parent_1_college_1_degree_received_4 integer required question-id-401, if "10", "11", "7", "8" or "9" is selected as 'education_level' and 'attended_institutions_number' is larger than 1, e.g.0:Associate's (AA, AS) 1:Bachelor's (BA, BS) 2:Master's (MA, MS) 3:Business (MBA, MAcc) 4:Law (JD, LLM) 5:Medicine (MD, DO, DVM, DDS)
+     * parent_1_college_1_degree_received_yr_4 string required question-id-402, if "10", "11", "7", "8" or "9" is selected as 'education_level' and 'attended_institutions_number' is larger than 1, e.g."2021"
+     * parent_1_college_1_degree_received_5 integer required question-id-403, if "10", "11", "7", "8" or "9" is selected as 'education_level' and 'attended_institutions_number' is larger than 1, e.g.0:Associate's (AA, AS) 1:Bachelor's (BA, BS) 2:Master's (MA, MS) 3:Business (MBA, MAcc) 4:Law (JD, LLM) 5:Medicine (MD, DO, DVM, DDS)
+     * parent_1_college_1_degree_received_yr_5 string required question-id-404, if "10", "11", "7", "8" or "9" is selected as 'education_level' and 'attended_institutions_number' is larger than 1, e.g."2021"
+     * if "10", "11", "7", "8" or "9" is selected as 'education_level' and 'attended_institutions_number' is larger than 1:
+     * parent_1_college_2 object required question-id-405, if "10", "11", "7", "8" or "9" is selected as 'education_level', e.g.{"ceebCode":"1700","name":"Aalto University","schoolTypeCode":"4-year college or university","address":{"city":"Aalto","state":"","zip":"FI-00076","countryValue":"FIN","address1":"PO Box 21210","address2":"","address3":"","countryCode":"73","stateValue":""}}
+     * parent_1_college_2_degrees_number integer required question-id-406, if "10", "11", "7", "8" or "9" is selected as 'education_level' and 'attended_institutions_number' is larger than 1, min.0 max.5
+     * parent_1_college_2_degree_received_1 integer required question-id-407, if "10", "11", "7", "8" or "9" is selected as 'education_level' and 'attended_institutions_number' is larger than 1, e.g.0:Associate's (AA, AS) 1:Bachelor's (BA, BS) 2:Master's (MA, MS) 3:Business (MBA, MAcc) 4:Law (JD, LLM) 5:Medicine (MD, DO, DVM, DDS)
+     * parent_1_college_2_degree_received_yr_1 string required question-id-408, if "10", "11", "7", "8" or "9" is selected as 'education_level' and 'attended_institutions_number' is larger than 1, e.g."2021"
+     * parent_1_college_2_degree_received_2 integer required question-id-409, if "10", "11", "7", "8" or "9" is selected as 'education_level' and 'attended_institutions_number' is larger than 1, e.g.0:Associate's (AA, AS) 1:Bachelor's (BA, BS) 2:Master's (MA, MS) 3:Business (MBA, MAcc) 4:Law (JD, LLM) 5:Medicine (MD, DO, DVM, DDS)
+     * parent_1_college_2_degree_received_yr_2 string required question-id-410, if "10", "11", "7", "8" or "9" is selected as 'education_level' and 'attended_institutions_number' is larger than 1, e.g."2021"
+     * parent_1_college_2_degree_received_3 integer required question-id-411, if "10", "11", "7", "8" or "9" is selected as 'education_level' and 'attended_institutions_number' is larger than 1, e.g.0:Associate's (AA, AS) 1:Bachelor's (BA, BS) 2:Master's (MA, MS) 3:Business (MBA, MAcc) 4:Law (JD, LLM) 5:Medicine (MD, DO, DVM, DDS)
+     * parent_1_college_2_degree_received_yr_3 string required question-id-412, if "10", "11", "7", "8" or "9" is selected as 'education_level' and 'attended_institutions_number' is larger than 1, e.g."2021"
+     * parent_1_college_2_degree_received_4 integer required question-id-413, if "10", "11", "7", "8" or "9" is selected as 'education_level' and 'attended_institutions_number' is larger than 1, e.g.0:Associate's (AA, AS) 1:Bachelor's (BA, BS) 2:Master's (MA, MS) 3:Business (MBA, MAcc) 4:Law (JD, LLM) 5:Medicine (MD, DO, DVM, DDS)
+     * parent_1_college_2_degree_received_yr_4 string required question-id-414, if "10", "11", "7", "8" or "9" is selected as 'education_level' and 'attended_institutions_number' is larger than 1, e.g."2021"
+     * parent_1_college_2_degree_received_5 integer required question-id-415, if "10", "11", "7", "8" or "9" is selected as 'education_level' and 'attended_institutions_number' is larger than 1, e.g.0:Associate's (AA, AS) 1:Bachelor's (BA, BS) 2:Master's (MA, MS) 3:Business (MBA, MAcc) 4:Law (JD, LLM) 5:Medicine (MD, DO, DVM, DDS)
+     * parent_1_college_2_degree_received_yr_5 string required question-id-416, if "10", "11", "7", "8" or "9" is selected as 'education_level' and 'attended_institutions_number' is larger than 1, e.g."2021"
+     * ...and so on (max. 5 colleges).
+     *
+     * The length of 'parents' is 2:
+     * @bodyParam parents.*.type integer required The length of 'parents' is 2, e.g.0:Mother 1:Father 2: I have limited information about this parent
+     * @bodyParam parents.*.is_living boolean required 0:yes 1:no
+     * @bodyParam parents.*.deceased_date date required if 'parents.*.is_living' is false
+     * @bodyParam parents.*.prefix integer required 0:Dr. 1:Mr. 2:Ms. 3:Mrs.
      * @bodyParam parents.*.first_name string required
      * @bodyParam parents.*.middle_name string
      * @bodyParam parents.*.last_name string required
-     * @bodyParam parents.*.address_is string required
-     * @bodyParam parents.*.country string required
-     * @bodyParam parents.*.state string required
-     * @bodyParam parents.*.address_line_1 string required
-     * @bodyParam parents.*.address_line_2 string
-     * @bodyParam parents.*.zip string
-     * @bodyParam parents.*.education_level string required
+     * @bodyParam parents.*.former_last_name string
+     * @bodyParam parents.*.suffix integer null, 0:Jr. 9:Sr. 1:II 2:III 3:IV 4:V
+     * @bodyParam parents.*.birth_country integer null, 0:United States of America 1:Canada
+     * @bodyParam parents.*.occupation integer null, 0:Accountant or actuary 1:Actor or entertainer 2:Architect or urban planner 3:Artist 4:Business (clerical) 5:Business executive (management, administrator) 6:Business owner or proprietor 7:Business salesperson or buyer 8:Clergy (minister, priest) 9:Clergy (other religious) 44:Other
+     * @bodyParam parents.*.occupation_descr string
+     * @bodyParam parents.*.education_level integer required null, 0:none 1:Some grade/primary school 2:Completed grade/primary school 3:Some high/secondary school 4:Graduated from high/secondary school (or equivalent) 10:Some trade school or community college 11:Graduated from trade school or community college 7:Some college/university 8:Graduated from college/university 9:Graduate school
+     *
+     * The min length of 'parents.*.colleges' is 0 and the max length is 5 if "10", "11", "7", "8" or "9" is selected as 'education_level':
+     * @bodyParam parents.*.colleges.*.name string required The min length of 'parents.*.colleges' is 0 and the max length is 5 if "10", "11", "7", "8" or "9" is selected as 'education_level', e.g."Aalto University"
+     * @bodyParam parents.*.colleges.*.ceeb_code integer required e.g.1700"
+     * @bodyParam parents.*.colleges.*.school_type_code string required e.g."4-year college or university"
+     * @bodyParam parents.*.colleges.*.city string required e.g.":"Aalto"
+     * @bodyParam parents.*.colleges.*.state string
+     * @bodyParam parents.*.colleges.*.state_value string
+     * @bodyParam parents.*.colleges.*.zip string required e.g."FI-00076"
+     * @bodyParam parents.*.colleges.*.country_code integer required e.g."73"
+     * @bodyParam parents.*.colleges.*.country_value string required e.g."FIN"
+     * @bodyParam parents.*.colleges.*.address_line_1 string required e.g."PO Box 21210"
+     * @bodyParam parents.*.colleges.*.address_line_2 string
+     * @bodyParam parents.*.colleges.*.address_line_3 string
+     *
+     * The min length of 'parents.*.colleges.*.degrees' is 1 and the max length is 5 if "10", "11", "7", "8" or "9" is selected as 'education_level':
+     * @bodyParam parents.*.colleges.*.degrees.*.name integer required The min length of 'parents.*.colleges.*.degrees' is 1 and the max length is 5 if "10", "11", "7", "8" or "9" is selected as 'education_level', e.g.0:Associate's (AA, AS) 1:Bachelor's (BA, BS) 2:Master's (MA, MS) 3:Business (MBA, MAcc) 4:Law (JD, LLM) 5:Medicine (MD, DO, DVM, DDS)
+     * @bodyParam parents.*.colleges.*.degrees.*.received_yr string required e.g."2021"
+     *
+     *
      * @bodyParam siblings.*.first_name string required
      * @bodyParam siblings.*.middle_name string
      * @bodyParam siblings.*.last_name string required
