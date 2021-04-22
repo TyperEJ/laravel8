@@ -35,15 +35,15 @@ class ExampleController extends Controller
      * == Address ==
      * address e.g.{"county":"Belknap","countryCode":"0","countryValue":"United States of America","address1":"2 Test St","address2":"","address3":"","city":"Belmont","stateValue":"NH","zip":"03220-4052","state":"38"}
      * @bodyParam address.*.county string required question-id-182
-     * @bodyParam address.*.country_code integer required 0:United States of America
+     * @bodyParam address.*.country_code integer required 0:United States of America 242:Taiwan
      * @bodyParam address.*.country_value string required e.g."United States of America"
      * @bodyParam address.*.address_line_1 string required
      * @bodyParam address.*.address_line_2 string
      * @bodyParam address.*.address_line_3 string
      * @bodyParam address.*.city string required e.g."Overton"
-     * @bodyParam address.*.state integer required 52:TN
-     * @bodyParam address.*.state_value string required e.g."TN"
-     * @bodyParam address.*.zip string required e.g."38541-6781"
+     * @bodyParam address.*.state integer optional, but required if "0"(USA) is selected as country, e.g.null
+     * @bodyParam address.*.state_value string optional, but required if "0"(USA) is selected as country, e.g.null, "TN"
+     * @bodyParam address.*.zip string optional, but required if "0"(USA) is selected as country, e.g.null, "38541-6781"
      *
      * @bodyParam used_mailing_address boolean required question-id-183, e.g.0:no 1:yes
      * if 'used_mailing_address' is true:
@@ -215,6 +215,8 @@ class ExampleController extends Controller
      *
      * == Parent 1/2 ==
      * parent_1_type integer required question-id-371, e.g.0:Mother 1:Father 2: I have limited information about this parent
+     * parent_2_type integer required question-id-453, e.g.0:Mother 1:Father 2: I have limited information about this parent 3:I do not have another parent to list
+     *
      * parent_1_is_living boolean required question-id-372, e.g.0:yes 1:no
      * if 'parent_1_is_living' is false:
      * parent_1_deceased_date date required question-id-373, if 'parent_1_is_living' is false, e.g."02/2003"
@@ -239,8 +241,8 @@ class ExampleController extends Controller
      *  9:Clergy (other religious)
      *  ...an so on.
      *  44:Other
-     * if "144"(Other) is selected in 'parent_1_occupation':
-     * parent_1_occupation_descr string question-id-1783, if "144"(Other) is selected in 'parent_1_occupation'
+     * if "44"(Other) is selected in 'parent_1_occupation':
+     * parent_1_occupation_descr string question-id-1783, if "44"(Other) is selected in 'parent_1_occupation'
      *
      * parent_1_education_level string question-id-391
      * e.g.null, 0:none 1:Some grade/primary school 2:Completed grade/primary school 3:Some high/secondary school 4:Graduated from high/secondary school (or equivalent) 10:Some trade school or community college 11:Graduated from trade school or community college 7:Some college/university 8:Graduated from college/university 9:Graduate school
@@ -307,6 +309,92 @@ class ExampleController extends Controller
      * @bodyParam parents.*.colleges.*.degrees.*.received_yr string required e.g."2021"
      *
      *
+     * == Legal Guardian ==
+     * @bodyParam prefix integer question-id-535, e.g.0:Dr. 1:Mr. 2:Ms. 3:Mrs.
+     * @bodyParam first_name string required question-id-536
+     * @bodyParam middle_name string question-id-537
+     * @bodyParam last_name string required question-id-538
+     * @bodyParam former_last_name string question-id-927
+     * @bodyParam suffix integer question-id-539, e.g.null, 0:Jr. 9:Sr. 1:II 2:III 3:IV 4:V
+     * @bodyParam relationship string required question-id-540
+     * @bodyParam email string question-id-541
+     * @bodyParam preferred_phone boolean question-id-542, 0:home 1:mobile 2:other 3:work
+     * preferred_phone_number e.g.{"countryCode":"+886","phoneNumber":"970824452","extension":""}
+     * @bodyParam preferred_phone_number.*.country_code string question-id-543, e.g."+886"
+     * @bodyParam preferred_phone_number.*.phone_number string  e.g."970824452"
+     * @bodyParam preferred_phone_number.*.extension string
+     * @bodyParam address_type integer required question-id-544, e.g.0:same as my home address 1:different
+     * if "1" is selected in 'address_type':
+     * address e.g.{"country":"242","address1":"ssss","address2":"","address3":"","city":"sdasd","state":null,"zip":null,"countryCode":"242","countryValue":"Taiwan","stateValue":null}
+     * @bodyParam address.*.county string required question-id-545, if "1" is selected in 'address_type'
+     * @bodyParam address.*.country_code integer required 0:United States of America 242:Taiwan
+     * @bodyParam address.*.country_value string required e.g."United States of America"
+     * @bodyParam address.*.address_line_1 string required
+     * @bodyParam address.*.address_line_2 string
+     * @bodyParam address.*.address_line_3 string
+     * @bodyParam address.*.city string required e.g."Overton"
+     * @bodyParam address.*.state integer optional, but required if "0"(USA) is selected as country, e.g.null
+     * @bodyParam address.*.state_value string optional, but required if "0"(USA) is selected as country, e.g.null, "TN"
+     * @bodyParam address.*.zip string optional, but required if "0"(USA) is selected as country, e.g.null, "38541-6781"
+     *
+     * @bodyParam occupation integer question-id-546
+     * e.g.null,
+     *  0:Accountant or actuary
+     *  1:Actor or entertainer
+     *  2:Architect or urban planner
+     *  3:Artist 4:Business (clerical)
+     *  5:Business executive (management, administrator)
+     *  6:Business owner or proprietor
+     *  7:Business salesperson or buyer
+     *  8:Clergy (minister, priest)
+     *  9:Clergy (other religious)
+     *  ...an so on.
+     *  44:Other
+     * if "44"(Other) is selected in 'occupation':
+     * @bodyParam occupation_descr string question-id-1785, if "44"(Other) is selected in 'occupation'
+     *
+     * @bodyParam employment_status integer required question-id-547, e.g.0:Employed 1:Unemployed 2:Retired 3:Self-Employed
+     * if "0"(Employed) or "2"(Retired) is selected in 'employment_status':
+     * @bodyParam position string question-id-548, if "0"(Employed) or "2"(Retired) is selected in 'employment_status', maxlength:40
+     * @bodyParam is_employed_or_retired_college boolean required question-id-549, if "0"(Employed) or "2"(Retired) is selected in 'employment_status', e.g.1:currently employed 2:retired 3:never
+     * if "2"(retired) or "3"(never) is selected in 'is_employed_or_retired_college':
+     * @bodyParam current_employer_name string required question-id-550, if "2"(retired) or "3"(never) is selected in 'is_employed_or_retired_college'
+     * if "1"(currently employed) or "2"(retired) is selected in 'is_employed_or_retired_college':
+     * college_employer e.g.{"ceebCode":"","name":"sss","address":{"city":"","state":"7","zip":"38541-6781","countryValue":"USA","address1":"","address2":"","address3":"","countryCode":"0","stateValue":"AZ"}}
+     * @bodyParam college_employer.*.name string required question-id-551, if "1"(currently employed) or "2"(retired) is selected in 'is_employed_or_retired_college'
+     * @bodyParam college_employer.*.ceeb_code integer e.g.1700"
+     * @bodyParam college_employer.*.school_type_code string e.g."4-year college or university"
+     * @bodyParam college_employer.*.city string e.g.":"Aalto"
+     * @bodyParam college_employer.*.state string
+     * @bodyParam college_employer.*.state_value string
+     * @bodyParam college_employer.*.zip string e.g."FI-00076"
+     * @bodyParam college_employer.*.country_code integer required e.g."242"
+     * @bodyParam college_employer.*.country_value string required e.g."TWN"
+     * @bodyParam college_employer.*.address_line_1 string e.g."PO Box 21210"
+     * @bodyParam college_employer.*.address_line_2 string
+     * @bodyParam college_employer.*.address_line_3 string
+     * @bodyParam education_level integer question-id-552, e.g.null, 0:none 1:Some grade/primary school 2:Completed grade/primary school 3:Some high/secondary school 4:Graduated from high/secondary school (or equivalent) 10:Some trade school or community college 11:Graduated from trade school or community college 7:Some college/university 8:Graduated from college/university 9:Graduate school
+     *
+     * The min length of 'colleges' is 0 and the max length is 5 if "10", "11", "7", "8" or "9" is selected as 'education_level':
+     * @bodyParam colleges.*.name string required The min length of 'colleges' is 0 and the max length is 5 if "10", "11", "7", "8" or "9" is selected as 'education_level', e.g."Aalto University"
+     * @bodyParam colleges.*.ceeb_code integer e.g.1700"
+     * @bodyParam colleges.*.school_type_code string e.g."4-year college or university"
+     * @bodyParam colleges.*.city string e.g.":"Aalto"
+     * @bodyParam colleges.*.state string
+     * @bodyParam colleges.*.state_value string
+     * @bodyParam colleges.*.zip string e.g."FI-00076"
+     * @bodyParam colleges.*.country_code integer required e.g."242"
+     * @bodyParam colleges.*.country_value string required e.g."TWN"
+     * @bodyParam colleges.*.address_line_1 string e.g."PO Box 21210"
+     * @bodyParam colleges.*.address_line_2 string
+     * @bodyParam colleges.*.address_line_3 string
+     *
+     * The min length of 'colleges.*.degrees' is 1 and the max length is 5 if "10", "11", "7", "8" or "9" is selected as 'education_level':
+     * @bodyParam colleges.*.degrees.*.name integer required The min length of 'colleges.*.degrees' is 1 and the max length is 5 if "10", "11", "7", "8" or "9" is selected as 'education_level', e.g.0:Associate's (AA, AS) 1:Bachelor's (BA, BS) 2:Master's (MA, MS) 3:Business (MBA, MAcc) 4:Law (JD, LLM) 5:Medicine (MD, DO, DVM, DDS)
+     * @bodyParam colleges.*.degrees.*.received_yr string required e.g."2021"
+     *
+     *
+     * == Sibling ==
      * @bodyParam siblings.*.first_name string required
      * @bodyParam siblings.*.middle_name string
      * @bodyParam siblings.*.last_name string required
