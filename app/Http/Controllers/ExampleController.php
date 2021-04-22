@@ -34,7 +34,7 @@ class ExampleController extends Controller
      *
      * == Address ==
      * address e.g.{"county":"Belknap","countryCode":"0","countryValue":"United States of America","address1":"2 Test St","address2":"","address3":"","city":"Belmont","stateValue":"NH","zip":"03220-4052","state":"38"}
-     * @bodyParam address.*.county string required question-id-182
+     * @bodyParam address.*.county string question-id-182
      * @bodyParam address.*.country_code integer required 0:United States of America 242:Taiwan
      * @bodyParam address.*.country_value string required e.g."United States of America"
      * @bodyParam address.*.address_line_1 string required
@@ -48,7 +48,7 @@ class ExampleController extends Controller
      * @bodyParam used_mailing_address boolean required question-id-183, e.g.0:no 1:yes
      * if 'used_mailing_address' is true:
      * mailing_address e.g.{"county":"Belknap","countryCode":"0","countryValue":"United States of America","address1":"2 Test St","address2":"","address3":"","city":"Belmont","stateValue":"NH","zip":"03220-4052","state":"38"}
-     * @bodyParam mailing_address.*.county string required question-id-186, if 'used_mailing_address' is true
+     * @bodyParam mailing_address.*.county string question-id-186, if 'used_mailing_address' is true
      * @bodyParam mailing_address.*.country_code integer required if 'used_mailing_address' is true, e.g.0:United States of America
      * @bodyParam mailing_address.*.country_value string required if 'used_mailing_address' is true, e.g."United States of America"
      * @bodyParam mailing_address.*.address_line_1 string required if 'used_mailing_address' is true
@@ -326,7 +326,7 @@ class ExampleController extends Controller
      * @bodyParam address_type integer required question-id-544, e.g.0:same as my home address 1:different
      * if "1" is selected in 'address_type':
      * address e.g.{"country":"242","address1":"ssss","address2":"","address3":"","city":"sdasd","state":null,"zip":null,"countryCode":"242","countryValue":"Taiwan","stateValue":null}
-     * @bodyParam address.*.county string required question-id-545, if "1" is selected in 'address_type'
+     * @bodyParam address.*.county string question-id-545, if "1" is selected in 'address_type'
      * @bodyParam address.*.country_code integer required 0:United States of America 242:Taiwan
      * @bodyParam address.*.country_value string required e.g."United States of America"
      * @bodyParam address.*.address_line_1 string required
