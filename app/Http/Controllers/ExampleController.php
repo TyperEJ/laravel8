@@ -395,10 +395,35 @@ class ExampleController extends Controller
      *
      *
      * == Sibling ==
-     * @bodyParam siblings.*.first_name string required
+     * siblings_number integer required question-id-614, min.0 max.5
+     * The min length of 'siblings' is 0 and the max length is 5:
+     * @bodyParam siblings.*.first_name string required The min length of 'siblings' is 0 and the max length is 5
      * @bodyParam siblings.*.middle_name string
      * @bodyParam siblings.*.last_name string required
-     * @bodyParam siblings.*.education_level string required
+     * @bodyParam siblings.*.age integer
+     * @bodyParam siblings.*.relationship integer e.g."", 0:brother 1:sister
+     * @bodyParam siblings.*.education_level integer required 0:none 1:Some grade/primary school 2:Completed grade/primary school 3:Some high/secondary school 4:Graduated from high/secondary school (or equivalent) 10:Some trade school or community college 11:Graduated from trade school or community college 7:Some college/university 8:Graduated from college/university 9:Graduate school
+     *
+     * if "10", "11", "7", "8" or "9" is selected as 'siblings.*.education_level':
+     * siblings.*.college e.g.null, {"ceebCode":"1700","name":"Aalto University","schoolTypeCode":"4-year college or university","address":{"city":"Aalto","state":"","zip":"FI-00076","countryValue":"FIN","address1":"PO Box 21210","address2":"","address3":"","countryCode":"73","stateValue":""}}
+     * @bodyParam siblings.*.college.*.name string required if "10", "11", "7", "8" or "9" is selected as 'siblings.*.education_level'
+     * @bodyParam siblings.*.college.*.ceeb_code integer e.g.1700"
+     * @bodyParam siblings.*.college.*.school_type_code string e.g."4-year college or university"
+     * @bodyParam siblings.*.college.*.city string e.g.":"Aalto"
+     * @bodyParam siblings.*.college.*.state string
+     * @bodyParam siblings.*.college.*.state_value string
+     * @bodyParam siblings.*.college.*.zip string e.g."FI-00076"
+     * @bodyParam siblings.*.college.*.country_code integer required e.g."242"
+     * @bodyParam siblings.*.college.*.country_value string required e.g."TWN"
+     * @bodyParam siblings.*.college.*.address_line_1 string e.g."PO Box 21210"
+     * @bodyParam siblings.*.college.*.address_line_2 string
+     * @bodyParam siblings.*.college.*.address_line_3 string
+     * @bodyParam siblings.*.college.*.degree.*.name integer 0:Associate's (AA, AS) 1:Bachelor's (BA, BS) 2:Master's (MA, MS) 3:Business (MBA, MAcc) 4:Law (JD, LLM) 5:Medicine (MD, DO, DVM, DDS)
+     * @bodyParam siblings.*.college.*.degree.*.from_month string e.g."03/2021"
+     * @bodyParam siblings.*.college.*.degree.*.to_month string e.g."04/2021"
+     *
+     *
+     *
      * @bodyParam high_school_name string required
      * @bodyParam is_boarding_high_school boolean required
      * @bodyParam is_graduate_from_school boolean required
