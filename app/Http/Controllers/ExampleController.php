@@ -290,15 +290,15 @@ class ExampleController extends Controller
      *
      * The min length of 'parents.*.colleges' is 0 and the max length is 5 if "10", "11", "7", "8" or "9" is selected as 'education_level':
      * @bodyParam parents.*.colleges.*.name string required The min length of 'parents.*.colleges' is 0 and the max length is 5 if "10", "11", "7", "8" or "9" is selected as 'education_level', e.g."Aalto University"
-     * @bodyParam parents.*.colleges.*.ceeb_code integer required e.g.1700"
-     * @bodyParam parents.*.colleges.*.school_type_code string required e.g."4-year college or university"
-     * @bodyParam parents.*.colleges.*.city string required e.g.":"Aalto"
+     * @bodyParam parents.*.colleges.*.ceeb_code integer e.g.1700"
+     * @bodyParam parents.*.colleges.*.school_type_code string e.g."4-year college or university"
+     * @bodyParam parents.*.colleges.*.city string e.g.":"Aalto"
      * @bodyParam parents.*.colleges.*.state string
      * @bodyParam parents.*.colleges.*.state_value string
-     * @bodyParam parents.*.colleges.*.zip string required e.g."FI-00076"
-     * @bodyParam parents.*.colleges.*.country_code integer required e.g."73"
-     * @bodyParam parents.*.colleges.*.country_value string required e.g."FIN"
-     * @bodyParam parents.*.colleges.*.address_line_1 string required e.g."PO Box 21210"
+     * @bodyParam parents.*.colleges.*.zip string e.g."FI-00076"
+     * @bodyParam parents.*.colleges.*.country_code integer required e.g."242"
+     * @bodyParam parents.*.colleges.*.country_value string required e.g."TWN"
+     * @bodyParam parents.*.colleges.*.address_line_1 string e.g."PO Box 21210"
      * @bodyParam parents.*.colleges.*.address_line_2 string
      * @bodyParam parents.*.colleges.*.address_line_3 string
      *
