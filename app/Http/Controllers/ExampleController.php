@@ -144,7 +144,7 @@ class ExampleController extends Controller
      * == Geography ==
      * @bodyParam birth_country integer required question-id-218, e.g.0:United States of America
      * @bodyParam birth_city string required question-id-219
-     * @bodyParam birth_state integer required question-id-220, e.g.3:Alabama
+     * @bodyParam birth_state integer question-id-220, optional, but required if "0" is selected as 'birth_country', e.g.3:Alabama
      * @bodyParam lived_in_us_yr integer required  question-id-221
      * @bodyParam lived_outside_us_yr integer required question-id-222
      *
@@ -452,6 +452,7 @@ class ExampleController extends Controller
      *
      * == Other Secondary/High Schools ==
      * other_high_schools_length integer required question-id-255, min:0 max:3
+     * other_high_school_1 object question-id-256
      * The min length of 'other_high_schools' is 0 and the max length is 3:
      * @bodyParam other_high_schools.*.name string required
      * @bodyParam other_high_schools.*.ceeb_code integer e.g.1700"
