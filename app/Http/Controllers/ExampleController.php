@@ -563,36 +563,59 @@ class ExampleController extends Controller
      * if 'wish_to_report_tests' is true:
      * tests_taken array required question-id-11, if 'wish_to_report_tests' is true, e.g.["0"(ACT), "1"(SAT before March 2016), "9"(SAT March 2016 or after), "2"(SAT Subject Tests), "3"(AP Subject Tests), "4"(IB Subject Tests), "5"(TOEFL iBT), "6"(TOEFL Paper), "8"(PTE Academic Tests), "7"(IELTS)]
      *
+     *
      * == ACT Tests ==
      * This section is required by the time "0"(ACT) is selected in 'tests_taken'.
      * @bodyParam acts_number integer required This section is required by the time "0"(ACT) is selected in 'tests_taken', min:0 max:5
      * @bodyParam took_act_plus_writing_test boolean required 0:yes 1:no
-     * @bodyParam highest_composite_score integer required
-     * @bodyParam composite_date date required e.g."11/27/2020"
-     * @bodyParam highest_english_score integer required
-     * @bodyParam english_date date required e.g."11/27/2020"
-     * @bodyParam highest_math_score integer required
-     * @bodyParam math_date date required e.g."11/27/2020"
-     * @bodyParam highest_reading_score integer required
-     * @bodyParam reading_date date required e.g."11/27/2020"
-     * @bodyParam highest_science_score integer required
-     * @bodyParam science_date date required e.g."11/27/2020"
+     * @bodyParam acts_highest_composite_score integer required
+     * @bodyParam acts_composite_date date required e.g."11/27/2020"
+     * @bodyParam acts_highest_english_score integer required
+     * @bodyParam acts_english_date date required e.g."11/27/2020"
+     * @bodyParam acts_highest_math_score integer required
+     * @bodyParam acts_math_date date required e.g."11/27/2020"
+     * @bodyParam acts_highest_reading_score integer required
+     * @bodyParam acts_reading_date date required e.g."11/27/2020"
+     * @bodyParam acts_highest_science_score integer required
+     * @bodyParam acts_science_date date required e.g."11/27/2020"
      * future_act_sitting_months_length integer required question-id-13, min:0 max:3
      * The min length of 'future_act_sitting_months' is 0 and the max length is 3:
      * @bodyParam future_act_sitting_months array required The min length of 'future_act_sitting_months' is 0 and the max length is 3, noticed that the value should be in between of January 2020 and December 2021 and in "month year" format, e.g.["06/2021", "07/2021"]
      *
      *
+     * == SAT (before March 2016) ==
+     * This section is required by the time "1"(SAT before March 2016) is selected in 'tests_taken'.
+     * @bodyParam sats_before_march_number integer required This section is required by the time "1"(SAT before March 2016) is selected in 'tests_taken', min:0 max:5
+     * @bodyParam sats_before_march_highest_critical_reading_score integer required
+     * @bodyParam sats_before_march_critical_reading_date date required e.g."11/27/2020"
+     * @bodyParam sats_before_march_highest_math_score integer required
+     * @bodyParam sats_before_march_math_date date required e.g."11/27/2020"
+     * @bodyParam sats_before_march_highest_writing_score integer required
+     * @bodyParam sats_before_march_writing_date date required e.g."11/27/2020"
      *
-     * @bodyParam sats_before_march.*.taken_date date required
-     * @bodyParam sats_before_march.*.subject string required
-     * @bodyParam sats_before_march.*.score integer
      *
-     * @bodyParam sats_after_march.*.taken_date date required
-     * @bodyParam sats_after_march.*.subject string required
-     * @bodyParam sats_after_march.*.score integer
+     * == SAT (March 2016 or after) ==
+     * This section is required by the time "9"(SAT March 2016 or after) is selected in 'tests_taken'.
+     * @bodyParam sats_after_march_number integer required This section is required by the time "9"(SAT March 2016 or after) is selected in 'tests_taken', min:0 max:5
+     * @bodyParam took_sat_essay boolean required 0:yes 1:no
+     * @bodyParam sats_after_march_highest_reading_and_writing_score integer required
+     * @bodyParam sats_after_march_reading_and_writing_date date required e.g."11/27/2020"
+     * @bodyParam sats_after_march_highest_math_score integer required
+     * @bodyParam sats_after_march_math_date date required e.g."11/27/2020"
+     * if 'took_sat_essay' is true:
+     * @bodyParam sats_after_march_highest_essay_score integer optional, but required if 'took_sat_essay' is true
+     * @bodyParam sats_after_march_essay_date date optional, but required if 'took_sat_essay' is true, e.g."11/27/2020"
+     * future_sat_sitting_months_length integer required question-id-13, min:0 max:3
+     * The min length of 'future_sat_sitting_months' is 0 and the max length is 3:
+     * @bodyParam future_sat_sitting_months array required The min length of 'future_sat_sitting_months' is 0 and the max length is 3, noticed that the value should be in between of January 2020 and December 2021 and in "month year" format, e.g.["06/2021", "07/2021"]
      *
-     * @bodyParam sats.*.taken_date date required
-     * @bodyParam sats.*.subject string required
+     *
+     * == SAT Subject Tests ==
+     * This section is required by the time "2"(SAT Subject Tests) is selected in 'tests_taken'.
+     * sats_number integer required This section is required by the time "2"(SAT Subject Tests) is selected in 'tests_taken', min:0 max:10
+     * The min length of 'sats' is 0 and the max length is 10 if "2"(SAT Subject Tests) is selected in 'tests_taken':
+     * @bodyParam sats.*.taken_month string required The min length of 'sats' is 0 and the max length is 10 if "2"(SAT Subject Tests) is selected in 'tests_taken', e.g."02/2013"
+     * @bodyParam sats.*.subject integer required 0:Biology - Ecological 1:Biology - Molecular 24:Writing
      * @bodyParam sats.*.score integer
      *
      *
