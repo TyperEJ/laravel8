@@ -548,8 +548,15 @@ class ExampleController extends Controller
      * @bodyParam community_based_organizations.*.mentor_phone_number.*.extension string
      *
      *
+     * == Future Plans ==
+     * @bodyParam career_interest integer required question-id-1492, e.g.0:Accountant or actuary 1:Actor or entertainer 2:Architect or urban planner 3:Artist 4:Business (clerical) 5:Business executive (management, administrator) 6:Business owner or proprietor 7:Business salesperson or buyer 8:Clergy (minister, priest) 9:Clergy (other religious) 44:Other
+     * if "44"(Other) is selected in 'career_interest':
+     * @bodyParam career_interest_descr string question-id-1919, if "44"(Other) is selected in 'career_interest'
      *
-     * @bodyParam career_interest string required
+     * @bodyParam highest_degree_to_earn integer required question-id-1493, e.g.0:Associate's (AA, AS) 1:Bachelor's (BA, BS) 2:Master's (MA, MS) 3:Business (MBA, MAcc) 4:Law (JD, LLM) 5:Medicine (MD, DO, DVM, DDS) 6:Doctorate (PhD, EdD, etc) 7:Other 8:Undecided
+     *
+     *
+     *
      * @bodyParam sats.*.taken_date date required
      * @bodyParam sats.*.subject string required
      * @bodyParam sats.*.score integer
