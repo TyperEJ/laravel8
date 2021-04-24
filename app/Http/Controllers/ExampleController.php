@@ -493,8 +493,28 @@ class ExampleController extends Controller
      * @bodyParam colleges.*.degree integer required e.g."", 0:AA 1:AS 2:BA 3:BS
      *
      *
-     * @bodyParam graduating_class_size string required
-     * @bodyParam class_rank integer required 1:weighted 2:unweighted
+     * == Grades ==
+     * @bodyParam graduating_class_size integer required question-id-303
+     * @bodyParam class_rank_reporting integer question-id-297, e.g."", 1:Exact 2:Decile 3:Quintile 4:Quartile 5:None
+     * if "1"(Exact) is selected in 'class_rank_reporting':
+     * @bodyParam exact_class_rank integer required question-id-298, if "1"(Exact) is selected in 'class_rank_reporting'
+     * if "2"(Decile) is selected in 'class_rank_reporting':
+     * @bodyParam decile_rank integer required question-id-299, if "2"(Decile) is selected in 'class_rank_reporting', e.g.1:Top 10% 2:Top 20% 3:Top 30% 4:Top 40% 5:Top 50% 6:Top 60% 7:Top 70% 8:Top 80% 9:Top 90% 10:Top 100%
+     * if "3"(Quintile) is selected in 'class_rank_reporting':
+     * @bodyParam quintile_rank integer required question-id-300, if "3"(Quintile) is selected in 'class_rank_reporting', e.g.1:Top 20% 2:Top 40% 3:Top 60% 4:Top 80% 5:Top 100%
+     * if "4"(Quartile) is selected in 'class_rank_reporting':
+     * @bodyParam quartile_rank integer required question-id-301, if "4"(Quartile) is selected in 'class_rank_reporting', e.g.1:Top 25% 2:Top 50% 3:Top 75% 4:Top 100%
+     * if "1"(Exact), "2"(Decile), "3"(Quintile) or "4"(Quartile) is selected in 'class_rank_reporting':
+     * @bodyParam class_rank_weighting integer required if "1"(Exact), "2"(Decile), "3'(Quintile) or "4"(Quartile) is selected in 'class_rank_reporting', e.g.1:weighted 2:unweighted
+     *
+     * @bodyParam gpa_scale_reporting integer e.g.from 4 to 20, 100, 200:None
+     * if "200"(None) is NOT selected in 'gpa_scale_reporting':
+     * @bodyParam cumulative_gpa integer optional, but required if "200"(None) is NOT selected in 'gpa_scale_reporting'
+     *
+     * @bodyParam gpa_weighting integer question-id-306, e.g."", 1:weighted 2:unweighted
+     *
+     *
+     *
      * @bodyParam year_courses_scheduling_system string required
      * @bodyParam year_courses.*.title string required
      * @bodyParam year_courses.*.level string
