@@ -292,7 +292,7 @@ class ExampleController extends Controller
      *
      * The min length of 'parents.*.colleges' is 0 and the max length is 5 if "10", "11", "7", "8" or "9" is selected as 'education_level':
      * @bodyParam parents.*.colleges.*.name string required The min length of 'parents.*.colleges' is 0 and the max length is 5 if "10", "11", "7", "8" or "9" is selected as 'education_level', e.g."Aalto University"
-     * @bodyParam parents.*.colleges.*.ceeb_code integer e.g.1700"
+     * @bodyParam parents.*.colleges.*.ceeb_code integer e.g."1700"
      * @bodyParam parents.*.colleges.*.school_type_code string e.g."4-year college or university"
      * @bodyParam parents.*.colleges.*.city string e.g."Aalto"
      * @bodyParam parents.*.colleges.*.state string
@@ -362,7 +362,7 @@ class ExampleController extends Controller
      * if "1"(currently employed) or "2"(retired) is selected in 'is_employed_or_retired_college':
      * college_employer e.g.{"ceebCode":"","name":"sss","address":{"city":"","state":"7","zip":"38541-6781","countryValue":"USA","address1":"","address2":"","address3":"","countryCode":"0","stateValue":"AZ"}}
      * @bodyParam college_employer.*.name string required question-id-551, if "1"(currently employed) or "2"(retired) is selected in 'is_employed_or_retired_college'
-     * @bodyParam college_employer.*.ceeb_code integer e.g.1700"
+     * @bodyParam college_employer.*.ceeb_code integer e.g."1700"
      * @bodyParam college_employer.*.school_type_code string e.g."4-year college or university"
      * @bodyParam college_employer.*.city string e.g."Aalto"
      * @bodyParam college_employer.*.state string
@@ -377,7 +377,7 @@ class ExampleController extends Controller
      *
      * The min length of 'colleges' is 0 and the max length is 5 if "10", "11", "7", "8" or "9" is selected as 'education_level':
      * @bodyParam colleges.*.name string required The min length of 'colleges' is 0 and the max length is 5 if "10", "11", "7", "8" or "9" is selected as 'education_level', e.g."Aalto University"
-     * @bodyParam colleges.*.ceeb_code integer e.g.1700"
+     * @bodyParam colleges.*.ceeb_code integer e.g."1700"
      * @bodyParam colleges.*.school_type_code string e.g."4-year college or university"
      * @bodyParam colleges.*.city string e.g."Aalto"
      * @bodyParam colleges.*.state string
@@ -407,7 +407,7 @@ class ExampleController extends Controller
      * if "10", "11", "7", "8" or "9" is selected as 'siblings.*.education_level':
      * siblings.*.college e.g.null, {"ceebCode":"1700","name":"Aalto University","schoolTypeCode":"4-year college or university","address":{"city":"Aalto","state":"","zip":"FI-00076","countryValue":"FIN","address1":"PO Box 21210","address2":"","address3":"","countryCode":"73","stateValue":""}}
      * @bodyParam siblings.*.college.*.name string required if "10", "11", "7", "8" or "9" is selected as 'siblings.*.education_level'
-     * @bodyParam siblings.*.college.*.ceeb_code integer e.g.1700"
+     * @bodyParam siblings.*.college.*.ceeb_code integer e.g."1700"
      * @bodyParam siblings.*.college.*.school_type_code string e.g."4-year college or university"
      * @bodyParam siblings.*.college.*.city string e.g."Aalto"
      * @bodyParam siblings.*.college.*.state string
@@ -426,7 +426,7 @@ class ExampleController extends Controller
      * == Current or Most Recent Secondary/High School ==
      * high_school question-id-245, e.g.{"ceebCode":"","name":"ddd","schoolTypeCode":"Public","address":{"city":"","state":"7","zip":"03220-4052","countryValue":"USA","address1":"","address2":"","address3":"","countryCode":"0","stateValue":"AZ"}}
      * @bodyParam name string required  question-id-245
-     * @bodyParam ceeb_code integer e.g.1700"
+     * @bodyParam ceeb_code integer e.g."1700"
      * @bodyParam school_type_code string required e.g."Public" "Charter"
      * @bodyParam city string e.g."Aalto"
      * @bodyParam state string optional, but required if "0"(USA) is selected as country
@@ -455,7 +455,7 @@ class ExampleController extends Controller
      * other_high_school_1 object question-id-256
      * The min length of 'other_high_schools' is 0 and the max length is 3:
      * @bodyParam other_high_schools.*.name string required
-     * @bodyParam other_high_schools.*.ceeb_code integer e.g.1700"
+     * @bodyParam other_high_schools.*.ceeb_code integer e.g."1700"
      * @bodyParam other_high_schools.*.school_type_code string required e.g."Public" "Charter"     *
      * @bodyParam other_high_schools.*.city string e.g."Aalto"
      * @bodyParam other_high_schools.*.state string optional, but required if "0"(USA) is selected as country
@@ -468,13 +468,31 @@ class ExampleController extends Controller
      * @bodyParam other_high_schools.*.address_line_3 string
      * @bodyParam other_high_schools.*.from_month string required e.g."04/2021"
      * @bodyParam other_high_schools.*.to_month string required e.g."04/2021"
+     * if the length of 'other_high_schools' is larger than 0:
+     * @bodyParam why_leave_other_high_school string optional, but required if the length of 'other_high_schools' is larger than 0, e.g."<p\>test<i\>xxxxx<u\>oooo</u\></i\></p\>"
+     *
+     * == Colleges/Universities ==
+     * colleges_length integer required question-id-267, min:0 max:3
+     * college_1 object
+     * The min length of 'colleges' is 0 and the max length is 3:
+     * @bodyParam colleges.*.name string required The min length of 'colleges' is 0 and the max length is 3, e.g."Aalto University"
+     * @bodyParam colleges.*.ceeb_code integer e.g."1700"
+     * @bodyParam colleges.*.school_type_code string e.g."4-year college or university"
+     * @bodyParam colleges.*.city string e.g."Aalto"
+     * @bodyParam colleges.*.state string
+     * @bodyParam colleges.*.state_value string
+     * @bodyParam colleges.*.zip string e.g."FI-00076"
+     * @bodyParam colleges.*.country_code integer required e.g."242"
+     * @bodyParam colleges.*.country_value string required e.g."TWN"
+     * @bodyParam colleges.*.address_line_1 string e.g."PO Box 21210"
+     * @bodyParam colleges.*.address_line_2 string
+     * @bodyParam colleges.*.address_line_3 string
+     * @bodyParam colleges.*.course_details integer required 6:Dual enrollment with high school 7:Summer program 8:Credit awarded directly by college
+     * @bodyParam colleges.*.from_month string required e.g."11/2016"
+     * @bodyParam colleges.*.to_month string required e.g."11/2016"
+     * @bodyParam colleges.*.degree integer required e.g."", 0:AA 1:AS 2:BA 3:BS
      *
      *
-     *
-     * @bodyParam why_leave_other_high_school string required
-     * @bodyParam colleges.*.name string required
-     * @bodyParam colleges.*.date_started date required
-     * @bodyParam colleges.*.date_ended date required
      * @bodyParam graduating_class_size string required
      * @bodyParam class_rank integer required 1:weighted 2:unweighted
      * @bodyParam year_courses_scheduling_system string required
