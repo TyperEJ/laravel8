@@ -514,11 +514,16 @@ class ExampleController extends Controller
      * @bodyParam gpa_weighting integer question-id-306, e.g."", 1:weighted 2:unweighted
      *
      *
+     * == Current or Most Recent Year Courses ==
+     * courses_length integer required question-id-307, min.1 max.15
+     * The min length of 'courses' is 1 and the max length is 15:
+     * @bodyParam courses_scheduling_system string required question-id-1803, e.g."Semester", "Trimester", "Quarter"
+     * @bodyParam courses.*.title string required question-id-308
+     * @bodyParam courses.*.level integer question-id-309, e.g.1:Regular/Standard 0:Accelerated 9:Advanced 2:Advanced Placement (AP) 3:AS/A-level/International A-level, Cambridge AICE  8:College Prep
+     * @bodyParam courses.*.schedule array required question-id-311, noticed that the options are related to the value selected in 'courses_scheduling_system' and other options couldn't be selected at the same time if "0"(Full Year) is selected in 'schedule', e.g.["0"(Full Year)], ["2"(First Trimester), "4"(Second Trimester), "5"(Third Trimester)], ["9"(Fourth Quarter)]
      *
-     * @bodyParam year_courses_scheduling_system string required
-     * @bodyParam year_courses.*.title string required
-     * @bodyParam year_courses.*.level string
-     * @bodyParam year_courses.*.schedule string required
+     *
+     *
      * @bodyParam honors.*.title string required
      * @bodyParam honors.*.level array
      * @bodyParam honors.*.level_recognition array
