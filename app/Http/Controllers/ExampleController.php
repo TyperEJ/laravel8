@@ -523,10 +523,14 @@ class ExampleController extends Controller
      * @bodyParam courses.*.schedule array required question-id-311, noticed that the options are related to the value selected in 'courses_scheduling_system' and other options couldn't be selected at the same time if "0"(Full Year) is selected in 'schedule', e.g.["0"(Full Year)], ["2"(First Trimester), "4"(Second Trimester), "5"(Third Trimester)], ["9"(Fourth Quarter)]
      *
      *
+     * == Honors ==
+     * wish_to_report_honors boolean required question-id-1970, 0:yes 1:no
+     * if 'wish_to_report_honors' is true, the length of 'honors' is 4:
+     * @bodyParam honors.*.title string required the length of 'honors' is 4
+     * @bodyParam honors.*.level array e.g.0:9 1:10 2:11 3:12 4:Post-graduate
+     * @bodyParam honors.*.level_recognition array e.g.0:School 1:State/Regional 2:National 3:International
      *
-     * @bodyParam honors.*.title string required
-     * @bodyParam honors.*.level array
-     * @bodyParam honors.*.level_recognition array
+     *
      * @bodyParam community_based_organizations.*.organization_name string required
      * @bodyParam community_based_organizations.*.mentor_prefix string
      * @bodyParam community_based_organizations.*.mentor_first_name string
