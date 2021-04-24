@@ -531,12 +531,24 @@ class ExampleController extends Controller
      * @bodyParam honors.*.level_recognition array e.g.0:School 1:State/Regional 2:National 3:International
      *
      *
-     * @bodyParam community_based_organizations.*.organization_name string required
-     * @bodyParam community_based_organizations.*.mentor_prefix string
-     * @bodyParam community_based_organizations.*.mentor_first_name string
+     * == Community-Based Organizations ==
+     * community_based_organizations_length integer required min:0 max:3
+     * community_based_organization_1 integer question-id-284, e.g.0:100 Black Men 102:Achieve Program 616:Achieving Collegiate Excellence and Success (ACES) 286:Building STEPS
+     * community_based_organization_2 integer question-id-285, e.g.0:100 Black Men 102:Achieve Program 616:Achieving Collegiate Excellence and Success (ACES) 286:Building STEPS
+     * community_based_organization_3 integer question-id-286, e.g.0:100 Black Men 102:Achieve Program 616:Achieving Collegiate Excellence and Success (ACES) 286:Building STEPS
+     * The min length of 'community_based_organizations' is 0 and the max length is 3:
+     * @bodyParam community_based_organizations.*.organization_name integer required 0:100 Black Men 102:Achieve Program 616:Achieving Collegiate Excellence and Success (ACES) 286:Building STEPS
+     * @bodyParam community_based_organizations.*.mentor_prefix string question-id-290, e.g.0:Dr. 1:Mr. 2:Ms.
+     * @bodyParam community_based_organizations.*.mentor_first_name string question-id-291
      * @bodyParam community_based_organizations.*.mentor_last_name string
      * @bodyParam community_based_organizations.*.mentor_email string
-     * @bodyParam community_based_organizations.*.mentor_phone string
+     * community_based_organizations.*.mentor_phone_number question-id-296, e.g.{"countryCode":"+886","phoneNumber":"970824452","extension":""}
+     * @bodyParam community_based_organizations.*.mentor_phone_number.*.country_code string e.g.null, "+886"
+     * @bodyParam community_based_organizations.*.mentor_phone_number.*.phone_number string e.g."970824452"
+     * @bodyParam community_based_organizations.*.mentor_phone_number.*.extension string
+     *
+     *
+     *
      * @bodyParam career_interest string required
      * @bodyParam sats.*.taken_date date required
      * @bodyParam sats.*.subject string required
