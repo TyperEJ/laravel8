@@ -66,7 +66,7 @@ class ExampleController extends Controller
      *
      *
      * == Contact Details ==
-     * @bodyParam preferred_phone boolean required question-id-188, 0:home 1:mobile
+     * @bodyParam preferred_phone boolean required question-id-188, e.g.0:home 1:mobile
      * preferred_phone_number e.g.{"countryCode":"+886","phoneNumber":"970824452","extension":""}
      * @bodyParam preferred_phone_number.*.country_code string required question-id-189, e.g."+886"
      * @bodyParam preferred_phone_number.*.phone_number string required e.g."970824452"
@@ -249,7 +249,7 @@ class ExampleController extends Controller
      * if "10", "11", "7", "8" or "9" is selected as 'education_level':
      * parent_1_attended_institutions_number integer required question-id-392, if "10", "11", "7", "8" or "9" is selected as 'education_level', min:1 max:5
      * parent_1_college_1 object required question-id-393, if "10", "11", "7", "8" or "9" is selected as 'education_level', e.g.{"ceebCode":"1700","name":"Aalto University","schoolTypeCode":"4-year college or university","address":{"city":"Aalto","state":"","zip":"FI-00076","countryValue":"FIN","address1":"PO Box 21210","address2":"","address3":"","countryCode":"73","stateValue":""}}
-     * parent_1_college_1_degrees_number integer required question-id-394, if "10", "11", "7", "8" or "9" is selected as 'education_level', min.0 max.5
+     * parent_1_college_1_degrees_number integer required question-id-394, if "10", "11", "7", "8" or "9" is selected as 'education_level', min:0 max:5
      * parent_1_college_1_degree_received_1 integer required question-id-395 if "10", "11", "7", "8" or "9" is selected as 'education_level', e.g.0:Associate's (AA, AS) 1:Bachelor's (BA, BS) 2:Master's (MA, MS) 3:Business (MBA, MAcc) 4:Law (JD, LLM) 5:Medicine (MD, DO, DVM, DDS)
      * parent_1_college_1_degree_received_yr_1 string required question-id-396 if "10", "11", "7", "8" or "9" is selected as 'education_level', e.g."2021"
      * parent_1_college_1_degree_received_2 integer required question-id-397, if "10", "11", "7", "8" or "9" is selected as 'education_level' and 'attended_institutions_number' is larger than 1, e.g.0:Associate's (AA, AS) 1:Bachelor's (BA, BS) 2:Master's (MA, MS) 3:Business (MBA, MAcc) 4:Law (JD, LLM) 5:Medicine (MD, DO, DVM, DDS)
@@ -262,7 +262,7 @@ class ExampleController extends Controller
      * parent_1_college_1_degree_received_yr_5 string required question-id-404, if "10", "11", "7", "8" or "9" is selected as 'education_level' and 'attended_institutions_number' is larger than 1, e.g."2021"
      * if "10", "11", "7", "8" or "9" is selected as 'education_level' and 'attended_institutions_number' is larger than 1:
      * parent_1_college_2 object required question-id-405, if "10", "11", "7", "8" or "9" is selected as 'education_level', e.g.{"ceebCode":"1700","name":"Aalto University","schoolTypeCode":"4-year college or university","address":{"city":"Aalto","state":"","zip":"FI-00076","countryValue":"FIN","address1":"PO Box 21210","address2":"","address3":"","countryCode":"73","stateValue":""}}
-     * parent_1_college_2_degrees_number integer required question-id-406, if "10", "11", "7", "8" or "9" is selected as 'education_level' and 'attended_institutions_number' is larger than 1, min.0 max.5
+     * parent_1_college_2_degrees_number integer required question-id-406, if "10", "11", "7", "8" or "9" is selected as 'education_level' and 'attended_institutions_number' is larger than 1, min:0 max:5
      * parent_1_college_2_degree_received_1 integer required question-id-407, if "10", "11", "7", "8" or "9" is selected as 'education_level' and 'attended_institutions_number' is larger than 1, e.g.0:Associate's (AA, AS) 1:Bachelor's (BA, BS) 2:Master's (MA, MS) 3:Business (MBA, MAcc) 4:Law (JD, LLM) 5:Medicine (MD, DO, DVM, DDS)
      * parent_1_college_2_degree_received_yr_1 string required question-id-408, if "10", "11", "7", "8" or "9" is selected as 'education_level' and 'attended_institutions_number' is larger than 1, e.g."2021"
      * parent_1_college_2_degree_received_2 integer required question-id-409, if "10", "11", "7", "8" or "9" is selected as 'education_level' and 'attended_institutions_number' is larger than 1, e.g.0:Associate's (AA, AS) 1:Bachelor's (BA, BS) 2:Master's (MA, MS) 3:Business (MBA, MAcc) 4:Law (JD, LLM) 5:Medicine (MD, DO, DVM, DDS)
@@ -273,7 +273,7 @@ class ExampleController extends Controller
      * parent_1_college_2_degree_received_yr_4 string required question-id-414, if "10", "11", "7", "8" or "9" is selected as 'education_level' and 'attended_institutions_number' is larger than 1, e.g."2021"
      * parent_1_college_2_degree_received_5 integer required question-id-415, if "10", "11", "7", "8" or "9" is selected as 'education_level' and 'attended_institutions_number' is larger than 1, e.g.0:Associate's (AA, AS) 1:Bachelor's (BA, BS) 2:Master's (MA, MS) 3:Business (MBA, MAcc) 4:Law (JD, LLM) 5:Medicine (MD, DO, DVM, DDS)
      * parent_1_college_2_degree_received_yr_5 string required question-id-416, if "10", "11", "7", "8" or "9" is selected as 'education_level' and 'attended_institutions_number' is larger than 1, e.g."2021"
-     * ...and so on (max. 5 colleges).
+     * ...and so on (max: 5 colleges).
      *
      * The length of 'parents' is 2:
      * @bodyParam parents.*.type integer required The length of 'parents' is 2, e.g.0:Mother 1:Father 2: I have limited information about this parent
@@ -318,7 +318,7 @@ class ExampleController extends Controller
      * @bodyParam suffix integer question-id-539, e.g.null, 0:Jr. 9:Sr. 1:II 2:III 3:IV 4:V
      * @bodyParam relationship string required question-id-540
      * @bodyParam email string question-id-541
-     * @bodyParam preferred_phone boolean question-id-542, 0:home 1:mobile 2:other 3:work
+     * @bodyParam preferred_phone boolean question-id-542, e.g.0:home 1:mobile 2:other 3:work
      * preferred_phone_number e.g.{"countryCode":"+886","phoneNumber":"970824452","extension":""}
      * @bodyParam preferred_phone_number.*.country_code string question-id-543, e.g."+886"
      * @bodyParam preferred_phone_number.*.phone_number string  e.g."970824452"
@@ -395,7 +395,7 @@ class ExampleController extends Controller
      *
      *
      * == Sibling ==
-     * siblings_number integer required question-id-614, min.0 max.5
+     * siblings_number integer required question-id-614, min:0 max:5
      * The min length of 'siblings' is 0 and the max length is 5:
      * @bodyParam siblings.*.first_name string required The min length of 'siblings' is 0 and the max length is 5
      * @bodyParam siblings.*.middle_name string
@@ -515,7 +515,7 @@ class ExampleController extends Controller
      *
      *
      * == Current or Most Recent Year Courses ==
-     * courses_length integer required question-id-307, min.1 max.15
+     * courses_length integer required question-id-307, min:1 max:15
      * The min length of 'courses' is 1 and the max length is 15:
      * @bodyParam courses_scheduling_system string required question-id-1803, e.g."Semester", "Trimester", "Quarter"
      * @bodyParam courses.*.title string required question-id-308
@@ -524,7 +524,7 @@ class ExampleController extends Controller
      *
      *
      * == Honors ==
-     * wish_to_report_honors boolean required question-id-1970, 0:yes 1:no
+     * wish_to_report_honors boolean required question-id-1970, e.g.0:yes 1:no
      * if 'wish_to_report_honors' is true, the length of 'honors' is 4:
      * @bodyParam honors.*.title string required the length of 'honors' is 4
      * @bodyParam honors.*.level array e.g.0:9 1:10 2:11 3:12 4:Post-graduate
@@ -556,28 +556,58 @@ class ExampleController extends Controller
      * @bodyParam highest_degree_to_earn integer required question-id-1493, e.g.0:Associate's (AA, AS) 1:Bachelor's (BA, BS) 2:Master's (MA, MS) 3:Business (MBA, MAcc) 4:Law (JD, LLM) 5:Medicine (MD, DO, DVM, DDS) 6:Doctorate (PhD, EdD, etc) 7:Other 8:Undecided
      *
      *
+     * == Tests Taken ==
+     * wish_to_report_tests boolean required question-id-925, e.g.0:yes 1:no
+     * @bodyParam gave_leaving_exams boolean question-id-837, noticed that students studying in the US typically answer no to this question, e.g."", 0:yes 1:no
+     *
+     * if 'wish_to_report_tests' is true:
+     * tests_taken array required question-id-11, if 'wish_to_report_tests' is true, e.g.["0"(ACT), "1"(SAT before March 2016), "9"(SAT March 2016 or after), "2"(SAT Subject Tests), "3"(AP Subject Tests), "4"(IB Subject Tests), "5"(TOEFL iBT), "6"(TOEFL Paper), "8"(PTE Academic Tests), "7"(IELTS)]
+     *
+     * == ACT Tests ==
+     * This section is required by the time "0"(ACT) is selected in 'tests_taken'.
+     * @bodyParam acts_number integer required This section is required by the time "0"(ACT) is selected in 'tests_taken', min:0 max:5
+     * @bodyParam took_act_plus_writing_test boolean required 0:yes 1:no
+     * @bodyParam highest_composite_score integer required
+     * @bodyParam composite_date date required e.g."11/27/2020"
+     * @bodyParam highest_english_score integer required
+     * @bodyParam english_date date required e.g."11/27/2020"
+     * @bodyParam highest_math_score integer required
+     * @bodyParam math_date date required e.g."11/27/2020"
+     * @bodyParam highest_reading_score integer required
+     * @bodyParam reading_date date required e.g."11/27/2020"
+     * @bodyParam highest_science_score integer required
+     * @bodyParam science_date date required e.g."11/27/2020"
+     * future_act_sitting_months_length integer required question-id-13, min:0 max:3
+     * The min length of 'future_act_sitting_months' is 0 and the max length is 3:
+     * @bodyParam future_act_sitting_months array required The min length of 'future_act_sitting_months' is 0 and the max length is 3, noticed that the value should be in between of January 2020 and December 2021 and in "month year" format, e.g.["06/2021", "07/2021"]
+     *
+     *
+     *
+     * @bodyParam sats_before_march.*.taken_date date required
+     * @bodyParam sats_before_march.*.subject string required
+     * @bodyParam sats_before_march.*.score integer
+     *
+     * @bodyParam sats_after_march.*.taken_date date required
+     * @bodyParam sats_after_march.*.subject string required
+     * @bodyParam sats_after_march.*.score integer
      *
      * @bodyParam sats.*.taken_date date required
      * @bodyParam sats.*.subject string required
      * @bodyParam sats.*.score integer
-     * @bodyParam acts.*.taken_date date required
-     * @bodyParam acts.*.highest_composite_score integer required
-     * @bodyParam acts.*.composite_date date required
-     * @bodyParam acts.*.highest_english_score integer required
-     * @bodyParam acts.*.english_date date required
-     * @bodyParam acts.*.highest_math_score integer required
-     * @bodyParam acts.*.math_date date required
-     * @bodyParam acts.*.highest_reading_score integer required
-     * @bodyParam acts.*.reading_date date required
-     * @bodyParam acts.*.highest_science_score integer required
-     * @bodyParam acts.*.science_date date required
+     *
+     *
+     *
      * @bodyParam aps.*.taken_date date required
      * @bodyParam aps.*.subject string required
      * @bodyParam aps.*.score integer
+     *
+     *
      * @bodyParam ibs.*.taken_date date required
      * @bodyParam ibs.*.subject string required
      * @bodyParam ibs.*.level string required 1:high level 0:standard level
      * @bodyParam ibs.*.score integer
+     *
+     *
      * @bodyParam toefls.*.total_score integer required
      * @bodyParam toefls.*.total_score_date date required
      * @bodyParam toefls.*.highest_reading_score integer required
@@ -588,6 +618,8 @@ class ExampleController extends Controller
      * @bodyParam toefls.*.listening_date date required
      * @bodyParam toefls.*.highest_writing_score integer required
      * @bodyParam toefls.*.writing_date date required
+     *
+     *
      * @bodyParam ielts.*.total_score integer required
      * @bodyParam ielts.*.total_score_date date required
      * @bodyParam ielts.*.highest_reading_score integer required
@@ -598,6 +630,8 @@ class ExampleController extends Controller
      * @bodyParam ielts.*.listening_date date required
      * @bodyParam ielts.*.highest_writing_score integer required
      * @bodyParam ielts.*.writing_date date required
+     *
+     *
      * @bodyParam activities.*.type string required
      * @bodyParam activities.*.position_des string required
      * @bodyParam activities.*.activity_des string required
