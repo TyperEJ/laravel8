@@ -558,36 +558,64 @@ class ExampleController extends Controller
      *
      * == Tests Taken ==
      * wish_to_report_tests boolean required question-id-925, e.g.0:yes 1:no
-     * @bodyParam gave_leaving_exams boolean question-id-837, noticed that students studying in the US typically answer no to this question, e.g."", 0:yes 1:no
+     * gave_leaving_exams boolean question-id-837, noticed that students studying in the US typically answer no to this question, e.g."", 0:yes 1:no
      *
      * if 'wish_to_report_tests' is true:
      * tests_taken array required question-id-11, if 'wish_to_report_tests' is true, e.g.["0"(ACT), "1"(SAT before March 2016), "9"(SAT March 2016 or after), "2"(SAT Subject Tests), "3"(AP Subject Tests), "4"(IB Subject Tests), "5"(TOEFL iBT), "6"(TOEFL Paper), "8"(PTE Academic Tests), "7"(IELTS)]
      *
      * tests e.g.[{"type": 0, "subject": 0, "score": 100, "takenDate": "11/27/2020", "futureSittingMonths": ["06/2021", "07/2021"]}]
-     * @bodyParam tests.*.type integer required 0:ACT 1:SAT (before March 2016) 9:SAT (March 2016 or after) 2:SAT Subject Tests 3:AP Subject Tests 4:IB Subject Tests 5:TOEFL iBT 6:TOEFL Paper 8:PTE Academic Tests 7:IELTS
+     * @bodyParam tests.*.type integer required 0:ACT 1:SAT (before March 2016) 9:SAT (March 2016 or after) 2:SAT Subject Tests 3:AP Subject Tests 4:IB Subject Tests 5:TOEFL iBT 6:TOEFL Paper 8:PTE Academic Tests 7:IELTS 10:Senior Secondary Leaving Examination
      *
-     * e.g.0:Biology - Ecological 1:Biology - Molecular 2:Chemistry 3:Chinese with Listening 5:French Reading 6:French with Listening 7:German Reading 8:German with Listening 9:Italian Reading 10:Japanese with Listening 11:Korean with Listening 12:Latin Reading 13:Literature 14:Math Level 1 16:Math Level 2 18:Modern Hebrew Reading 19:Physics 20:Spanish Reading 21:Spanish with Listening 22:US History 23:World History 24:Writing 25:composite 26:english 27:math 28:reading 29:science 30:reading and writing 31:essay
+     * e.g.
+     * 0:Biology - Ecological 1:Biology - Molecular 2:Chemistry 3:Chinese with Listening 5:French Reading 6:French with Listening 7:German Reading 8:German with Listening 9:Italian Reading 10:Japanese with Listening 11:Korean with Listening 12:Latin Reading 13:Literature 14:Math Level 1 16:Math Level 2 18:Modern Hebrew Reading 19:Physics 20:Spanish Reading 21:Spanish with Listening 22:US History 23:World History 24:Writing
+     * 25:composite 26:english 27:math 28:reading 29:science 30:reading and writing 31:essay
+     * 32:Art: Studio Art-3-D Design 33:Art: Studio Art-drawing 34:History of Art 35:Biology 36:Calculus AB 37:Calculus BC 38:Calculus BC - AB Subscore Grade 39:Chemistry 40:Chinese Language & Culture 41:Computer Science A 42:Computer Science Principles 43:English Language & Composition 44:English Literature & Composition 45:Environmental Science 46:European History 47:French Language 48:German Language 49:Government & Politics: Comparative 50:Government & Politics: United States 51:Human Geography 52:Italian Language & Culture 53:Japanese Language & Culture 54:Latin 55:Latin: Literature 56:Latin: Vergil 57:Economics: Macroeconomics 58:Economics: Microeconomics 59:Music Theory 60:Music Theory - Aural Subscore 61:Music Theory - Nonaural Subscore 62:Physics 1 63:Physics 2 64:Physics B 65:Physics C - Electricity & Magnetism 66:Physics C Mechanics 67:Psychology 68:Research 69:Seminar 70:Spanish Language 71:Spanish Literature 72:Statistics 73:United States History 74:World History
+     * 75:speaking 76:listening 77:total/overall
+     * 78:TWE
+     * 79:oral fluency 80:pronunciation 81:spelling 82:vocabulary 83:discourse
+     *
      * if 0"(ACT) is set as 'tests.*.type':
      * 24(Writing), 25(composite), 26(english), 27(math), 28(reading) or 29(science) is available for 'tests.*.subject'
+     *
      * if "1"(SAT before March 2016) is set as 'tests.*.type':
      * 24(Writing), 27(math) or 28(reading) is available for 'tests.*.subject'
+     *
      * if "9"(SAT March 2016 or after) is set as 'tests.*.type':
      * 24(Writing), 27(math), 30(reading and writing) or 31(essay) is available for 'tests.*.subject'
+     *
      * if "2"(SAT Subject Tests) is set as 'tests.*.type':
      * 0-24 is available for 'tests.*.subject'
+     *
      * if "3"(AP Subject Tests) is set as 'tests.*.type':
      * 32-74 is available for 'tests.*.subject'
-     * if "4"(IB Subject Tests) is set as 'tests.*.type':
-     * if "5"(TOEFL iBT) is set as 'tests.*.type':
-     * if "6"(TOEFL Paper)is set as 'tests.*.type':
-     * if "8"(PTE Academic Tests) is set as 'tests.*.type':
-     * if "7"(IELTS) is set as 'tests.*.type':
      *
-     * @bodyParam tests.*.subject integer required 24-29 is available if 0"(ACT) is set as 'tests.*.type'/24, 27 or 28 if "1"(SAT before March 2016) is set as 'tests.*.type'/24, 27, 30 or 31 if "9"(SAT March 2016 or after) is set as 'tests.*.type'/0-24 is available if "2"(SAT Subject Tests) is set as 'tests.*.type', 32-74 is available for 'tests.*.subject' if "3"(AP Subject Tests) is set as 'tests.*.type',
-     * e.g.0:Biology - Ecological 1:Biology - Molecular 2:Chemistry 3:Chinese with Listening 5:French Reading 6:French with Listening 7:German Reading 8:German with Listening 9:Italian Reading 10:Japanese with Listening 11:Korean with Listening 12:Latin Reading 13:Literature 14:Math Level 1 16:Math Level 2 18:Modern Hebrew Reading 19:Physics 20:Spanish Reading 21:Spanish with Listening 22:US History 23:World History 24:Writing 25:composite 26:english 27:math 28:reading 29:science 30:reading and writing 31:essay 32:Art: Studio Art-3-D Design 33:Art: Studio Art-drawing 34:History of Art 35:Biology 36:Calculus AB 37:Calculus BC 38:Calculus BC - AB Subscore Grade 39:Chemistry 40:Chinese Language & Culture 41:Computer Science A 42:Computer Science Principles 43:English Language & Composition 44:English Literature & Composition 45:Environmental Science 46:European History 47:French Language 48:German Language 49:Government & Politics: Comparative 50:Government & Politics: United States 51:Human Geography 52:Italian Language & Culture 53:Japanese Language & Culture 54:Latin 55:Latin: Literature 56:Latin: Vergil 57:Economics: Macroeconomics 58:Economics: Microeconomics 59:Music Theory 60:Music Theory - Aural Subscore 61:Music Theory - Nonaural Subscore 62:Physics 1 63:Physics 2 64:Physics B 65:Physics C - Electricity & Magnetism 66:Physics C Mechanics 67:Psychology 68:Research 69:Seminar 70:Spanish Language 71:Spanish Literature 72:Statistics 73:United States History 74:World History
-     * @bodyParam tests.*.score integer optional, but required if "3"(AP Subject Tests) is NOT set as 'tests.*.type'. The min number is 1 and the max number is 5 if "3"(AP Subject Tests) is set as tests.*.type'
+     * if "4"(IB Subject Tests) is set as 'tests.*.type':
+     *
+     *
+     * if "5"(TOEFL iBT) is set as 'tests.*.type':
+     * 24(Writing), 28(reading), 75(speaking), 76(listening) or 77(total/overall) is available for 'tests.*.subject'
+     *
+     * if "6"(TOEFL Paper) is set as 'tests.*.type':
+     * 24(Writing), 28(reading), 76(listening), 77(total/overall) or 78(TWE) is available for 'tests.*.subject'
+     *
+     * if "8"(PTE Academic Tests) is set as 'tests.*.type':
+     * 24(Writing), 28(reading), 75(speaking), 76(listening), 79(oral fluency), 80(pronunciation), 81(spelling), 82(vocabulary) or 83(discourse) is available for 'tests.*.subject'
+     *
+     * if "7"(IELTS) is set as 'tests.*.type':
+     * 24(Writing), 28(reading), 75(speaking), 76(listening) or 77(total/overall) is available for 'tests.*.subject'
+     *
+     * if "10"(Senior Secondary Leaving Examination) is set as 'tests.*.type':
+     * typeof 'tests.*.subject' is string
+     *
+     * @bodyParam tests.*.subject integer/string required 24-29 is available if 0"(ACT) is set as 'tests.*.type'/24, 27 or 28 if "1"(SAT before March 2016) is set as 'tests.*.type'/24, 27, 30 or 31 if "9"(SAT March 2016 or after) is set as 'tests.*.type'/0-24 is available if "2"(SAT Subject Tests) is set as 'tests.*.type'/32-74 is available for 'tests.*.subject' if "3"(AP Subject Tests) is set as 'tests.*.type'/24, 28, 75-77 is available for 'tests.*.subject' if "5"(TOEFL iBT) or "7"(IELTS) is set as 'tests.*.type'/24, 28, 76-78 is available for 'tests.*.subject' if "6"(TOEFL Paper) is set as 'tests.*.type'/24, 28, 75, 76, 79-83 is available for 'tests.*.subject' if "8"(PTE Academic Tests) is set as 'tests.*.type'/typeof 'tests.*.subject' is string if "10"(Senior Secondary Leaving Examination) is set as 'tests.*.type'
+     * e.g.0:Biology - Ecological 1:Biology - Molecular 2:Chemistry 3:Chinese with Listening 5:French Reading 6:French with Listening 7:German Reading 8:German with Listening 9:Italian Reading 10:Japanese with Listening 11:Korean with Listening 12:Latin Reading 13:Literature 14:Math Level 1 16:Math Level 2 18:Modern Hebrew Reading 19:Physics 20:Spanish Reading 21:Spanish with Listening 22:US History 23:World History 24:Writing 25:composite 26:english 27:math 28:reading 29:science 30:reading and writing 31:essay 32:Art: Studio Art-3-D Design 33:Art: Studio Art-drawing 34:History of Art 35:Biology 36:Calculus AB 37:Calculus BC 38:Calculus BC - AB Subscore Grade 39:Chemistry 40:Chinese Language & Culture 41:Computer Science A 42:Computer Science Principles 43:English Language & Composition 44:English Literature & Composition 45:Environmental Science 46:European History 47:French Language 48:German Language 49:Government & Politics: Comparative 50:Government & Politics: United States 51:Human Geography 52:Italian Language & Culture 53:Japanese Language & Culture 54:Latin 55:Latin: Literature 56:Latin: Vergil 57:Economics: Macroeconomics 58:Economics: Microeconomics 59:Music Theory 60:Music Theory - Aural Subscore 61:Music Theory - Nonaural Subscore 62:Physics 1 63:Physics 2 64:Physics B 65:Physics C - Electricity & Magnetism 66:Physics C Mechanics 67:Psychology 68:Research 69:Seminar 70:Spanish Language 71:Spanish Literature 72:Statistics 73:United States History 74:World History 75:speaking 76:listening 77:total/overall 78:TWE 79:oral fluency 80:pronunciation 81:spelling 82:vocabulary 83:discourse
+     * @bodyParam tests.*.score integer/float optional, but required if "3"(AP Subject Tests) is NOT set as 'tests.*.type'. The min number is 1/1/0/10 and the max number is 5/7/30/90 if "3"(AP Subject Tests)/"4"(IB Subject Tests)/"5"(TOEFL iBT)/"8"(PTE Academic Tests) is set as 'tests.*.type'/0, 0.5, 1, 1.5...9 if "7"(IELTS) is set as 'tests.*.type'/typeof 'tests.*.score' is float if "10"(Senior Secondary Leaving Examination) is set as 'tests.*.type'.
      * @bodyParam tests.*.taken_date date required e.g."11/27/2020"
-     * @bodyParam tests.*.future_sitting_months array The min length of 'future_act_sitting_months' is 0 and the max length is 3, noticed that the value should be in between of January 2020 and December 2021 and in "month year" format if "0"(ACT) or "9"(SAT March 2016 or after) is set as 'tests.*.type', e.g.["06/2021", "07/2021"]
+     * @bodyParam tests.*.level integer optional, but required if "4"(IB Subject Tests) is set as 'tests.*.type', e.g.
+     * @bodyParam tests.*.future_sitting_months array The min length of 'future_act_sitting_months' is 0 and the max length is 3, noticed that the value should be in between of January 2020 and December 2021 and in "month year" format if "0"(ACT), "9"(SAT March 2016 or after) or "7" is set as 'tests.*.type', e.g.["06/2021", "07/2021"]
+     * @bodyParam tests.*.examination_board integer optional, but required if "10"(Senior Secondary Leaving Examination) is set as 'tests.*.type'
+     * @bodyParam tests.*.score_type integer optional, but required if "10"(Senior Secondary Leaving Examination) is set as 'tests.*.type', e.g.0:Actual 1:Predicted
+     * @bodyParam tests.*.examination_board_descr optional, but required if "10"(Senior Secondary Leaving Examination) is set as 'tests.*.type' and "21"(Other) is set as 'tests.*.examination_board'
      *
      *
      * == ACT Tests ==
@@ -702,34 +730,99 @@ class ExampleController extends Controller
      * aps.*.score integer e.g.""
      *
      *
-     * ibs.*.taken_date date required
+     * == IB Subject Tests ==
+     * This section is required by the time "4"(IB Subject Tests) is selected in 'tests_taken'.
+     * ibs_number integer required This section is required by the time "4"(IB Subject Tests) is selected in 'tests_taken', min:0 max:10
+     * ibs.*.taken_date date required e.g."11/27/2020"
      * ibs.*.subject string required
+     * e.g.0:Afrikaans A
+     *  294:Afrikaans A: Literature
+     *  295:Akan A
+     *  296:Akan A: Literature
+     *
      * ibs.*.level string required 1:high level 0:standard level
-     * ibs.*.score integer
+     * ibs.*.score integer min:1 max:7
      *
      *
+     * == TOEFL iBT ==
+     * This section is required by the time if "5"(TOEFL iBT) is selected in 'tests_taken'.
+     * toefls_number integer required This section is required by the time "5"(TOEFL iBT) is selected in 'tests_taken', min:0 max:10
      * toefls.*.total_score integer required
      * toefls.*.total_score_date date required
-     * toefls.*.highest_reading_score integer required
+     * toefls.*.highest_reading_score integer required min:0 max:30
      * toefls.*.reading_date date required
-     * toefls.*.highest_speaking_score integer required
+     * toefls.*.highest_speaking_score integer required min:0 max:30
      * toefls.*.speaking_date date required
-     * toefls.*.highest_listening_score integer required
+     * toefls.*.highest_listening_score integer required min:0 max:30
      * toefls.*.listening_date date required
-     * toefls.*.highest_writing_score integer required
+     * toefls.*.highest_writing_score integer required min:0 max:30
      * toefls.*.writing_date date required
      *
      *
-     * ielts.*.total_score integer required
-     * ielts.*.total_score_date date required
-     * ielts.*.highest_reading_score integer required
+     * == TOEFL Paper ==
+     * This section is required by the time if "6"(TOEFL Paper) is selected in 'tests_taken'.
+     * toefl_papers_number integer required This section is required by the time "6"(TOEFL Paper) is selected in 'tests_taken', min:0 max:5
+     * toefl_papers.*.total_score integer required
+     * toefl_papers.*.total_score_date date required
+     * toefl_papers.*.highest_reading_score integer required
+     * toefl_papers.*.reading_date date required
+     * toefl_papers.*.highest_listening_score integer required
+     * toefl_papers.*.listening_date date required
+     * toefl_papers.*.highest_writing_score integer required
+     * toefl_papers.*.writing_date date required
+     * toefl_papers.*.highest_twe_score integer required
+     * toefl_papers.*.twe_date date required
+     *
+     *
+     * == PTE Academic Tests ==
+     * This section is required by the time if "8"(PTE Academic Tests) is selected in 'tests_taken'.
+     * ptes_number integer required This section is required by the time "8"(PTE Academic Tests) is selected in 'tests_taken', min:0 max:5
+     * ptes.*.highest_reading_score integer required min:10 max:90
+     * ptes.*.reading_date date required
+     * ptes.*.highest_speaking_score integer required min:10 max:90
+     * ptes.*.speaking_date date required
+     * ptes.*.highest_listening_score integer required min:10 max:90
+     * ptes.*.listening_date date required
+     * ptes.*.highest_writing_score integer required min:10 max:90
+     * ptes.*.writing_date date required
+     * ptes.*.highest_oral_fluency_score integer required min:10 max:90
+     * ptes.*.oral_fluency_date date required
+     * ptes.*.highest_pronunciation_score integer required min:10 max:90
+     * ptes.*.pronunciation_date date required
+     * ptes.*.highest_spelling_score integer required min:10 max:90
+     * ptes.*.spelling_date date required
+     * ptes.*.highest_vocabulary_score integer required min:10 max:90
+     * ptes.*.vocabulary_date date required
+     * ptes.*.highest_discourse_score integer required min:10 max:90
+     * ptes.*.discourse_date date required
+     *
+     *
+     * == IELTS ==
+     * This section is required by the time if "7"(IELTS) is selected in 'tests_taken'.
+     * ielts_number integer required This section is required by the time "7"(IELTS) is selected in 'tests_taken', min:0 max:5
+     * ielts.*.overall_score integer required e.g.0, 0.5, 1, 1.5...9
+     * ielts.*.overall_score_date date required
+     * ielts.*.highest_reading_score integer required e.g.0, 0.5, 1, 1.5...9
      * ielts.*.reading_date date required
-     * ielts.*.highest_speaking_score integer required
+     * ielts.*.highest_speaking_score integer required e.g.0, 0.5, 1, 1.5...9
      * ielts.*.speaking_date date required
-     * ielts.*.highest_listening_score integer required
+     * ielts.*.highest_listening_score integer required e.g.0, 0.5, 1, 1.5...9
      * ielts.*.listening_date date required
-     * ielts.*.highest_writing_score integer required
+     * ielts.*.highest_writing_score integer required e.g.0, 0.5, 1, 1.5...9
      * ielts.*.writing_date date required
+     *
+     *
+     * == Senior Secondary Leaving Examinations ==
+     * This section is required by the time if 'gave_leaving_exams' is true.
+     * leaving_exams_number integer required This section is required if 'gave_leaving_exams' is true, min:0 max:5
+     * leaving_exams.*.taken_date date required e.g."11/27/2020"
+     * leaving_exams.*.examination_board integer required 21:Other
+     * if (Other) is selected in 'leaving_exams.*.examination_board':
+     * leaving_exams.*.examination_board_descr string optional, but required if "21"(Other) is selected in 'leaving_exams.*.examination_board'
+     *
+     * leaving_exams.*.subject integer required
+     * leaving_exams.*.score float required
+     * leaving_exams.*.score_type integer required 0:Actual 1:Predicted
      *
      *
      * activities.*.type string required
