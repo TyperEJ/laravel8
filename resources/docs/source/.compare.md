@@ -35,7 +35,7 @@ curl -X GET \
     -G "http://localhost/api-doc/example" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"first_name":"animi","middle_name":"eos","last_name":"architecto","suffix":18,"preferred_name":"facere","used_any_other_names":false,"former_first_name":"enim","former_middle_name":"ut","former_last_name":"sunt","sex":true,"sex_descr":"suscipit","birth_date":"qui","address":[{"county":"vero","country_code":10,"country_value":"unde","address_line_1":"temporibus","address_line_2":"culpa","address_line_3":"dolorum","city":"qui","state":3,"state_value":"nam","zip":"assumenda"}],"used_mailing_address":false,"mailing_address":[{"county":"tempore","country_code":5,"country_value":"consequuntur","address_line_1":"aliquid","address_line_2":"totam","address_line_3":"reprehenderit","city":"dicta","state":13,"state_value":"est","zip":"hic"}],"is_temporary_mailing_address":false,"temporary_mailing_address_from_date":"cum","temporary_mailing_address_to_date":"est","preferred_phone":true,"preferred_phone_number":[{"country_code":"aspernatur","phone_number":"et","extension":"dolor"}],"used_alternate_phone":false,"alternate_phone_number":[{"country_code":"magni","phone_number":"necessitatibus","extension":"sit"}],"religion":1,"religion_descr":"facilis","us_armed_forces_status":19,"us_military_anticipated_status":7,"us_military_experiences":[{"branch":13,"from_month":"excepturi","to_month":"sapiente"}],"ever_received_discharge":false,"discharge_descr":"assumenda","is_hispanic_or_latino":false,"hispanic_or_latino_identities":[],"hispanic_or_latino_descr":"sed","other_identities":[],"tribal_identity":"non","is_federally_recognized_tribe":true,"tribe":19,"tribal_enrollment_number":"at","asian_backgrounds":[],"east_asian_descr":"sed","south_asian_descr":"et","southeast_asian_descr":"eum","african_american_backgrounds":[],"african_american_descr":"quisquam","native_hawaiian_or_other_pacific_islander_backgrounds":[],"native_hawaiian_or_other_pacific_islander_descr":"quae","white_backgrounds":[],"white_descr":[],"agreed_terms_demographics":true,"birth_country":7,"birth_city":"qui","birth_state":1,"lived_in_us_yr":20,"lived_outside_us_yr":16,"languages":[{"lang":19,"proficiency":[]}],"citizenship_status":11,"ssn_number":"laborum","list_citizenship":[],"green_card_file":"excepturi","arn_number":"quas","arn_expiration_date":"libero","hold_us_visa":true,"held_visa":14,"visa_number":"voluptas","visa_date_issued":"tenetur","other_visa_type_descr":"sapiente","want_to_apply_us_visa":15,"want_to_apply_other_visa_descr":"molestiae","apply_fee_waiver":false,"fee_waiver_indicators":[],"fee_waiver_signature":"maiores","want_info_from_strive_for_college":true,"parents_marital_status":1,"divorced_yr":"maiores","want_to_list_step_parents":true,"step_parents_number":7,"whom_make_your_permanent_home":14,"living_situation_descr":"et","has_children":false,"children_number":3,"parents":[{"type":7,"is_living":false,"deceased_date":"debitis","prefix":20,"first_name":"molestiae","middle_name":"excepturi","last_name":"aspernatur","former_last_name":"laborum","suffix":15,"birth_country":19,"occupation":16,"occupation_descr":"delectus","education_level":19,"colleges":[{"name":"quis","ceeb_code":2,"school_type_code":"expedita","city":"nemo","state":"aliquid","state_value":"rerum","zip":"quae","country_code":16,"country_value":"deserunt","address_line_1":"amet","address_line_2":"aut","address_line_3":"et","degrees":[{"name":13,"received_yr":"nemo"}]}]}],"prefix":15,"relationship":"iure","email":"atque","address_type":11,"occupation":20,"occupation_descr":"sint","employment_status":19,"position":"itaque","is_employed_or_retired_college":true,"current_employer_name":"quas","college_employer":[{"name":"nihil","ceeb_code":8,"school_type_code":"eos","city":"voluptatem","state":"quis","state_value":"odio","zip":"ullam","country_code":7,"country_value":"non","address_line_1":"laboriosam","address_line_2":"asperiores","address_line_3":"et"}],"education_level":14,"colleges":[{"name":"pariatur","ceeb_code":11,"school_type_code":"asperiores","city":"possimus","state":"iure","state_value":"perspiciatis","zip":"sint","country_code":16,"country_value":"ut","address_line_1":"quaerat","address_line_2":"velit","address_line_3":"consequatur","degrees":[{"name":4,"received_yr":"facilis"}],"course_details":9,"from_month":"velit","to_month":"dolor","degree":9}],"siblings":[{"first_name":"magni","middle_name":"quia","last_name":"aliquam","age":15,"relationship":16,"education_level":2,"college":[{"name":"qui","ceeb_code":11,"school_type_code":"voluptatibus","city":"culpa","state":"vel","state_value":"rem","zip":"veritatis","country_code":18,"country_value":"unde","address_line_1":"adipisci","address_line_2":"sit","address_line_3":"omnis","degree":[{"name":9,"from_month":"deserunt","to_month":"neque"}]}]}],"name":"aspernatur","ceeb_code":13,"school_type_code":"fuga","city":"sit","state":"eveniet","state_value":"nemo","zip":"neque","country_code":15,"country_value":"explicabo","address_line_1":"quibusdam","address_line_2":"culpa","address_line_3":"repudiandae","entry_month":"autem","is_boarding_high_school":false,"live_on_campus":true,"graduate_from_school":true,"high_school_exit_month":"dicta","receive_high_school_equivalency":true,"receive_high_school_equivalency_month":"libero","high_school_descr":"itaque","progression":[],"progression_descr":"aliquid","other_high_schools":[{"name":"mollitia","ceeb_code":14,"school_type_code":"pariatur","city":"voluptatem","state":"et","state_value":"necessitatibus","zip":"perspiciatis","country_code":13,"country_value":"sit","address_line_1":"laboriosam","address_line_2":"voluptatem","address_line_3":"quo","from_month":"illum","to_month":"qui"}],"why_leave_other_high_school":"omnis","graduating_class_size":4,"class_rank_reporting":5,"exact_class_rank":3,"decile_rank":12,"quintile_rank":20,"quartile_rank":4,"class_rank_weighting":2,"gpa_scale_reporting":14,"cumulative_gpa":15,"gpa_weighting":7,"courses_scheduling_system":"quia","courses":[{"title":"quam","level":3,"schedule":[]}],"honors":[{"title":"consequatur","level":[],"level_recognition":[]}],"community_based_organizations":[{"organization_name":14,"mentor_prefix":"fugiat","mentor_first_name":"mollitia","mentor_last_name":"harum","mentor_email":"consectetur","mentor_phone_number":[{"country_code":"tenetur","phone_number":"eaque","extension":"expedita"}]}],"career_interest":1,"career_interest_descr":"et","highest_degree_to_earn":4,"tests":[{"type":1,"subject":"et","score":"tempore","taken_date":"suscipit","level":7,"future_sitting_months":[],"examination_board":12,"score_type":19,"examination_board_descr":"quis"}]}'
+    -d '{"first_name":"et","middle_name":"quisquam","last_name":"eius","suffix":2,"preferred_name":"aspernatur","used_any_other_names":false,"former_first_name":"sequi","former_middle_name":"vero","former_last_name":"rerum","sex":true,"sex_descr":"occaecati","birth_date":"ut","address":[{"county":"magnam","country_code":4,"country_value":"aliquid","address_line_1":"ea","address_line_2":"error","address_line_3":"qui","city":"sunt","state":20,"state_value":"aliquid","zip":"velit"}],"used_mailing_address":false,"mailing_address":[{"county":"et","country_code":7,"country_value":"quis","address_line_1":"et","address_line_2":"eum","address_line_3":"ullam","city":"ut","state":20,"state_value":"et","zip":"recusandae"}],"is_temporary_mailing_address":false,"temporary_mailing_address_from_date":"et","temporary_mailing_address_to_date":"cupiditate","preferred_phone":false,"preferred_phone_number":[{"country_code":"suscipit","phone_number":"modi","extension":"nobis"}],"used_alternate_phone":true,"alternate_phone_number":[{"country_code":"et","phone_number":"repudiandae","extension":"incidunt"}],"religion":2,"religion_descr":"dolore","us_armed_forces_status":19,"us_military_anticipated_status":8,"us_military_experiences":[{"branch":2,"from_month":"ea","to_month":"vel"}],"ever_received_discharge":false,"discharge_descr":"rerum","is_hispanic_or_latino":true,"hispanic_or_latino_identities":[],"hispanic_or_latino_descr":"laborum","other_identities":[],"tribal_identity":"ipsum","is_federally_recognized_tribe":true,"tribe":5,"tribal_enrollment_number":"inventore","asian_backgrounds":[],"east_asian_descr":"libero","south_asian_descr":"aut","southeast_asian_descr":"facere","african_american_backgrounds":[],"african_american_descr":"nisi","native_hawaiian_or_other_pacific_islander_backgrounds":[],"native_hawaiian_or_other_pacific_islander_descr":"mollitia","white_backgrounds":[],"white_descr":[],"agreed_terms_demographics":false,"birth_country":7,"birth_city":"autem","birth_state":2,"lived_in_us_yr":7,"lived_outside_us_yr":9,"languages":[{"lang":12,"proficiency":[]}],"citizenship_status":3,"ssn_number":"quibusdam","list_citizenship":[],"green_card_file":"et","arn_number":"ut","arn_expiration_date":"occaecati","hold_us_visa":true,"held_visa":15,"visa_number":"numquam","visa_date_issued":"nemo","other_visa_type_descr":"veniam","want_to_apply_us_visa":14,"want_to_apply_other_visa_descr":"hic","apply_fee_waiver":true,"fee_waiver_indicators":[],"fee_waiver_signature":"quia","want_info_from_strive_for_college":true,"parents_marital_status":10,"divorced_yr":"vero","want_to_list_step_parents":true,"step_parents_number":10,"whom_make_your_permanent_home":11,"living_situation_descr":"sed","has_children":true,"children_number":5,"parents":[{"type":1,"is_living":true,"deceased_date":"facere","prefix":7,"first_name":"assumenda","middle_name":"voluptatem","last_name":"ut","former_last_name":"facilis","suffix":2,"birth_country":3,"occupation":3,"occupation_descr":"adipisci","education_level":7,"colleges":[{"name":"sequi","ceeb_code":19,"school_type_code":"voluptatem","city":"illum","state":"recusandae","state_value":"laboriosam","zip":"tempore","country_code":6,"country_value":"itaque","address_line_1":"quas","address_line_2":"cupiditate","address_line_3":"velit","degrees":[{"name":12,"received_yr":"nostrum"}]}]}],"prefix":5,"relationship":"culpa","email":"ullam","address_type":19,"occupation":5,"occupation_descr":"omnis","employment_status":7,"position":"laudantium","is_employed_or_retired_college":false,"current_employer_name":"aut","college_employer":[{"name":"qui","ceeb_code":14,"school_type_code":"modi","city":"ea","state":"et","state_value":"quia","zip":"incidunt","country_code":18,"country_value":"iste","address_line_1":"earum","address_line_2":"enim","address_line_3":"eos"}],"education_level":16,"colleges":[{"name":"libero","ceeb_code":1,"school_type_code":"maiores","city":"et","state":"et","state_value":"a","zip":"fugit","country_code":3,"country_value":"expedita","address_line_1":"id","address_line_2":"voluptas","address_line_3":"enim","degrees":[{"name":3,"received_yr":"est"}],"course_details":7,"from_month":"suscipit","to_month":"aliquam","degree":16}],"siblings":[{"first_name":"ipsam","middle_name":"iusto","last_name":"fuga","age":9,"relationship":14,"education_level":16,"college":[{"name":"sed","ceeb_code":17,"school_type_code":"temporibus","city":"recusandae","state":"dolore","state_value":"in","zip":"est","country_code":6,"country_value":"et","address_line_1":"et","address_line_2":"dolores","address_line_3":"labore","degree":[{"name":5,"from_month":"temporibus","to_month":"expedita"}]}]}],"name":"distinctio","ceeb_code":2,"school_type_code":"nam","city":"amet","state":"sit","state_value":"ut","zip":"aliquid","country_code":10,"country_value":"aut","address_line_1":"dolore","address_line_2":"velit","address_line_3":"animi","entry_month":"tempora","is_boarding_high_school":true,"live_on_campus":false,"graduate_from_school":false,"high_school_exit_month":"fuga","receive_high_school_equivalency":false,"receive_high_school_equivalency_month":"quo","high_school_descr":"dolor","progression":[],"progression_descr":"et","other_high_schools":[{"name":"eum","ceeb_code":18,"school_type_code":"qui","city":"assumenda","state":"quae","state_value":"quas","zip":"sapiente","country_code":3,"country_value":"error","address_line_1":"et","address_line_2":"rerum","address_line_3":"hic","from_month":"expedita","to_month":"consequatur"}],"why_leave_other_high_school":"aut","graduating_class_size":8,"class_rank_reporting":13,"exact_class_rank":11,"decile_rank":3,"quintile_rank":8,"quartile_rank":18,"class_rank_weighting":4,"gpa_scale_reporting":9,"cumulative_gpa":8,"gpa_weighting":14,"courses_scheduling_system":"distinctio","courses":[{"title":"ut","level":6,"schedule":[]}],"honors":[{"title":"voluptatibus","level":[],"level_recognition":[]}],"community_based_organizations":[{"organization_name":17,"mentor_prefix":"ea","mentor_first_name":"nemo","mentor_last_name":"ab","mentor_email":"voluptatem","mentor_phone_number":[{"country_code":"debitis","phone_number":"dolorum","extension":"ducimus"}]}],"career_interest":2,"career_interest_descr":"consequatur","highest_degree_to_earn":10,"tests":[{"type":14,"subject":"est","score":"ut","taken_date":"nesciunt","level":7,"future_sitting_months":[],"examination_board":8,"score_type":14,"examination_board_descr":"sunt"}],"activities":[{"type":15,"sport":13,"position_descr":"voluptatem","organization_name":"fugit","grade_levels":[],"participation_time":[],"hours_spent_per_week":3,"hours_spent_per_yr":19,"intend_to_participate_similar_in_college":true}],"activity_descr":"in"}'
 
 ```
 
@@ -50,357 +50,371 @@ let headers = {
 };
 
 let body = {
-    "first_name": "animi",
-    "middle_name": "eos",
-    "last_name": "architecto",
-    "suffix": 18,
-    "preferred_name": "facere",
+    "first_name": "et",
+    "middle_name": "quisquam",
+    "last_name": "eius",
+    "suffix": 2,
+    "preferred_name": "aspernatur",
     "used_any_other_names": false,
-    "former_first_name": "enim",
-    "former_middle_name": "ut",
-    "former_last_name": "sunt",
+    "former_first_name": "sequi",
+    "former_middle_name": "vero",
+    "former_last_name": "rerum",
     "sex": true,
-    "sex_descr": "suscipit",
-    "birth_date": "qui",
+    "sex_descr": "occaecati",
+    "birth_date": "ut",
     "address": [
         {
-            "county": "vero",
-            "country_code": 10,
-            "country_value": "unde",
-            "address_line_1": "temporibus",
-            "address_line_2": "culpa",
-            "address_line_3": "dolorum",
-            "city": "qui",
-            "state": 3,
-            "state_value": "nam",
-            "zip": "assumenda"
+            "county": "magnam",
+            "country_code": 4,
+            "country_value": "aliquid",
+            "address_line_1": "ea",
+            "address_line_2": "error",
+            "address_line_3": "qui",
+            "city": "sunt",
+            "state": 20,
+            "state_value": "aliquid",
+            "zip": "velit"
         }
     ],
     "used_mailing_address": false,
     "mailing_address": [
         {
-            "county": "tempore",
-            "country_code": 5,
-            "country_value": "consequuntur",
-            "address_line_1": "aliquid",
-            "address_line_2": "totam",
-            "address_line_3": "reprehenderit",
-            "city": "dicta",
-            "state": 13,
-            "state_value": "est",
-            "zip": "hic"
+            "county": "et",
+            "country_code": 7,
+            "country_value": "quis",
+            "address_line_1": "et",
+            "address_line_2": "eum",
+            "address_line_3": "ullam",
+            "city": "ut",
+            "state": 20,
+            "state_value": "et",
+            "zip": "recusandae"
         }
     ],
     "is_temporary_mailing_address": false,
-    "temporary_mailing_address_from_date": "cum",
-    "temporary_mailing_address_to_date": "est",
-    "preferred_phone": true,
+    "temporary_mailing_address_from_date": "et",
+    "temporary_mailing_address_to_date": "cupiditate",
+    "preferred_phone": false,
     "preferred_phone_number": [
         {
-            "country_code": "aspernatur",
-            "phone_number": "et",
-            "extension": "dolor"
+            "country_code": "suscipit",
+            "phone_number": "modi",
+            "extension": "nobis"
         }
     ],
-    "used_alternate_phone": false,
+    "used_alternate_phone": true,
     "alternate_phone_number": [
         {
-            "country_code": "magni",
-            "phone_number": "necessitatibus",
-            "extension": "sit"
+            "country_code": "et",
+            "phone_number": "repudiandae",
+            "extension": "incidunt"
         }
     ],
-    "religion": 1,
-    "religion_descr": "facilis",
+    "religion": 2,
+    "religion_descr": "dolore",
     "us_armed_forces_status": 19,
-    "us_military_anticipated_status": 7,
+    "us_military_anticipated_status": 8,
     "us_military_experiences": [
         {
-            "branch": 13,
-            "from_month": "excepturi",
-            "to_month": "sapiente"
+            "branch": 2,
+            "from_month": "ea",
+            "to_month": "vel"
         }
     ],
     "ever_received_discharge": false,
-    "discharge_descr": "assumenda",
-    "is_hispanic_or_latino": false,
+    "discharge_descr": "rerum",
+    "is_hispanic_or_latino": true,
     "hispanic_or_latino_identities": [],
-    "hispanic_or_latino_descr": "sed",
+    "hispanic_or_latino_descr": "laborum",
     "other_identities": [],
-    "tribal_identity": "non",
+    "tribal_identity": "ipsum",
     "is_federally_recognized_tribe": true,
-    "tribe": 19,
-    "tribal_enrollment_number": "at",
+    "tribe": 5,
+    "tribal_enrollment_number": "inventore",
     "asian_backgrounds": [],
-    "east_asian_descr": "sed",
-    "south_asian_descr": "et",
-    "southeast_asian_descr": "eum",
+    "east_asian_descr": "libero",
+    "south_asian_descr": "aut",
+    "southeast_asian_descr": "facere",
     "african_american_backgrounds": [],
-    "african_american_descr": "quisquam",
+    "african_american_descr": "nisi",
     "native_hawaiian_or_other_pacific_islander_backgrounds": [],
-    "native_hawaiian_or_other_pacific_islander_descr": "quae",
+    "native_hawaiian_or_other_pacific_islander_descr": "mollitia",
     "white_backgrounds": [],
     "white_descr": [],
-    "agreed_terms_demographics": true,
+    "agreed_terms_demographics": false,
     "birth_country": 7,
-    "birth_city": "qui",
-    "birth_state": 1,
-    "lived_in_us_yr": 20,
-    "lived_outside_us_yr": 16,
+    "birth_city": "autem",
+    "birth_state": 2,
+    "lived_in_us_yr": 7,
+    "lived_outside_us_yr": 9,
     "languages": [
         {
-            "lang": 19,
+            "lang": 12,
             "proficiency": []
         }
     ],
-    "citizenship_status": 11,
-    "ssn_number": "laborum",
+    "citizenship_status": 3,
+    "ssn_number": "quibusdam",
     "list_citizenship": [],
-    "green_card_file": "excepturi",
-    "arn_number": "quas",
-    "arn_expiration_date": "libero",
+    "green_card_file": "et",
+    "arn_number": "ut",
+    "arn_expiration_date": "occaecati",
     "hold_us_visa": true,
-    "held_visa": 14,
-    "visa_number": "voluptas",
-    "visa_date_issued": "tenetur",
-    "other_visa_type_descr": "sapiente",
-    "want_to_apply_us_visa": 15,
-    "want_to_apply_other_visa_descr": "molestiae",
-    "apply_fee_waiver": false,
+    "held_visa": 15,
+    "visa_number": "numquam",
+    "visa_date_issued": "nemo",
+    "other_visa_type_descr": "veniam",
+    "want_to_apply_us_visa": 14,
+    "want_to_apply_other_visa_descr": "hic",
+    "apply_fee_waiver": true,
     "fee_waiver_indicators": [],
-    "fee_waiver_signature": "maiores",
+    "fee_waiver_signature": "quia",
     "want_info_from_strive_for_college": true,
-    "parents_marital_status": 1,
-    "divorced_yr": "maiores",
+    "parents_marital_status": 10,
+    "divorced_yr": "vero",
     "want_to_list_step_parents": true,
-    "step_parents_number": 7,
-    "whom_make_your_permanent_home": 14,
-    "living_situation_descr": "et",
-    "has_children": false,
-    "children_number": 3,
+    "step_parents_number": 10,
+    "whom_make_your_permanent_home": 11,
+    "living_situation_descr": "sed",
+    "has_children": true,
+    "children_number": 5,
     "parents": [
         {
-            "type": 7,
-            "is_living": false,
-            "deceased_date": "debitis",
-            "prefix": 20,
-            "first_name": "molestiae",
-            "middle_name": "excepturi",
-            "last_name": "aspernatur",
-            "former_last_name": "laborum",
-            "suffix": 15,
-            "birth_country": 19,
-            "occupation": 16,
-            "occupation_descr": "delectus",
-            "education_level": 19,
+            "type": 1,
+            "is_living": true,
+            "deceased_date": "facere",
+            "prefix": 7,
+            "first_name": "assumenda",
+            "middle_name": "voluptatem",
+            "last_name": "ut",
+            "former_last_name": "facilis",
+            "suffix": 2,
+            "birth_country": 3,
+            "occupation": 3,
+            "occupation_descr": "adipisci",
+            "education_level": 7,
             "colleges": [
                 {
-                    "name": "quis",
-                    "ceeb_code": 2,
-                    "school_type_code": "expedita",
-                    "city": "nemo",
-                    "state": "aliquid",
-                    "state_value": "rerum",
-                    "zip": "quae",
-                    "country_code": 16,
-                    "country_value": "deserunt",
-                    "address_line_1": "amet",
-                    "address_line_2": "aut",
-                    "address_line_3": "et",
+                    "name": "sequi",
+                    "ceeb_code": 19,
+                    "school_type_code": "voluptatem",
+                    "city": "illum",
+                    "state": "recusandae",
+                    "state_value": "laboriosam",
+                    "zip": "tempore",
+                    "country_code": 6,
+                    "country_value": "itaque",
+                    "address_line_1": "quas",
+                    "address_line_2": "cupiditate",
+                    "address_line_3": "velit",
                     "degrees": [
                         {
-                            "name": 13,
-                            "received_yr": "nemo"
+                            "name": 12,
+                            "received_yr": "nostrum"
                         }
                     ]
                 }
             ]
         }
     ],
-    "prefix": 15,
-    "relationship": "iure",
-    "email": "atque",
-    "address_type": 11,
-    "occupation": 20,
-    "occupation_descr": "sint",
-    "employment_status": 19,
-    "position": "itaque",
-    "is_employed_or_retired_college": true,
-    "current_employer_name": "quas",
+    "prefix": 5,
+    "relationship": "culpa",
+    "email": "ullam",
+    "address_type": 19,
+    "occupation": 5,
+    "occupation_descr": "omnis",
+    "employment_status": 7,
+    "position": "laudantium",
+    "is_employed_or_retired_college": false,
+    "current_employer_name": "aut",
     "college_employer": [
         {
-            "name": "nihil",
-            "ceeb_code": 8,
-            "school_type_code": "eos",
-            "city": "voluptatem",
-            "state": "quis",
-            "state_value": "odio",
-            "zip": "ullam",
-            "country_code": 7,
-            "country_value": "non",
-            "address_line_1": "laboriosam",
-            "address_line_2": "asperiores",
-            "address_line_3": "et"
+            "name": "qui",
+            "ceeb_code": 14,
+            "school_type_code": "modi",
+            "city": "ea",
+            "state": "et",
+            "state_value": "quia",
+            "zip": "incidunt",
+            "country_code": 18,
+            "country_value": "iste",
+            "address_line_1": "earum",
+            "address_line_2": "enim",
+            "address_line_3": "eos"
         }
     ],
-    "education_level": 14,
+    "education_level": 16,
     "colleges": [
         {
-            "name": "pariatur",
-            "ceeb_code": 11,
-            "school_type_code": "asperiores",
-            "city": "possimus",
-            "state": "iure",
-            "state_value": "perspiciatis",
-            "zip": "sint",
-            "country_code": 16,
-            "country_value": "ut",
-            "address_line_1": "quaerat",
-            "address_line_2": "velit",
-            "address_line_3": "consequatur",
+            "name": "libero",
+            "ceeb_code": 1,
+            "school_type_code": "maiores",
+            "city": "et",
+            "state": "et",
+            "state_value": "a",
+            "zip": "fugit",
+            "country_code": 3,
+            "country_value": "expedita",
+            "address_line_1": "id",
+            "address_line_2": "voluptas",
+            "address_line_3": "enim",
             "degrees": [
                 {
-                    "name": 4,
-                    "received_yr": "facilis"
+                    "name": 3,
+                    "received_yr": "est"
                 }
             ],
-            "course_details": 9,
-            "from_month": "velit",
-            "to_month": "dolor",
-            "degree": 9
+            "course_details": 7,
+            "from_month": "suscipit",
+            "to_month": "aliquam",
+            "degree": 16
         }
     ],
     "siblings": [
         {
-            "first_name": "magni",
-            "middle_name": "quia",
-            "last_name": "aliquam",
-            "age": 15,
-            "relationship": 16,
-            "education_level": 2,
+            "first_name": "ipsam",
+            "middle_name": "iusto",
+            "last_name": "fuga",
+            "age": 9,
+            "relationship": 14,
+            "education_level": 16,
             "college": [
                 {
-                    "name": "qui",
-                    "ceeb_code": 11,
-                    "school_type_code": "voluptatibus",
-                    "city": "culpa",
-                    "state": "vel",
-                    "state_value": "rem",
-                    "zip": "veritatis",
-                    "country_code": 18,
-                    "country_value": "unde",
-                    "address_line_1": "adipisci",
-                    "address_line_2": "sit",
-                    "address_line_3": "omnis",
+                    "name": "sed",
+                    "ceeb_code": 17,
+                    "school_type_code": "temporibus",
+                    "city": "recusandae",
+                    "state": "dolore",
+                    "state_value": "in",
+                    "zip": "est",
+                    "country_code": 6,
+                    "country_value": "et",
+                    "address_line_1": "et",
+                    "address_line_2": "dolores",
+                    "address_line_3": "labore",
                     "degree": [
                         {
-                            "name": 9,
-                            "from_month": "deserunt",
-                            "to_month": "neque"
+                            "name": 5,
+                            "from_month": "temporibus",
+                            "to_month": "expedita"
                         }
                     ]
                 }
             ]
         }
     ],
-    "name": "aspernatur",
-    "ceeb_code": 13,
-    "school_type_code": "fuga",
-    "city": "sit",
-    "state": "eveniet",
-    "state_value": "nemo",
-    "zip": "neque",
-    "country_code": 15,
-    "country_value": "explicabo",
-    "address_line_1": "quibusdam",
-    "address_line_2": "culpa",
-    "address_line_3": "repudiandae",
-    "entry_month": "autem",
-    "is_boarding_high_school": false,
-    "live_on_campus": true,
-    "graduate_from_school": true,
-    "high_school_exit_month": "dicta",
-    "receive_high_school_equivalency": true,
-    "receive_high_school_equivalency_month": "libero",
-    "high_school_descr": "itaque",
+    "name": "distinctio",
+    "ceeb_code": 2,
+    "school_type_code": "nam",
+    "city": "amet",
+    "state": "sit",
+    "state_value": "ut",
+    "zip": "aliquid",
+    "country_code": 10,
+    "country_value": "aut",
+    "address_line_1": "dolore",
+    "address_line_2": "velit",
+    "address_line_3": "animi",
+    "entry_month": "tempora",
+    "is_boarding_high_school": true,
+    "live_on_campus": false,
+    "graduate_from_school": false,
+    "high_school_exit_month": "fuga",
+    "receive_high_school_equivalency": false,
+    "receive_high_school_equivalency_month": "quo",
+    "high_school_descr": "dolor",
     "progression": [],
-    "progression_descr": "aliquid",
+    "progression_descr": "et",
     "other_high_schools": [
         {
-            "name": "mollitia",
-            "ceeb_code": 14,
-            "school_type_code": "pariatur",
-            "city": "voluptatem",
-            "state": "et",
-            "state_value": "necessitatibus",
-            "zip": "perspiciatis",
-            "country_code": 13,
-            "country_value": "sit",
-            "address_line_1": "laboriosam",
-            "address_line_2": "voluptatem",
-            "address_line_3": "quo",
-            "from_month": "illum",
-            "to_month": "qui"
+            "name": "eum",
+            "ceeb_code": 18,
+            "school_type_code": "qui",
+            "city": "assumenda",
+            "state": "quae",
+            "state_value": "quas",
+            "zip": "sapiente",
+            "country_code": 3,
+            "country_value": "error",
+            "address_line_1": "et",
+            "address_line_2": "rerum",
+            "address_line_3": "hic",
+            "from_month": "expedita",
+            "to_month": "consequatur"
         }
     ],
-    "why_leave_other_high_school": "omnis",
-    "graduating_class_size": 4,
-    "class_rank_reporting": 5,
-    "exact_class_rank": 3,
-    "decile_rank": 12,
-    "quintile_rank": 20,
-    "quartile_rank": 4,
-    "class_rank_weighting": 2,
-    "gpa_scale_reporting": 14,
-    "cumulative_gpa": 15,
-    "gpa_weighting": 7,
-    "courses_scheduling_system": "quia",
+    "why_leave_other_high_school": "aut",
+    "graduating_class_size": 8,
+    "class_rank_reporting": 13,
+    "exact_class_rank": 11,
+    "decile_rank": 3,
+    "quintile_rank": 8,
+    "quartile_rank": 18,
+    "class_rank_weighting": 4,
+    "gpa_scale_reporting": 9,
+    "cumulative_gpa": 8,
+    "gpa_weighting": 14,
+    "courses_scheduling_system": "distinctio",
     "courses": [
         {
-            "title": "quam",
-            "level": 3,
+            "title": "ut",
+            "level": 6,
             "schedule": []
         }
     ],
     "honors": [
         {
-            "title": "consequatur",
+            "title": "voluptatibus",
             "level": [],
             "level_recognition": []
         }
     ],
     "community_based_organizations": [
         {
-            "organization_name": 14,
-            "mentor_prefix": "fugiat",
-            "mentor_first_name": "mollitia",
-            "mentor_last_name": "harum",
-            "mentor_email": "consectetur",
+            "organization_name": 17,
+            "mentor_prefix": "ea",
+            "mentor_first_name": "nemo",
+            "mentor_last_name": "ab",
+            "mentor_email": "voluptatem",
             "mentor_phone_number": [
                 {
-                    "country_code": "tenetur",
-                    "phone_number": "eaque",
-                    "extension": "expedita"
+                    "country_code": "debitis",
+                    "phone_number": "dolorum",
+                    "extension": "ducimus"
                 }
             ]
         }
     ],
-    "career_interest": 1,
-    "career_interest_descr": "et",
-    "highest_degree_to_earn": 4,
+    "career_interest": 2,
+    "career_interest_descr": "consequatur",
+    "highest_degree_to_earn": 10,
     "tests": [
         {
-            "type": 1,
-            "subject": "et",
-            "score": "tempore",
-            "taken_date": "suscipit",
+            "type": 14,
+            "subject": "est",
+            "score": "ut",
+            "taken_date": "nesciunt",
             "level": 7,
             "future_sitting_months": [],
-            "examination_board": 12,
-            "score_type": 19,
-            "examination_board_descr": "quis"
+            "examination_board": 8,
+            "score_type": 14,
+            "examination_board_descr": "sunt"
         }
-    ]
+    ],
+    "activities": [
+        {
+            "type": 15,
+            "sport": 13,
+            "position_descr": "voluptatem",
+            "organization_name": "fugit",
+            "grade_levels": [],
+            "participation_time": [],
+            "hours_spent_per_week": 3,
+            "hours_spent_per_yr": 19,
+            "intend_to_participate_similar_in_college": true
+        }
+    ],
+    "activity_descr": "in"
 }
 
 fetch(url, {
@@ -670,8 +684,8 @@ Parameter | Type | Status | Description
         `courses.*.level` | integer |  optional  | question-id-309, e.g.1:Regular/Standard 0:Accelerated 9:Advanced 2:Advanced Placement (AP) 3:AS/A-level/International A-level, Cambridge AICE  8:College Prep
         `courses.*.schedule` | array |  required  | question-id-311, noticed that the options are related to the value selected in 'courses_scheduling_system' and other options couldn't be selected at the same time if "0"(Full Year) is selected in 'schedule', e.g.["0"(Full Year)], ["2"(First Trimester), "4"(Second Trimester), "5"(Third Trimester)], ["9"(Fourth Quarter)]
         `honors.*.title` | string |  required  | the length of 'honors' is 4
-        `honors.*.level` | array |  optional  | e.g.0:9 1:10 2:11 3:12 4:Post-graduate
-        `honors.*.level_recognition` | array |  optional  | e.g.0:School 1:State/Regional 2:National 3:International
+        `honors.*.level` | array |  optional  | e.g.["0"(9), "1"(10), "2"(11), "3"(12), "4"(Post-graduate)]
+        `honors.*.level_recognition` | array |  optional  | 0:School 1:State/Regional 2:National 3:International
         `community_based_organizations.*.organization_name` | integer |  required  | 0:100 Black Men 102:Achieve Program 616:Achieving Collegiate Excellence and Success (ACES) 286:Building STEPS
         `community_based_organizations.*.mentor_prefix` | string |  optional  | question-id-290, e.g.0:Dr. 1:Mr. 2:Ms.
         `community_based_organizations.*.mentor_first_name` | string |  optional  | question-id-291
@@ -684,7 +698,7 @@ Parameter | Type | Status | Description
         `career_interest_descr` | string |  optional  | question-id-1919, if "44"(Other) is selected in 'career_interest'
         `highest_degree_to_earn` | integer |  required  | question-id-1493, e.g.0:Associate's (AA, AS) 1:Bachelor's (BA, BS) 2:Master's (MA, MS) 3:Business (MBA, MAcc) 4:Law (JD, LLM) 5:Medicine (MD, DO, DVM, DDS) 6:Doctorate (PhD, EdD, etc) 7:Other 8:Undecided
         `tests.*.type` | integer |  required  | 0:ACT 1:SAT (before March 2016) 9:SAT (March 2016 or after) 2:SAT Subject Tests 3:AP Subject Tests 4:IB Subject Tests 5:TOEFL iBT 6:TOEFL Paper 8:PTE Academic Tests 7:IELTS 10:Senior Secondary Leaving Examination
-        `tests.*.subject` | integer/string |  required  | 24-29 is available if 0"(ACT) is set as 'tests.*.type'/24, 27 or 28 if "1"(SAT before March 2016) is set as 'tests.*.type'/24, 27, 30 or 31 if "9"(SAT March 2016 or after) is set as 'tests.*.type'/0-24 is available if "2"(SAT Subject Tests) is set as 'tests.*.type'/32-74 is available for 'tests.*.subject' if "3"(AP Subject Tests) is set as 'tests.*.type'/24, 28, 75-77 is available for 'tests.*.subject' if "5"(TOEFL iBT) or "7"(IELTS) is set as 'tests.*.type'/24, 28, 76-78 is available for 'tests.*.subject' if "6"(TOEFL Paper) is set as 'tests.*.type'/24, 28, 75, 76, 79-83 is available for 'tests.*.subject' if "8"(PTE Academic Tests) is set as 'tests.*.type'/typeof 'tests.*.subject' is string if "10"(Senior Secondary Leaving Examination) is set as 'tests.*.type'
+        `tests.*.subject` | integer/string |  required  | 24-29 is available if 0"(ACT) is set as 'tests.*.type'/24, 27 or 28 if "1"(SAT before March 2016) is set as 'tests.*.type'/24, 27, 30 or 31 if "9"(SAT March 2016 or after) is set as 'tests.*.type'/0-24 is available if "2"(SAT Subject Tests) is set as 'tests.*.type'/32-74 is available for 'tests.*.subject' if "3"(AP Subject Tests) is set as 'tests.*.type'/24, 28, 75-77 is available for 'tests.*.subject' if "5"(TOEFL iBT) or "7"(IELTS) is set as 'tests.*.type'/24, 28, 76-78 is available for 'tests.*.subject' if "6"(TOEFL Paper) is set as 'tests.*.type'/24, 28, 75, 76, 79-83 is available for 'tests.*.subject' if "8"(PTE Academic Tests) is set as 'tests.*.type'/typeof 'tests.*.subject' is string if "10"(Senior Secondary Leaving Examination) is set as 'tests.*.type', e.g.0:Biology - Ecological 1:Biology - Molecular 2:Chemistry 3:Chinese with Listening 5:French Reading 6:French with Listening 7:German Reading 8:German with Listening 9:Italian Reading 10:Japanese with Listening 11:Korean with Listening 12:Latin Reading 13:Literature 14:Math Level 1 16:Math Level 2 18:Modern Hebrew Reading 19:Physics 20:Spanish Reading 21:Spanish with Listening 22:US History 23:World History 24:Writing 25:composite 26:english 27:math 28:reading 29:science 30:reading and writing 31:essay 32:Art: Studio Art-3-D Design 33:Art: Studio Art-drawing 34:History of Art 35:Biology 36:Calculus AB 37:Calculus BC 38:Calculus BC - AB Subscore Grade 39:Chemistry 40:Chinese Language & Culture 41:Computer Science A 42:Computer Science Principles 43:English Language & Composition 44:English Literature & Composition 45:Environmental Science 46:European History 47:French Language 48:German Language 49:Government & Politics: Comparative 50:Government & Politics: United States 51:Human Geography 52:Italian Language & Culture 53:Japanese Language & Culture 54:Latin 55:Latin: Literature 56:Latin: Vergil 57:Economics: Macroeconomics 58:Economics: Microeconomics 59:Music Theory 60:Music Theory - Aural Subscore 61:Music Theory - Nonaural Subscore 62:Physics 1 63:Physics 2 64:Physics B 65:Physics C - Electricity & Magnetism 66:Physics C Mechanics 67:Psychology 68:Research 69:Seminar 70:Spanish Language 71:Spanish Literature 72:Statistics 73:United States History 74:World History 75:speaking 76:listening 77:total/overall 78:TWE 79:oral fluency 80:pronunciation 81:spelling 82:vocabulary 83:discourse
         `tests.*.score` | integer/float |  optional  | optional, but required if "3"(AP Subject Tests) is NOT set as 'tests.*.type'. The min number is 1/1/0/10 and the max number is 5/7/30/90 if "3"(AP Subject Tests)/"4"(IB Subject Tests)/"5"(TOEFL iBT)/"8"(PTE Academic Tests) is set as 'tests.*.type'/0, 0.5, 1, 1.5...9 if "7"(IELTS) is set as 'tests.*.type'/typeof 'tests.*.score' is float if "10"(Senior Secondary Leaving Examination) is set as 'tests.*.type'.
         `tests.*.taken_date` | date |  required  | e.g."11/27/2020"
         `tests.*.level` | integer |  optional  | optional, but required if "4"(IB Subject Tests) is set as 'tests.*.type', e.g.
@@ -692,6 +706,16 @@ Parameter | Type | Status | Description
         `tests.*.examination_board` | integer |  optional  | optional, but required if "10"(Senior Secondary Leaving Examination) is set as 'tests.*.type'
         `tests.*.score_type` | integer |  optional  | optional, but required if "10"(Senior Secondary Leaving Examination) is set as 'tests.*.type', e.g.0:Actual 1:Predicted
         `tests.*.examination_board_descr` | optional, |  optional  | but required if "10"(Senior Secondary Leaving Examination) is set as 'tests.*.type' and "21"(Other) is set as 'tests.*.examination_board'
+        `activities.*.type` | integer |  required  | The length of 'activities' is 10, e.g.2:Athletics: Club 3:Athletics: JV/Varsity
+        `activities.*.sport` | integer |  optional  | optional, but required if "2"(Athletics: Club) or "3"(Athletics: JV/Varsity) is set as 'activities.*.type'
+        `activities.*.position_descr` | string |  required  | maxLength:50
+        `activities.*.organization_name` | string |  optional  | maxLength:100
+        `activity_descr` | string |  required  | maxLength:150
+        `activities.*.grade_levels` | array |  required  | e.g.["0"(9), "1"(10), "2"(11), "3"(12), "4"(Post-graduate)]
+        `activities.*.participation_time` | array |  required  | e.g.["0"(During school year), "1"(During school break), "2"(All year)]
+        `activities.*.hours_spent_per_week` | integer |  required  | 
+        `activities.*.hours_spent_per_yr` | integer |  required  | 
+        `activities.*.intend_to_participate_similar_in_college` | boolean |  required  | 0:yes,1:no
     
 <!-- END_ac4cee75b9957dd48cbd8b931f50462b -->
 
