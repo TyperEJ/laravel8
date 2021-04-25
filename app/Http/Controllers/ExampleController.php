@@ -563,106 +563,183 @@ class ExampleController extends Controller
      * if 'wish_to_report_tests' is true:
      * tests_taken array required question-id-11, if 'wish_to_report_tests' is true, e.g.["0"(ACT), "1"(SAT before March 2016), "9"(SAT March 2016 or after), "2"(SAT Subject Tests), "3"(AP Subject Tests), "4"(IB Subject Tests), "5"(TOEFL iBT), "6"(TOEFL Paper), "8"(PTE Academic Tests), "7"(IELTS)]
      *
+     * tests e.g.[{"type": 0, "subject": 0, "score": 100, "takenDate": "11/27/2020", "futureSittingMonths": ["06/2021", "07/2021"]}]
+     * @bodyParam tests.*.type integer required 0:ACT 1:SAT (before March 2016) 9:SAT (March 2016 or after) 2:SAT Subject Tests 3:AP Subject Tests 4:IB Subject Tests 5:TOEFL iBT 6:TOEFL Paper 8:PTE Academic Tests 7:IELTS
+     *
+     * e.g.0:Biology - Ecological 1:Biology - Molecular 2:Chemistry 3:Chinese with Listening 5:French Reading 6:French with Listening 7:German Reading 8:German with Listening 9:Italian Reading 10:Japanese with Listening 11:Korean with Listening 12:Latin Reading 13:Literature 14:Math Level 1 16:Math Level 2 18:Modern Hebrew Reading 19:Physics 20:Spanish Reading 21:Spanish with Listening 22:US History 23:World History 24:Writing 25:composite 26:english 27:math 28:reading 29:science 30:reading and writing 31:essay
+     * if 0"(ACT) is set as 'tests.*.type':
+     * 24(Writing), 25(composite), 26(english), 27(math), 28(reading) or 29(science) is available for 'tests.*.subject'
+     * if "1"(SAT before March 2016) is set as 'tests.*.type':
+     * 24(Writing), 27(math) or 28(reading) is available for 'tests.*.subject'
+     * if "9"(SAT March 2016 or after) is set as 'tests.*.type':
+     * 24(Writing), 27(math), 30(reading and writing) or 31(essay) is available for 'tests.*.subject'
+     * if "2"(SAT Subject Tests) is set as 'tests.*.type':
+     * 0-24 is available for 'tests.*.subject'
+     * if "3"(AP Subject Tests) is set as 'tests.*.type':
+     * 32-74 is available for 'tests.*.subject'
+     * if "4"(IB Subject Tests) is set as 'tests.*.type':
+     * if "5"(TOEFL iBT) is set as 'tests.*.type':
+     * if "6"(TOEFL Paper)is set as 'tests.*.type':
+     * if "8"(PTE Academic Tests) is set as 'tests.*.type':
+     * if "7"(IELTS) is set as 'tests.*.type':
+     *
+     * @bodyParam tests.*.subject integer required 24-29 is available if 0"(ACT) is set as 'tests.*.type'/24, 27 or 28 if "1"(SAT before March 2016) is set as 'tests.*.type'/24, 27, 30 or 31 if "9"(SAT March 2016 or after) is set as 'tests.*.type'/0-24 is available if "2"(SAT Subject Tests) is set as 'tests.*.type', 32-74 is available for 'tests.*.subject' if "3"(AP Subject Tests) is set as 'tests.*.type',
+     * e.g.0:Biology - Ecological 1:Biology - Molecular 2:Chemistry 3:Chinese with Listening 5:French Reading 6:French with Listening 7:German Reading 8:German with Listening 9:Italian Reading 10:Japanese with Listening 11:Korean with Listening 12:Latin Reading 13:Literature 14:Math Level 1 16:Math Level 2 18:Modern Hebrew Reading 19:Physics 20:Spanish Reading 21:Spanish with Listening 22:US History 23:World History 24:Writing 25:composite 26:english 27:math 28:reading 29:science 30:reading and writing 31:essay 32:Art: Studio Art-3-D Design 33:Art: Studio Art-drawing 34:History of Art 35:Biology 36:Calculus AB 37:Calculus BC 38:Calculus BC - AB Subscore Grade 39:Chemistry 40:Chinese Language & Culture 41:Computer Science A 42:Computer Science Principles 43:English Language & Composition 44:English Literature & Composition 45:Environmental Science 46:European History 47:French Language 48:German Language 49:Government & Politics: Comparative 50:Government & Politics: United States 51:Human Geography 52:Italian Language & Culture 53:Japanese Language & Culture 54:Latin 55:Latin: Literature 56:Latin: Vergil 57:Economics: Macroeconomics 58:Economics: Microeconomics 59:Music Theory 60:Music Theory - Aural Subscore 61:Music Theory - Nonaural Subscore 62:Physics 1 63:Physics 2 64:Physics B 65:Physics C - Electricity & Magnetism 66:Physics C Mechanics 67:Psychology 68:Research 69:Seminar 70:Spanish Language 71:Spanish Literature 72:Statistics 73:United States History 74:World History
+     * @bodyParam tests.*.score integer optional, but required if "3"(AP Subject Tests) is NOT set as 'tests.*.type'. The min number is 1 and the max number is 5 if "3"(AP Subject Tests) is set as tests.*.type'
+     * @bodyParam tests.*.taken_date date required e.g."11/27/2020"
+     * @bodyParam tests.*.future_sitting_months array The min length of 'future_act_sitting_months' is 0 and the max length is 3, noticed that the value should be in between of January 2020 and December 2021 and in "month year" format if "0"(ACT) or "9"(SAT March 2016 or after) is set as 'tests.*.type', e.g.["06/2021", "07/2021"]
+     *
      *
      * == ACT Tests ==
      * This section is required by the time "0"(ACT) is selected in 'tests_taken'.
-     * @bodyParam acts_number integer required This section is required by the time "0"(ACT) is selected in 'tests_taken', min:0 max:5
-     * @bodyParam took_act_plus_writing_test boolean required 0:yes 1:no
-     * @bodyParam acts_highest_composite_score integer required
-     * @bodyParam acts_composite_date date required e.g."11/27/2020"
-     * @bodyParam acts_highest_english_score integer required
-     * @bodyParam acts_english_date date required e.g."11/27/2020"
-     * @bodyParam acts_highest_math_score integer required
-     * @bodyParam acts_math_date date required e.g."11/27/2020"
-     * @bodyParam acts_highest_reading_score integer required
-     * @bodyParam acts_reading_date date required e.g."11/27/2020"
-     * @bodyParam acts_highest_science_score integer required
-     * @bodyParam acts_science_date date required e.g."11/27/2020"
+     * acts_number integer required This section is required by the time "0"(ACT) is selected in 'tests_taken', min:0 max:5
+     * took_act_plus_writing_test boolean required 0:yes 1:no
+     * acts_highest_composite_score integer required
+     * acts_composite_date date required e.g."11/27/2020"
+     * acts_highest_english_score integer required
+     * acts_english_date date required e.g."11/27/2020"
+     * acts_highest_math_score integer required
+     * acts_math_date date required e.g."11/27/2020"
+     * acts_highest_reading_score integer required
+     * acts_reading_date date required e.g."11/27/2020"
+     * acts_highest_science_score integer required
+     * acts_science_date date required e.g."11/27/2020"
+     * if 'took_act_plus_writing_test' is true:
+     * acts_highest_writing_score integer optional, if 'took_act_plus_writing_test' is true
+     * acts_writing_date date optional, required if 'took_act_plus_writing_test' is true, e.g."11/27/2020"
+     *
      * future_act_sitting_months_length integer required question-id-13, min:0 max:3
      * The min length of 'future_act_sitting_months' is 0 and the max length is 3:
-     * @bodyParam future_act_sitting_months array required The min length of 'future_act_sitting_months' is 0 and the max length is 3, noticed that the value should be in between of January 2020 and December 2021 and in "month year" format, e.g.["06/2021", "07/2021"]
+     * future_act_sitting_months array required The min length of 'future_act_sitting_months' is 0 and the max length is 3, noticed that the value should be in between of January 2020 and December 2021 and in "month year" format, e.g.["06/2021", "07/2021"]
      *
      *
      * == SAT (before March 2016) ==
      * This section is required by the time "1"(SAT before March 2016) is selected in 'tests_taken'.
-     * @bodyParam sats_before_march_number integer required This section is required by the time "1"(SAT before March 2016) is selected in 'tests_taken', min:0 max:5
-     * @bodyParam sats_before_march_highest_critical_reading_score integer required
-     * @bodyParam sats_before_march_critical_reading_date date required e.g."11/27/2020"
-     * @bodyParam sats_before_march_highest_math_score integer required
-     * @bodyParam sats_before_march_math_date date required e.g."11/27/2020"
-     * @bodyParam sats_before_march_highest_writing_score integer required
-     * @bodyParam sats_before_march_writing_date date required e.g."11/27/2020"
+     * sats_before_march_number integer required This section is required by the time "1"(SAT before March 2016) is selected in 'tests_taken', min:0 max:5
+     * sats_before_march_highest_critical_reading_score integer required
+     * sats_before_march_critical_reading_date date required e.g."11/27/2020"
+     * sats_before_march_highest_math_score integer required
+     * sats_before_march_math_date date required e.g."11/27/2020"
+     * sats_before_march_highest_writing_score integer required
+     * sats_before_march_writing_date date required e.g."11/27/2020"
      *
      *
      * == SAT (March 2016 or after) ==
      * This section is required by the time "9"(SAT March 2016 or after) is selected in 'tests_taken'.
-     * @bodyParam sats_after_march_number integer required This section is required by the time "9"(SAT March 2016 or after) is selected in 'tests_taken', min:0 max:5
-     * @bodyParam took_sat_essay boolean required 0:yes 1:no
-     * @bodyParam sats_after_march_highest_reading_and_writing_score integer required
-     * @bodyParam sats_after_march_reading_and_writing_date date required e.g."11/27/2020"
-     * @bodyParam sats_after_march_highest_math_score integer required
-     * @bodyParam sats_after_march_math_date date required e.g."11/27/2020"
+     * sats_after_march_number integer required This section is required by the time "9"(SAT March 2016 or after) is selected in 'tests_taken', min:0 max:5
+     * took_sat_essay boolean required 0:yes 1:no
+     * sats_after_march_highest_reading_and_writing_score integer required
+     * sats_after_march_reading_and_writing_date date required e.g."11/27/2020"
+     * sats_after_march_highest_math_score integer required
+     * sats_after_march_math_date date required e.g."11/27/2020"
      * if 'took_sat_essay' is true:
-     * @bodyParam sats_after_march_highest_essay_score integer optional, but required if 'took_sat_essay' is true
-     * @bodyParam sats_after_march_essay_date date optional, but required if 'took_sat_essay' is true, e.g."11/27/2020"
+     * sats_after_march_highest_essay_score integer optional, but required if 'took_sat_essay' is true
+     * sats_after_march_essay_date date optional, but required if 'took_sat_essay' is true, e.g."11/27/2020"
      * future_sat_sitting_months_length integer required question-id-13, min:0 max:3
      * The min length of 'future_sat_sitting_months' is 0 and the max length is 3:
-     * @bodyParam future_sat_sitting_months array required The min length of 'future_sat_sitting_months' is 0 and the max length is 3, noticed that the value should be in between of January 2020 and December 2021 and in "month year" format, e.g.["06/2021", "07/2021"]
+     * future_sat_sitting_months array required The min length of 'future_sat_sitting_months' is 0 and the max length is 3, noticed that the value should be in between of January 2020 and December 2021 and in "month year" format, e.g.["06/2021", "07/2021"]
      *
      *
      * == SAT Subject Tests ==
      * This section is required by the time "2"(SAT Subject Tests) is selected in 'tests_taken'.
      * sats_number integer required This section is required by the time "2"(SAT Subject Tests) is selected in 'tests_taken', min:0 max:10
      * The min length of 'sats' is 0 and the max length is 10 if "2"(SAT Subject Tests) is selected in 'tests_taken':
-     * @bodyParam sats.*.taken_month string required The min length of 'sats' is 0 and the max length is 10 if "2"(SAT Subject Tests) is selected in 'tests_taken', e.g."02/2013"
-     * @bodyParam sats.*.subject integer required 0:Biology - Ecological 1:Biology - Molecular 24:Writing
-     * @bodyParam sats.*.score integer
+     * sats.*.taken_month string required The min length of 'sats' is 0 and the max length is 10 if "2"(SAT Subject Tests) is selected in 'tests_taken', e.g."02/2013"
+     * sats.*.subject integer required 0:Biology - Ecological 1:Biology - Molecular 24:Writing
+     * sats.*.score integer
      *
      *
+     * == AP Subject Tests ==
+     * This section is required by the time "3"(AP Subject Tests) is selected in 'tests_taken'.
+     * aps_number integer required This section is required by the time "3"(AP Subject Tests) is selected in 'tests_taken', min:0 max:15
+     * The min length of 'aps' is 0 and the max length is 15 if "3"(AP Subject Tests) is selected in 'tests_taken':
+     * aps.*.taken_date date required
+     * aps.*.subject string required
+     * e.g.1:Art: Studio Art-3-D Design
+     *  2:Art: Studio Art-drawing
+     *  3:History of Art
+     *  4:Biology
+     *  5:Calculus AB
+     *  6:Calculus BC
+     *  7:Calculus BC - AB Subscore Grade
+     *  8:Chemistry
+     *  9:Chinese Language & Culture
+     *  10:Computer Science A
+     *  46:Computer Science Principles
+     *  12:English Language & Composition
+     *  13:English Literature & Composition
+     *  14:Environmental Science
+     *  15:European History
+     *  16:French Language
+     *  18:German Language
+     *  19:Government & Politics: Comparative
+     *  20:Government & Politics: United States
+     *  21:Human Geography
+     *  23:Italian Language & Culture
+     *  24:Japanese Language & Culture
+     *  41:Latin
+     *  25:Latin: Literature
+     *  26:Latin: Vergil
+     *  27:Economics: Macroeconomics
+     *  28:Economics: Microeconomics
+     *  29:Music Theory
+     *  30:Music Theory - Aural Subscore
+     *  31:Music Theory - Nonaural Subscore
+     *  42:Physics 1
+     *  43:Physics 2
+     *  32:Physics B
+     *  33:Physics C - Electricity & Magnetism
+     *  34:Physics C Mechanics
+     *  35:Psychology
+     *  44:Research
+     *  45:Seminar
+     *  36:Spanish Language
+     *  37:Spanish Literature
+     *  38:Statistics
+     *  39:United States History
+     *  40:World History
      *
-     * @bodyParam aps.*.taken_date date required
-     * @bodyParam aps.*.subject string required
-     * @bodyParam aps.*.score integer
+     * aps.*.score integer e.g.""
      *
      *
-     * @bodyParam ibs.*.taken_date date required
-     * @bodyParam ibs.*.subject string required
-     * @bodyParam ibs.*.level string required 1:high level 0:standard level
-     * @bodyParam ibs.*.score integer
+     * ibs.*.taken_date date required
+     * ibs.*.subject string required
+     * ibs.*.level string required 1:high level 0:standard level
+     * ibs.*.score integer
      *
      *
-     * @bodyParam toefls.*.total_score integer required
-     * @bodyParam toefls.*.total_score_date date required
-     * @bodyParam toefls.*.highest_reading_score integer required
-     * @bodyParam toefls.*.reading_date date required
-     * @bodyParam toefls.*.highest_speaking_score integer required
-     * @bodyParam toefls.*.speaking_date date required
-     * @bodyParam toefls.*.highest_listening_score integer required
-     * @bodyParam toefls.*.listening_date date required
-     * @bodyParam toefls.*.highest_writing_score integer required
-     * @bodyParam toefls.*.writing_date date required
+     * toefls.*.total_score integer required
+     * toefls.*.total_score_date date required
+     * toefls.*.highest_reading_score integer required
+     * toefls.*.reading_date date required
+     * toefls.*.highest_speaking_score integer required
+     * toefls.*.speaking_date date required
+     * toefls.*.highest_listening_score integer required
+     * toefls.*.listening_date date required
+     * toefls.*.highest_writing_score integer required
+     * toefls.*.writing_date date required
      *
      *
-     * @bodyParam ielts.*.total_score integer required
-     * @bodyParam ielts.*.total_score_date date required
-     * @bodyParam ielts.*.highest_reading_score integer required
-     * @bodyParam ielts.*.reading_date date required
-     * @bodyParam ielts.*.highest_speaking_score integer required
-     * @bodyParam ielts.*.speaking_date date required
-     * @bodyParam ielts.*.highest_listening_score integer required
-     * @bodyParam ielts.*.listening_date date required
-     * @bodyParam ielts.*.highest_writing_score integer required
-     * @bodyParam ielts.*.writing_date date required
+     * ielts.*.total_score integer required
+     * ielts.*.total_score_date date required
+     * ielts.*.highest_reading_score integer required
+     * ielts.*.reading_date date required
+     * ielts.*.highest_speaking_score integer required
+     * ielts.*.speaking_date date required
+     * ielts.*.highest_listening_score integer required
+     * ielts.*.listening_date date required
+     * ielts.*.highest_writing_score integer required
+     * ielts.*.writing_date date required
      *
      *
-     * @bodyParam activities.*.type string required
-     * @bodyParam activities.*.position_des string required
-     * @bodyParam activities.*.activity_des string required
-     * @bodyParam activities.*.grade_levels string required
-     * @bodyParam activities.*.participation_time array required
-     * @bodyParam activities.*.hours_spent_per_week integer required
-     * @bodyParam activities.*.hours_spent_per_year integer required
-     * @bodyParam activities.*.intend_to_participate boolean required
+     * activities.*.type string required
+     * activities.*.position_des string required
+     * activities.*.activity_des string required
+     * activities.*.grade_levels string required
+     * activities.*.participation_time array required
+     * activities.*.hours_spent_per_week integer required
+     * activities.*.hours_spent_per_year integer required
+     * activities.*.intend_to_participate boolean required
      *
      */
     public function document()
