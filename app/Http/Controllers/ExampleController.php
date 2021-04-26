@@ -832,8 +832,48 @@ class ExampleController extends Controller
      *
      * == Activities ==
      * wish_to_report_activities boolean required question-id-1788, e.g.0:yes 1:no
+     * activity_1_type question-id-930
+     * activity_2_type question-id-939
+     * activity_3_type question-id-948
+     * activity_4_type question-id-957
+     * activity_5_type question-id-966
+     * activity_6_type question-id-975
+     * activity_7_type question-id-984
+     * activity_8_type question-id-993
+     * activity_9_type question-id-1002
+     * activity_10_type question-id-1011
+     * e.g.0:Academic
+     *  1:Art
+     *  2:Athletics: Club
+     *  3:Athletics: JV/Varsity
+     *  4:Career Oriented
+     *  5:Community Service (Volunteer)
+     *  6:Computer/Technology
+     *  7:Cultural
+     *  8:Dance 9:Debate/Speech
+     *  10:Environmental
+     *  11:Family Responsibilities
+     *  12:Foreign Exchange
+     *  13:Foreign Language
+     *  28:Internship
+     *  14:Journalism/Publication
+     *  15:Junior R.O.T.C.
+     *  16:LGBT
+     *  17:Music: Instrumental
+     *  18:Music: Vocal
+     *  19:Religious
+     *  27:Research
+     *  26:Robotics
+     *  20:School Spirit
+     *  21:Science/Math
+     *  29:Social Justice
+     *  22:Student Govt./Politics
+     *  23:Theater/Drama
+     *  24:Work (Paid)
+     *  25:Other Club/Activity
+     *
      * if 'wish_to_report_activities' is true, the length of 'activities' is 10:
-     * @bodyParam activities.*.type integer required the length of 'activities' is 10, e.g.2:Athletics: Club 3:Athletics: JV/Varsity
+     * @bodyParam activities.*.type integer required the length of 'activities' is 10, e.g.0:Academic 1:Art 2:Athletics: Club 3:Athletics: JV/Varsity 4:Career Oriented 5:Community Service (Volunteer) 6:Computer/Technology 7:Cultural 8:Dance 9:Debate/Speech 10:Environmental 11:Family Responsibilities 12:Foreign Exchange 13:Foreign Language 28:Internship 14:Journalism/Publication 15:Junior R.O.T.C. 16:LGBT 17:Music: Instrumental 18:Music: Vocal 19:Religious 27:Research 26:Robotics 20:School Spirit 21:Science/Math 29:Social Justice 22:Student Govt./Politics 23:Theater/Drama 24:Work (Paid) 25:Other Club/Activity
      * @bodyParam activities.*.sport integer optional, but required if "2"(Athletics: Club) or "3"(Athletics: JV/Varsity) is set as 'activities.*.type'
      * @bodyParam activities.*.position_descr string required maxLength:50
      * @bodyParam activities.*.organization_name string maxLength:100
