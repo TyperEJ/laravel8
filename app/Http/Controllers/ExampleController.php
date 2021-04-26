@@ -456,7 +456,7 @@ class ExampleController extends Controller
      * The min length of 'other_high_schools' is 0 and the max length is 3:
      * @bodyParam other_high_schools.*.name string required
      * @bodyParam other_high_schools.*.ceeb_code integer e.g."1700"
-     * @bodyParam other_high_schools.*.school_type_code string required e.g."Public" "Charter"     *
+     * @bodyParam other_high_schools.*.school_type_code string required e.g."Public", "Charter"
      * @bodyParam other_high_schools.*.city string e.g."Aalto"
      * @bodyParam other_high_schools.*.state string optional, but required if "0"(USA) is selected as country
      * @bodyParam other_high_schools.*.state_value string optional, but required if "0"(USA) is selected as country
@@ -507,7 +507,7 @@ class ExampleController extends Controller
      * if "1"(Exact), "2"(Decile), "3"(Quintile) or "4"(Quartile) is selected in 'class_rank_reporting':
      * @bodyParam class_rank_weighting integer required if "1"(Exact), "2"(Decile), "3'(Quintile) or "4"(Quartile) is selected in 'class_rank_reporting', e.g.1:weighted 2:unweighted
      *
-     * @bodyParam gpa_scale_reporting integer e.g.from 4 to 20, 100, 200:None
+     * @bodyParam gpa_scale_reporting integer e.g.4-20, 100, 200:None
      * if "200"(None) is NOT selected in 'gpa_scale_reporting':
      * @bodyParam cumulative_gpa integer optional, but required if "200"(None) is NOT selected in 'gpa_scale_reporting'
      *
@@ -896,19 +896,19 @@ class ExampleController extends Controller
      *  4:Discuss an accomplishment, event, or realization that sparked a period of personal growth and a new understanding of yourself or others.
      *  5:Describe a topic, idea, or concept you find so engaging that it makes you lose all track of time. Why does it captivate you? What or who do you turn to when you want to learn more?
      *  6:Share an essay on any topic of your choice. It can be one you've already written, one that responds to a different prompt, or one of your own design.
-     * @bodyParam essay_content string question-id-832, minLength:250/max:650, e.g."<p>asdasdasd</p>
+     * @bodyParam essay_content string question-id-832, minLength:250/maxLength:650, e.g."<p>asdasdasd</p>
      *
      *
      * == Disciplinary History ==
      * @bodyParam received_disciplinary_action boolean required question-id-833, 0:yes 1:no
-     * @bodyParam disciplinary_history_descr string question-id-1043, optional, but required if 'received_disciplinary_action' is true, minLength:1/max:400, e.g."<p>asdasdasd</p>
+     * @bodyParam disciplinary_history_descr string question-id-1043, optional, but required if 'received_disciplinary_action' is true, minLength:1/maxLength:400, e.g."<p>asdasdasd</p>
      *
      *
      * == Additional Information ==
      * @bodyParam wish_to_share_about_covid boolean required question-id-1957, 0:yes 1:no
-     * @bodyParam covid_descr string question-id-1956, optional, but required if 'wish_to_share_about_covid' is true, minLength:1/max:250, e.g."<p>asdasdasd</p>
+     * @bodyParam covid_descr string question-id-1956, optional, but required if 'wish_to_share_about_covid' is true, minLength:1/maxLength:250, e.g."<p>asdasdasd</p>
      * @bodyParam wish_to_share_not_reflected_by_covid boolean required question-id-1878, 0:yes 1:no
-     * @bodyParam not_reflected_by_covid_descr string question-id-835, optional, but required if 'wish_to_share_not_reflected_by_covid' is true, minLength:1/max:650, e.g."<p>asdasdasd</p>
+     * @bodyParam not_reflected_by_covid_descr string question-id-835, optional, but required if 'wish_to_share_not_reflected_by_covid' is true, minLength:1/maxLength:650, e.g."<p>asdasdasd</p>
      *
      */
     public function document()
