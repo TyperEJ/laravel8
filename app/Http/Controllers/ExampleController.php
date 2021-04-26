@@ -276,7 +276,7 @@ class ExampleController extends Controller
      * ...and so on (max: 5 colleges).
      *
      * The length of 'parents' is 2:
-     * @bodyParam parents.*.type integer required The length of 'parents' is 2, e.g.0:Mother 1:Father 2: I have limited information about this parent
+     * @bodyParam parents.*.type integer required The length of 'parents' is 2, e.g.0:Mother 1:Father 2:I have limited information about this parent
      * @bodyParam parents.*.is_living boolean required 0:yes 1:no
      * @bodyParam parents.*.deceased_date date required if 'parents.*.is_living' is false
      * @bodyParam parents.*.prefix integer required 0:Dr. 1:Mr. 2:Ms. 3:Mrs.
@@ -566,48 +566,40 @@ class ExampleController extends Controller
      * tests e.g.[{"type": 0, "subject": 0, "score": 100, "takenDate": "11/27/2020", "futureSittingMonths": ["06/2021", "07/2021"]}]
      * @bodyParam tests.*.type integer required 0:ACT 1:SAT (before March 2016) 9:SAT (March 2016 or after) 2:SAT Subject Tests 3:AP Subject Tests 4:IB Subject Tests 5:TOEFL iBT 6:TOEFL Paper 8:PTE Academic Tests 7:IELTS 10:Senior Secondary Leaving Examination
      *
-     * e.g.
-     * 0:Biology - Ecological 1:Biology - Molecular 2:Chemistry 3:Chinese with Listening 5:French Reading 6:French with Listening 7:German Reading 8:German with Listening 9:Italian Reading 10:Japanese with Listening 11:Korean with Listening 12:Latin Reading 13:Literature 14:Math Level 1 16:Math Level 2 18:Modern Hebrew Reading 19:Physics 20:Spanish Reading 21:Spanish with Listening 22:US History 23:World History 24:Writing
-     * 25:composite 26:english 27:math 28:reading 29:science 30:reading and writing 31:essay
-     * 32:Art: Studio Art-3-D Design 33:Art: Studio Art-drawing 34:History of Art 35:Biology 36:Calculus AB 37:Calculus BC 38:Calculus BC - AB Subscore Grade 39:Chemistry 40:Chinese Language & Culture 41:Computer Science A 42:Computer Science Principles 43:English Language & Composition 44:English Literature & Composition 45:Environmental Science 46:European History 47:French Language 48:German Language 49:Government & Politics: Comparative 50:Government & Politics: United States 51:Human Geography 52:Italian Language & Culture 53:Japanese Language & Culture 54:Latin 55:Latin: Literature 56:Latin: Vergil 57:Economics: Macroeconomics 58:Economics: Microeconomics 59:Music Theory 60:Music Theory - Aural Subscore 61:Music Theory - Nonaural Subscore 62:Physics 1 63:Physics 2 64:Physics B 65:Physics C - Electricity & Magnetism 66:Physics C Mechanics 67:Psychology 68:Research 69:Seminar 70:Spanish Language 71:Spanish Literature 72:Statistics 73:United States History 74:World History
-     * 75:speaking 76:listening 77:total/overall
-     * 78:TWE
-     * 79:oral fluency 80:pronunciation 81:spelling 82:vocabulary 83:discourse
-     *
      * if 0"(ACT) is set as 'tests.*.type':
-     * 24(Writing), 25(composite), 26(english), 27(math), 28(reading) or 29(science) is available for 'tests.*.subject'
+     * composite, english, math, reading, science or writing is available for 'tests.*.subject'
      *
      * if "1"(SAT before March 2016) is set as 'tests.*.type':
-     * 24(Writing), 27(math) or 28(reading) is available for 'tests.*.subject'
+     * critical_reading, math or writing is available for 'tests.*.subject'
      *
      * if "9"(SAT March 2016 or after) is set as 'tests.*.type':
-     * 24(Writing), 27(math), 30(reading and writing) or 31(essay) is available for 'tests.*.subject'
+     * reading and writing, math or essay is available for 'tests.*.subject'
      *
      * if "2"(SAT Subject Tests) is set as 'tests.*.type':
-     * 0-24 is available for 'tests.*.subject'
+     * check e.g. in "== SAT Subject Tests =="
      *
      * if "3"(AP Subject Tests) is set as 'tests.*.type':
-     * 32-74 is available for 'tests.*.subject'
+     * check e.g. in "== AP Subject Tests =="
      *
      * if "4"(IB Subject Tests) is set as 'tests.*.type':
-     *
+     * check e.g. in "== IB Subject Tests =="
      *
      * if "5"(TOEFL iBT) is set as 'tests.*.type':
-     * 24(Writing), 28(reading), 75(speaking), 76(listening) or 77(total/overall) is available for 'tests.*.subject'
+     * total, reading, speaking, listening, writing is available for 'tests.*.subject'
      *
      * if "6"(TOEFL Paper) is set as 'tests.*.type':
-     * 24(Writing), 28(reading), 76(listening), 77(total/overall) or 78(TWE) is available for 'tests.*.subject'
+     * total, reading, listening, writing, TWE is available for 'tests.*.subject'
      *
      * if "8"(PTE Academic Tests) is set as 'tests.*.type':
-     * 24(Writing), 28(reading), 75(speaking), 76(listening), 79(oral fluency), 80(pronunciation), 81(spelling), 82(vocabulary) or 83(discourse) is available for 'tests.*.subject'
+     * reading, speaking, listening, writing, oral fluency, pronunciation, spelling, vocabulary or discourse is available for 'tests.*.subject'
      *
      * if "7"(IELTS) is set as 'tests.*.type':
-     * 24(Writing), 28(reading), 75(speaking), 76(listening) or 77(total/overall) is available for 'tests.*.subject'
+     * overall, reading, speaking, listening, writing is available for 'tests.*.subject'
      *
      * if "10"(Senior Secondary Leaving Examination) is set as 'tests.*.type':
      * typeof 'tests.*.subject' is string
      *
-     * @bodyParam tests.*.subject integer/string required 24-29 is available if 0"(ACT) is set as 'tests.*.type'/24, 27 or 28 if "1"(SAT before March 2016) is set as 'tests.*.type'/24, 27, 30 or 31 if "9"(SAT March 2016 or after) is set as 'tests.*.type'/0-24 is available if "2"(SAT Subject Tests) is set as 'tests.*.type'/32-74 is available for 'tests.*.subject' if "3"(AP Subject Tests) is set as 'tests.*.type'/24, 28, 75-77 is available for 'tests.*.subject' if "5"(TOEFL iBT) or "7"(IELTS) is set as 'tests.*.type'/24, 28, 76-78 is available for 'tests.*.subject' if "6"(TOEFL Paper) is set as 'tests.*.type'/24, 28, 75, 76, 79-83 is available for 'tests.*.subject' if "8"(PTE Academic Tests) is set as 'tests.*.type'/typeof 'tests.*.subject' is string if "10"(Senior Secondary Leaving Examination) is set as 'tests.*.type', e.g.0:Biology - Ecological 1:Biology - Molecular 2:Chemistry 3:Chinese with Listening 5:French Reading 6:French with Listening 7:German Reading 8:German with Listening 9:Italian Reading 10:Japanese with Listening 11:Korean with Listening 12:Latin Reading 13:Literature 14:Math Level 1 16:Math Level 2 18:Modern Hebrew Reading 19:Physics 20:Spanish Reading 21:Spanish with Listening 22:US History 23:World History 24:Writing 25:composite 26:english 27:math 28:reading 29:science 30:reading and writing 31:essay 32:Art: Studio Art-3-D Design 33:Art: Studio Art-drawing 34:History of Art 35:Biology 36:Calculus AB 37:Calculus BC 38:Calculus BC - AB Subscore Grade 39:Chemistry 40:Chinese Language & Culture 41:Computer Science A 42:Computer Science Principles 43:English Language & Composition 44:English Literature & Composition 45:Environmental Science 46:European History 47:French Language 48:German Language 49:Government & Politics: Comparative 50:Government & Politics: United States 51:Human Geography 52:Italian Language & Culture 53:Japanese Language & Culture 54:Latin 55:Latin: Literature 56:Latin: Vergil 57:Economics: Macroeconomics 58:Economics: Microeconomics 59:Music Theory 60:Music Theory - Aural Subscore 61:Music Theory - Nonaural Subscore 62:Physics 1 63:Physics 2 64:Physics B 65:Physics C - Electricity & Magnetism 66:Physics C Mechanics 67:Psychology 68:Research 69:Seminar 70:Spanish Language 71:Spanish Literature 72:Statistics 73:United States History 74:World History 75:speaking 76:listening 77:total/overall 78:TWE 79:oral fluency 80:pronunciation 81:spelling 82:vocabulary 83:discourse
+     * @bodyParam tests.*.subject integer/string required Please check e.g. in each part of section below.
      * @bodyParam tests.*.score integer/float optional, but required if "3"(AP Subject Tests) is NOT set as 'tests.*.type'. The min number is 1/1/0/10 and the max number is 5/7/30/90 if "3"(AP Subject Tests)/"4"(IB Subject Tests)/"5"(TOEFL iBT)/"8"(PTE Academic Tests) is set as 'tests.*.type'/0, 0.5, 1, 1.5...9 if "7"(IELTS) is set as 'tests.*.type'/typeof 'tests.*.score' is float if "10"(Senior Secondary Leaving Examination) is set as 'tests.*.type'.
      * @bodyParam tests.*.taken_date date required e.g."11/27/2020"
      * @bodyParam tests.*.level integer optional, but required if "4"(IB Subject Tests) is set as 'tests.*.type', e.g.
