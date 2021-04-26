@@ -145,8 +145,8 @@ class ExampleController extends Controller
      * @bodyParam birth_country integer required question-id-218, e.g.0:United States of America
      * @bodyParam birth_city string required question-id-219
      * @bodyParam birth_state integer question-id-220, optional, but required if "0" is selected as 'birth_country', e.g.3:Alabama
-     * @bodyParam lived_in_us_yr integer required  question-id-221
-     * @bodyParam lived_outside_us_yr integer required question-id-222
+     * @bodyParam lived_in_us_yr integer required  question-id-221, min:0/max:5
+     * @bodyParam lived_outside_us_yr integer required question-id-222, min:0/max:21
      *
      *
      * == Language ==
