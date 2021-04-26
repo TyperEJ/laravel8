@@ -13,5 +13,5 @@ class EducationalLevelEnum
     const GraduatedFromTradeSchoolOrCommunityCollege = 11;  // Graduated from trade school or community college
     const SomeCollege = 7;  // Some college/university
     const GraduatedFromCollege = 8; // Graduated from college/university
-    const GradeSchool = 9;  // Graduate school
+    const GraduateSchool = 9;  // Graduate school
 }

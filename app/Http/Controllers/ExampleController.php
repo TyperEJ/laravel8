@@ -837,11 +837,11 @@ class ExampleController extends Controller
      * @bodyParam activities.*.sport integer optional, but required if "2"(Athletics: Club) or "3"(Athletics: JV/Varsity) is set as 'activities.*.type'
      * @bodyParam activities.*.position_descr string required maxLength:50
      * @bodyParam activities.*.organization_name string maxLength:100
-     * @bodyParam activity_descr string required maxLength:150
+     * @bodyParam activities.*.descr string required maxLength:150
      * @bodyParam activities.*.grade_levels array required e.g.["0"(9), "1"(10), "2"(11), "3"(12), "4"(Post-graduate)]
      * @bodyParam activities.*.participation_time array required e.g.["0"(During school year), "1"(During school break), "2"(All year)]
      * @bodyParam activities.*.hours_spent_per_week integer required
-     * @bodyParam activities.*.hours_spent_per_yr integer required
+     * @bodyParam activities.*.weeks_spent_per_yr integer required
      * @bodyParam activities.*.intend_to_participate_similar_in_college boolean required 0:yes,1:no
      *
      */
