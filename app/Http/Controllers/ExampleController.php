@@ -898,6 +898,11 @@ class ExampleController extends Controller
      *  6:Share an essay on any topic of your choice. It can be one you've already written, one that responds to a different prompt, or one of your own design.
      * @bodyParam essay_content string question-id-832, minLength:250/max:650, e.g."<p>asdasdasd</p>
      *
+     *
+     * == Disciplinary History ==
+     * @bodyParam received_disciplinary_action boolean required question-id-833, 0:yes 1:no
+     * @bodyParam disciplinary_history_descr string question-id-1043, optional, but required if 'received_disciplinary_action' is true, minLength:1/max:400, e.g."<p>asdasdasd</p>
+     *
      */
     public function document()
     {
