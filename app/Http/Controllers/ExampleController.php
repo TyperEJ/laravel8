@@ -563,7 +563,7 @@ class ExampleController extends Controller
      * if 'wish_to_report_tests' is true:
      * tests_taken array required question-id-11, if 'wish_to_report_tests' is true, e.g.["0"(ACT), "1"(SAT before March 2016), "9"(SAT March 2016 or after), "2"(SAT Subject Tests), "3"(AP Subject Tests), "4"(IB Subject Tests), "5"(TOEFL iBT), "6"(TOEFL Paper), "8"(PTE Academic Tests), "7"(IELTS)]
      *
-     * tests e.g.[{"type": 0, "subject": 0, "score": 100, "takenDate": "11/27/2020", "futureSittingMonths": ["06/2021", "07/2021"]}]
+     * tests e.g.[{"type": 0, "subject": 0, "score": 100, "takenDate": "11/27/2020", "takenTimes": 3, "futureSittingMonths": ["06/2021", "07/2021"]}]
      * @bodyParam tests.*.type integer required 0:ACT 1:SAT (before March 2016) 9:SAT (March 2016 or after) 2:SAT Subject Tests 3:AP Subject Tests 4:IB Subject Tests 5:TOEFL iBT 6:TOEFL Paper 8:PTE Academic Tests 7:IELTS 10:Senior Secondary Leaving Examination
      *
      * if 0"(ACT) is set as 'tests.*.type':
@@ -602,6 +602,7 @@ class ExampleController extends Controller
      * @bodyParam tests.*.subject integer/string required Please check e.g. in each part of section below.
      * @bodyParam tests.*.score integer/float optional, but required if "3"(AP Subject Tests) is NOT set as 'tests.*.type'. The min number is 1/1/0/10 and the max number is 5/7/30/90 if "3"(AP Subject Tests)/"4"(IB Subject Tests)/"5"(TOEFL iBT)/"8"(PTE Academic Tests) is set as 'tests.*.type'/0, 0.5, 1, 1.5...9 if "7"(IELTS) is set as 'tests.*.type'/typeof 'tests.*.score' is float if "10"(Senior Secondary Leaving Examination) is set as 'tests.*.type'.
      * @bodyParam tests.*.taken_date date required e.g."11/27/2020"
+     * @bodyParam tests.*.taken_times integer optional, but required if "2"(SAT Subject Tests), "3"(AP Subject Tests), "4"(IB Subject Tests) or "10"(Senior Secondary Leaving Examination) is NOT set as 'tests.*.type'
      * @bodyParam tests.*.level integer optional, but required if "4"(IB Subject Tests) is set as 'tests.*.type', e.g.
      * @bodyParam tests.*.future_sitting_months array The min length of 'future_act_sitting_months' is 0 and the max length is 3, noticed that the value should be in between of January 2020 and December 2021 and in "month year" format if "0"(ACT), "9"(SAT March 2016 or after) or "7" is set as 'tests.*.type', e.g.["06/2021", "07/2021"]
      * @bodyParam tests.*.examination_board integer optional, but required if "10"(Senior Secondary Leaving Examination) is set as 'tests.*.type'
@@ -612,6 +613,7 @@ class ExampleController extends Controller
      * == ACT Tests ==
      * This section is required by the time "0"(ACT) is selected in 'tests_taken'.
      * acts_number integer required This section is required by the time "0"(ACT) is selected in 'tests_taken', min:0 max:5
+     *
      * took_act_plus_writing_test boolean required 0:yes 1:no
      * acts_highest_composite_score integer required
      * acts_composite_date date required e.g."11/27/2020"
@@ -635,6 +637,7 @@ class ExampleController extends Controller
      * == SAT (before March 2016) ==
      * This section is required by the time "1"(SAT before March 2016) is selected in 'tests_taken'.
      * sats_before_march_number integer required This section is required by the time "1"(SAT before March 2016) is selected in 'tests_taken', min:0 max:5
+     *
      * sats_before_march_highest_critical_reading_score integer required
      * sats_before_march_critical_reading_date date required e.g."11/27/2020"
      * sats_before_march_highest_math_score integer required
@@ -646,6 +649,7 @@ class ExampleController extends Controller
      * == SAT (March 2016 or after) ==
      * This section is required by the time "9"(SAT March 2016 or after) is selected in 'tests_taken'.
      * sats_after_march_number integer required This section is required by the time "9"(SAT March 2016 or after) is selected in 'tests_taken', min:0 max:5
+     *
      * took_sat_essay boolean required 0:yes 1:no
      * sats_after_march_highest_reading_and_writing_score integer required
      * sats_after_march_reading_and_writing_date date required e.g."11/27/2020"
@@ -663,6 +667,7 @@ class ExampleController extends Controller
      * This section is required by the time "2"(SAT Subject Tests) is selected in 'tests_taken'.
      * sats_number integer required This section is required by the time "2"(SAT Subject Tests) is selected in 'tests_taken', min:0 max:10
      * The min length of 'sats' is 0 and the max length is 10 if "2"(SAT Subject Tests) is selected in 'tests_taken':
+     *
      * sats.*.taken_month string required The min length of 'sats' is 0 and the max length is 10 if "2"(SAT Subject Tests) is selected in 'tests_taken', e.g."02/2013"
      * sats.*.subject integer required 0:Biology - Ecological 1:Biology - Molecular 24:Writing
      * sats.*.score integer
@@ -672,6 +677,7 @@ class ExampleController extends Controller
      * This section is required by the time "3"(AP Subject Tests) is selected in 'tests_taken'.
      * aps_number integer required This section is required by the time "3"(AP Subject Tests) is selected in 'tests_taken', min:0 max:15
      * The min length of 'aps' is 0 and the max length is 15 if "3"(AP Subject Tests) is selected in 'tests_taken':
+     *
      * aps.*.taken_date date required
      * aps.*.subject string required
      * e.g.1:Art: Studio Art-3-D Design
@@ -724,6 +730,8 @@ class ExampleController extends Controller
      * == IB Subject Tests ==
      * This section is required by the time "4"(IB Subject Tests) is selected in 'tests_taken'.
      * ibs_number integer required This section is required by the time "4"(IB Subject Tests) is selected in 'tests_taken', min:0 max:10
+     * The min length of 'ibs' is 0 and the max length is 10 if "4"(IB Subject Tests) is selected in 'tests_taken':
+     *
      * ibs.*.taken_date date required e.g."11/27/2020"
      * ibs.*.subject string required
      * e.g.0:Afrikaans A
@@ -738,77 +746,83 @@ class ExampleController extends Controller
      * == TOEFL iBT ==
      * This section is required by the time if "5"(TOEFL iBT) is selected in 'tests_taken'.
      * toefls_number integer required This section is required by the time "5"(TOEFL iBT) is selected in 'tests_taken', min:0 max:10
-     * toefls.*.total_score integer required
-     * toefls.*.total_score_date date required
-     * toefls.*.highest_reading_score integer required min:0 max:30
-     * toefls.*.reading_date date required
-     * toefls.*.highest_speaking_score integer required min:0 max:30
-     * toefls.*.speaking_date date required
-     * toefls.*.highest_listening_score integer required min:0 max:30
-     * toefls.*.listening_date date required
-     * toefls.*.highest_writing_score integer required min:0 max:30
-     * toefls.*.writing_date date required
+     *
+     * toefls_total_score integer required
+     * toefls_total_score_date date required
+     * toefls_highest_reading_score integer required min:0 max:30
+     * toefls_reading_date date required
+     * toefls_highest_speaking_score integer required min:0 max:30
+     * toefls_speaking_date date required
+     * toefls_highest_listening_score integer required min:0 max:30
+     * toefls_listening_date date required
+     * toefls_highest_writing_score integer required min:0 max:30
+     * toefls_writing_date date required
      *
      *
      * == TOEFL Paper ==
      * This section is required by the time if "6"(TOEFL Paper) is selected in 'tests_taken'.
      * toefl_papers_number integer required This section is required by the time "6"(TOEFL Paper) is selected in 'tests_taken', min:0 max:5
-     * toefl_papers.*.total_score integer required
-     * toefl_papers.*.total_score_date date required
-     * toefl_papers.*.highest_reading_score integer required
-     * toefl_papers.*.reading_date date required
-     * toefl_papers.*.highest_listening_score integer required
-     * toefl_papers.*.listening_date date required
-     * toefl_papers.*.highest_writing_score integer required
-     * toefl_papers.*.writing_date date required
-     * toefl_papers.*.highest_twe_score integer required
-     * toefl_papers.*.twe_date date required
+     *
+     * toefl_papers_total_score integer required
+     * toefl_papers_total_score_date date required
+     * toefl_papers_highest_reading_score integer required
+     * toefl_papers_reading_date date required
+     * toefl_papers_highest_listening_score integer required
+     * toefl_papers_listening_date date required
+     * toefl_papers_highest_writing_score integer required
+     * toefl_papers_writing_date date required
+     * toefl_papers_highest_twe_score integer required
+     * toefl_papers_twe_date date required
      *
      *
      * == PTE Academic Tests ==
      * This section is required by the time if "8"(PTE Academic Tests) is selected in 'tests_taken'.
      * ptes_number integer required This section is required by the time "8"(PTE Academic Tests) is selected in 'tests_taken', min:0 max:5
-     * ptes.*.highest_reading_score integer required min:10 max:90
-     * ptes.*.reading_date date required
-     * ptes.*.highest_speaking_score integer required min:10 max:90
-     * ptes.*.speaking_date date required
-     * ptes.*.highest_listening_score integer required min:10 max:90
-     * ptes.*.listening_date date required
-     * ptes.*.highest_writing_score integer required min:10 max:90
-     * ptes.*.writing_date date required
-     * ptes.*.highest_oral_fluency_score integer required min:10 max:90
-     * ptes.*.oral_fluency_date date required
-     * ptes.*.highest_pronunciation_score integer required min:10 max:90
-     * ptes.*.pronunciation_date date required
-     * ptes.*.highest_spelling_score integer required min:10 max:90
-     * ptes.*.spelling_date date required
-     * ptes.*.highest_vocabulary_score integer required min:10 max:90
-     * ptes.*.vocabulary_date date required
-     * ptes.*.highest_discourse_score integer required min:10 max:90
-     * ptes.*.discourse_date date required
+     *
+     * ptes_highest_reading_score integer required min:10 max:90
+     * ptes_reading_date date required
+     * ptes_highest_speaking_score integer required min:10 max:90
+     * ptes_speaking_date date required
+     * ptes_highest_listening_score integer required min:10 max:90
+     * ptes_listening_date date required
+     * ptes_highest_writing_score integer required min:10 max:90
+     * ptes_writing_date date required
+     * ptes_highest_oral_fluency_score integer required min:10 max:90
+     * ptes_oral_fluency_date date required
+     * ptes_highest_pronunciation_score integer required min:10 max:90
+     * ptes_pronunciation_date date required
+     * ptes_highest_spelling_score integer required min:10 max:90
+     * ptes_spelling_date date required
+     * ptes_highest_vocabulary_score integer required min:10 max:90
+     * ptes_vocabulary_date date required
+     * ptes_highest_discourse_score integer required min:10 max:90
+     * ptes_discourse_date date required
      *
      *
      * == IELTS ==
      * This section is required by the time if "7"(IELTS) is selected in 'tests_taken'.
      * ielts_number integer required This section is required by the time "7"(IELTS) is selected in 'tests_taken', min:0 max:5
-     * ielts.*.overall_score integer required e.g.0, 0.5, 1, 1.5...9
-     * ielts.*.overall_score_date date required
-     * ielts.*.highest_reading_score integer required e.g.0, 0.5, 1, 1.5...9
-     * ielts.*.reading_date date required
-     * ielts.*.highest_speaking_score integer required e.g.0, 0.5, 1, 1.5...9
-     * ielts.*.speaking_date date required
-     * ielts.*.highest_listening_score integer required e.g.0, 0.5, 1, 1.5...9
-     * ielts.*.listening_date date required
-     * ielts.*.highest_writing_score integer required e.g.0, 0.5, 1, 1.5...9
-     * ielts.*.writing_date date required
+     *
+     * ielts_overall_score integer required e.g.0, 0.5, 1, 1.5...9
+     * ielts_overall_score_date date required
+     * ielts_highest_reading_score integer required e.g.0, 0.5, 1, 1.5...9
+     * ielts_reading_date date required
+     * ielts_highest_speaking_score integer required e.g.0, 0.5, 1, 1.5...9
+     * ielts_speaking_date date required
+     * ielts_highest_listening_score integer required e.g.0, 0.5, 1, 1.5...9
+     * ielts_listening_date date required
+     * ielts_highest_writing_score integer required e.g.0, 0.5, 1, 1.5...9
+     * ielts_writing_date date required
      *
      *
      * == Senior Secondary Leaving Examinations ==
      * This section is required by the time if 'gave_leaving_exams' is true.
      * leaving_exams_number integer required This section is required if 'gave_leaving_exams' is true, min:0 max:5
+     * The min length of 'leaving_exams' is 0 and the max length is 5 if 'gave_leaving_exams' is true:
+     *
      * leaving_exams.*.taken_date date required e.g."11/27/2020"
      * leaving_exams.*.examination_board integer required 21:Other
-     * if (Other) is selected in 'leaving_exams.*.examination_board':
+     * if "21"(Other) is selected in 'leaving_exams.*.examination_board':
      * leaving_exams.*.examination_board_descr string optional, but required if "21"(Other) is selected in 'leaving_exams.*.examination_board'
      *
      * leaving_exams.*.subject integer required
@@ -817,8 +831,9 @@ class ExampleController extends Controller
      *
      *
      * == Activities ==
-     * The length of 'activities' is 10:
-     * @bodyParam activities.*.type integer required The length of 'activities' is 10, e.g.2:Athletics: Club 3:Athletics: JV/Varsity
+     * wish_to_report_activities boolean required question-id-1788, e.g.0:yes 1:no
+     * if 'wish_to_report_activities' is true, the length of 'activities' is 10:
+     * @bodyParam activities.*.type integer required the length of 'activities' is 10, e.g.2:Athletics: Club 3:Athletics: JV/Varsity
      * @bodyParam activities.*.sport integer optional, but required if "2"(Athletics: Club) or "3"(Athletics: JV/Varsity) is set as 'activities.*.type'
      * @bodyParam activities.*.position_descr string required maxLength:50
      * @bodyParam activities.*.organization_name string maxLength:100
