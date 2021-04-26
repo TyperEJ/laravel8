@@ -563,7 +563,7 @@ class ExampleController extends Controller
      * if 'wish_to_report_tests' is true:
      * tests_taken array required question-id-11, if 'wish_to_report_tests' is true, e.g.["0"(ACT), "1"(SAT before March 2016), "9"(SAT March 2016 or after), "2"(SAT Subject Tests), "3"(AP Subject Tests), "4"(IB Subject Tests), "5"(TOEFL iBT), "6"(TOEFL Paper), "8"(PTE Academic Tests), "7"(IELTS)]
      *
-     * tests e.g.[{"type": 0, "subject": 0, "score": 100, "takenDate": "11/27/2020", "takenTimes": 3, "futureSittingMonths": ["06/2021", "07/2021"]}]
+     * tests e.g.[{"type": 0, "subject": 0, "score": 100, "takenDate": "11/27/2020", "wishToReportNumber": 3, "futureSittingMonths": ["06/2021", "07/2021"]}]
      * @bodyParam tests.*.type integer required 0:ACT 1:SAT (before March 2016) 9:SAT (March 2016 or after) 2:SAT Subject Tests 3:AP Subject Tests 4:IB Subject Tests 5:TOEFL iBT 6:TOEFL Paper 8:PTE Academic Tests 7:IELTS 10:Senior Secondary Leaving Examination
      *
      * if 0"(ACT) is set as 'tests.*.type':
@@ -602,7 +602,7 @@ class ExampleController extends Controller
      * @bodyParam tests.*.subject integer/string required Please check e.g. in each part of section below.
      * @bodyParam tests.*.score integer/float optional, but required if "3"(AP Subject Tests) is NOT set as 'tests.*.type'. The min number is 1/1/0/10 and the max number is 5/7/30/90 if "3"(AP Subject Tests)/"4"(IB Subject Tests)/"5"(TOEFL iBT)/"8"(PTE Academic Tests) is set as 'tests.*.type'/0, 0.5, 1, 1.5...9 if "7"(IELTS) is set as 'tests.*.type'/typeof 'tests.*.score' is float if "10"(Senior Secondary Leaving Examination) is set as 'tests.*.type'.
      * @bodyParam tests.*.taken_date date required e.g."11/27/2020"
-     * @bodyParam tests.*.taken_times integer optional, but required if "2"(SAT Subject Tests), "3"(AP Subject Tests), "4"(IB Subject Tests) or "10"(Senior Secondary Leaving Examination) is NOT set as 'tests.*.type'
+     * @bodyParam tests.*.wish_to_report_number integer optional, but required if "2"(SAT Subject Tests), "3"(AP Subject Tests), "4"(IB Subject Tests) or "10"(Senior Secondary Leaving Examination) is NOT set as 'tests.*.type'
      * @bodyParam tests.*.level integer optional, but required if "4"(IB Subject Tests) is set as 'tests.*.type', e.g.
      * @bodyParam tests.*.future_sitting_months array The min length of 'future_act_sitting_months' is 0 and the max length is 3, noticed that the value should be in between of January 2020 and December 2021 and in "month year" format if "0"(ACT), "9"(SAT March 2016 or after) or "7" is set as 'tests.*.type', e.g.["06/2021", "07/2021"]
      * @bodyParam tests.*.examination_board integer optional, but required if "10"(Senior Secondary Leaving Examination) is set as 'tests.*.type'
