@@ -903,6 +903,13 @@ class ExampleController extends Controller
      * @bodyParam received_disciplinary_action boolean required question-id-833, 0:yes 1:no
      * @bodyParam disciplinary_history_descr string question-id-1043, optional, but required if 'received_disciplinary_action' is true, minLength:1/max:400, e.g."<p>asdasdasd</p>
      *
+     *
+     * == Additional Information ==
+     * @bodyParam wish_to_share_about_covid boolean required question-id-1957, 0:yes 1:no
+     * @bodyParam covid_descr string question-id-1956, optional, but required if 'wish_to_share_about_covid' is true, minLength:1/max:250, e.g."<p>asdasdasd</p>
+     * @bodyParam wish_to_share_not_reflected_by_covid boolean required question-id-1878, 0:yes 1:no
+     * @bodyParam not_reflected_by_covid_descr string question-id-835, optional, but required if 'wish_to_share_not_reflected_by_covid' is true, minLength:1/max:650, e.g."<p>asdasdasd</p>
+     *
      */
     public function document()
     {
