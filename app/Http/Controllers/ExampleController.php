@@ -45,7 +45,7 @@ class ExampleController extends Controller
      * @bodyParam address.*.state_value string optional, but required if "0"(USA) is selected as country, e.g.null, "TN"
      * @bodyParam address.*.zip string optional, but required if "0"(USA) is selected as country, e.g.null, "38541-6781"
      *
-     * @bodyParam used_mailing_address boolean required question-id-183, e.g.0:no 1:yes
+     * @bodyParam used_mailing_address boolean required question-id-183, e.g.0:yes 1:no
      * if 'used_mailing_address' is true:
      * mailing_address e.g.{"county":"Belknap","countryCode":"0","countryValue":"United States of America","address1":"2 Test St","address2":"","address3":"","city":"Belmont","stateValue":"NH","zip":"03220-4052","state":"38"}
      * @bodyParam mailing_address.*.county string question-id-186, if 'used_mailing_address' is true
