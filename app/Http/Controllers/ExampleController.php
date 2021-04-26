@@ -150,7 +150,7 @@ class ExampleController extends Controller
      *
      *
      * == Language ==
-     * languages_length integer required question-id-223, min:1 max:5
+     * languages_length integer required question-id-223, min:1/max:5
      * language_1 integer required question-id-224, e.g.0:English 1:Spanish 2:Aceh
      * proficiency_1 array required question-id-225, e.g.3:First Language 0:Speak 1:Read 2:Write 4:Spoken at Home
      * language_2 integer required question-id-226
@@ -210,7 +210,7 @@ class ExampleController extends Controller
      *
      * @bodyParam has_children boolean question-id-369, e.g."", 0:yes 1:no
      * if 'has_children' is true:
-     * @bodyParam children_number integer required question-id-370, if 'has_children' is true, min:0 max:99
+     * @bodyParam children_number integer required question-id-370, if 'has_children' is true, min:0/max:99
      *
      *
      * == Parent 1/2 ==
@@ -247,9 +247,9 @@ class ExampleController extends Controller
      * parent_1_education_level string question-id-391
      * e.g.null, 0:none 1:Some grade/primary school 2:Completed grade/primary school 3:Some high/secondary school 4:Graduated from high/secondary school (or equivalent) 10:Some trade school or community college 11:Graduated from trade school or community college 7:Some college/university 8:Graduated from college/university 9:Graduate school
      * if "10", "11", "7", "8" or "9" is selected as 'education_level':
-     * parent_1_attended_institutions_number integer required question-id-392, if "10", "11", "7", "8" or "9" is selected as 'education_level', min:1 max:5
+     * parent_1_attended_institutions_number integer required question-id-392, if "10", "11", "7", "8" or "9" is selected as 'education_level', min:1/max:5
      * parent_1_college_1 object required question-id-393, if "10", "11", "7", "8" or "9" is selected as 'education_level', e.g.{"ceebCode":"1700","name":"Aalto University","schoolTypeCode":"4-year college or university","address":{"city":"Aalto","state":"","zip":"FI-00076","countryValue":"FIN","address1":"PO Box 21210","address2":"","address3":"","countryCode":"73","stateValue":""}}
-     * parent_1_college_1_degrees_number integer required question-id-394, if "10", "11", "7", "8" or "9" is selected as 'education_level', min:0 max:5
+     * parent_1_college_1_degrees_number integer required question-id-394, if "10", "11", "7", "8" or "9" is selected as 'education_level', min:0/max:5
      * parent_1_college_1_degree_received_1 integer required question-id-395 if "10", "11", "7", "8" or "9" is selected as 'education_level', e.g.0:Associate's (AA, AS) 1:Bachelor's (BA, BS) 2:Master's (MA, MS) 3:Business (MBA, MAcc) 4:Law (JD, LLM) 5:Medicine (MD, DO, DVM, DDS)
      * parent_1_college_1_degree_received_yr_1 string required question-id-396 if "10", "11", "7", "8" or "9" is selected as 'education_level', e.g."2021"
      * parent_1_college_1_degree_received_2 integer required question-id-397, if "10", "11", "7", "8" or "9" is selected as 'education_level' and 'attended_institutions_number' is larger than 1, e.g.0:Associate's (AA, AS) 1:Bachelor's (BA, BS) 2:Master's (MA, MS) 3:Business (MBA, MAcc) 4:Law (JD, LLM) 5:Medicine (MD, DO, DVM, DDS)
@@ -262,7 +262,7 @@ class ExampleController extends Controller
      * parent_1_college_1_degree_received_yr_5 string required question-id-404, if "10", "11", "7", "8" or "9" is selected as 'education_level' and 'attended_institutions_number' is larger than 1, e.g."2021"
      * if "10", "11", "7", "8" or "9" is selected as 'education_level' and 'attended_institutions_number' is larger than 1:
      * parent_1_college_2 object required question-id-405, if "10", "11", "7", "8" or "9" is selected as 'education_level', e.g.{"ceebCode":"1700","name":"Aalto University","schoolTypeCode":"4-year college or university","address":{"city":"Aalto","state":"","zip":"FI-00076","countryValue":"FIN","address1":"PO Box 21210","address2":"","address3":"","countryCode":"73","stateValue":""}}
-     * parent_1_college_2_degrees_number integer required question-id-406, if "10", "11", "7", "8" or "9" is selected as 'education_level' and 'attended_institutions_number' is larger than 1, min:0 max:5
+     * parent_1_college_2_degrees_number integer required question-id-406, if "10", "11", "7", "8" or "9" is selected as 'education_level' and 'attended_institutions_number' is larger than 1, min:0/max:5
      * parent_1_college_2_degree_received_1 integer required question-id-407, if "10", "11", "7", "8" or "9" is selected as 'education_level' and 'attended_institutions_number' is larger than 1, e.g.0:Associate's (AA, AS) 1:Bachelor's (BA, BS) 2:Master's (MA, MS) 3:Business (MBA, MAcc) 4:Law (JD, LLM) 5:Medicine (MD, DO, DVM, DDS)
      * parent_1_college_2_degree_received_yr_1 string required question-id-408, if "10", "11", "7", "8" or "9" is selected as 'education_level' and 'attended_institutions_number' is larger than 1, e.g."2021"
      * parent_1_college_2_degree_received_2 integer required question-id-409, if "10", "11", "7", "8" or "9" is selected as 'education_level' and 'attended_institutions_number' is larger than 1, e.g.0:Associate's (AA, AS) 1:Bachelor's (BA, BS) 2:Master's (MA, MS) 3:Business (MBA, MAcc) 4:Law (JD, LLM) 5:Medicine (MD, DO, DVM, DDS)
@@ -395,7 +395,7 @@ class ExampleController extends Controller
      *
      *
      * == Sibling ==
-     * siblings_number integer required question-id-614, min:0 max:5
+     * siblings_number integer required question-id-614, min:0/max:5
      * The min length of 'siblings' is 0 and the max length is 5:
      * @bodyParam siblings.*.first_name string required The min length of 'siblings' is 0 and the max length is 5
      * @bodyParam siblings.*.middle_name string
@@ -451,7 +451,7 @@ class ExampleController extends Controller
      *
      *
      * == Other Secondary/High Schools ==
-     * other_high_schools_length integer required question-id-255, min:0 max:3
+     * other_high_schools_length integer required question-id-255, min:0/max:3
      * other_high_school_1 object question-id-256
      * The min length of 'other_high_schools' is 0 and the max length is 3:
      * @bodyParam other_high_schools.*.name string required
@@ -472,7 +472,7 @@ class ExampleController extends Controller
      * @bodyParam why_leave_other_high_school string optional, but required if the length of 'other_high_schools' is larger than 0, e.g."<p\>test<i\>xxxxx<u\>oooo</u\></i\></p\>"
      *
      * == Colleges/Universities ==
-     * colleges_length integer required question-id-267, min:0 max:3
+     * colleges_length integer required question-id-267, min:0/max:3
      * college_1 object
      * The min length of 'colleges' is 0 and the max length is 3:
      * @bodyParam colleges.*.name string required The min length of 'colleges' is 0 and the max length is 3, e.g."Aalto University"
@@ -515,7 +515,7 @@ class ExampleController extends Controller
      *
      *
      * == Current or Most Recent Year Courses ==
-     * courses_length integer required question-id-307, min:1 max:15
+     * courses_length integer required question-id-307, min:1/max:15
      * The min length of 'courses' is 1 and the max length is 15:
      * @bodyParam courses_scheduling_system string required question-id-1803, e.g."Semester", "Trimester", "Quarter"
      * @bodyParam courses.*.title string required question-id-308
@@ -532,7 +532,7 @@ class ExampleController extends Controller
      *
      *
      * == Community-Based Organizations ==
-     * community_based_organizations_length integer required min:0 max:3
+     * community_based_organizations_length integer required min:0/max:3
      * community_based_organization_1 integer question-id-284, e.g.0:100 Black Men 102:Achieve Program 616:Achieving Collegiate Excellence and Success (ACES) 286:Building STEPS
      * community_based_organization_2 integer question-id-285, e.g.0:100 Black Men 102:Achieve Program 616:Achieving Collegiate Excellence and Success (ACES) 286:Building STEPS
      * community_based_organization_3 integer question-id-286, e.g.0:100 Black Men 102:Achieve Program 616:Achieving Collegiate Excellence and Success (ACES) 286:Building STEPS
@@ -612,7 +612,7 @@ class ExampleController extends Controller
      *
      * == ACT Tests ==
      * This section is required by the time "0"(ACT) is selected in 'tests_taken'.
-     * acts_number integer required This section is required by the time "0"(ACT) is selected in 'tests_taken', min:0 max:5
+     * acts_number integer required This section is required by the time "0"(ACT) is selected in 'tests_taken', min:0/max:5
      *
      * took_act_plus_writing_test boolean required 0:yes 1:no
      * acts_highest_composite_score integer required
@@ -629,14 +629,14 @@ class ExampleController extends Controller
      * acts_highest_writing_score integer optional, if 'took_act_plus_writing_test' is true
      * acts_writing_date date optional, required if 'took_act_plus_writing_test' is true, e.g."11/27/2020"
      *
-     * future_act_sitting_months_length integer required question-id-13, min:0 max:3
+     * future_act_sitting_months_length integer required question-id-13, min:0/max:3
      * The min length of 'future_act_sitting_months' is 0 and the max length is 3:
      * future_act_sitting_months array required The min length of 'future_act_sitting_months' is 0 and the max length is 3, noticed that the value should be in between of January 2020 and December 2021 and in "month year" format, e.g.["06/2021", "07/2021"]
      *
      *
      * == SAT (before March 2016) ==
      * This section is required by the time "1"(SAT before March 2016) is selected in 'tests_taken'.
-     * sats_before_march_number integer required This section is required by the time "1"(SAT before March 2016) is selected in 'tests_taken', min:0 max:5
+     * sats_before_march_number integer required This section is required by the time "1"(SAT before March 2016) is selected in 'tests_taken', min:0/max:5
      *
      * sats_before_march_highest_critical_reading_score integer required
      * sats_before_march_critical_reading_date date required e.g."11/27/2020"
@@ -648,7 +648,7 @@ class ExampleController extends Controller
      *
      * == SAT (March 2016 or after) ==
      * This section is required by the time "9"(SAT March 2016 or after) is selected in 'tests_taken'.
-     * sats_after_march_number integer required This section is required by the time "9"(SAT March 2016 or after) is selected in 'tests_taken', min:0 max:5
+     * sats_after_march_number integer required This section is required by the time "9"(SAT March 2016 or after) is selected in 'tests_taken', min:0/max:5
      *
      * took_sat_essay boolean required 0:yes 1:no
      * sats_after_march_highest_reading_and_writing_score integer required
@@ -658,14 +658,14 @@ class ExampleController extends Controller
      * if 'took_sat_essay' is true:
      * sats_after_march_highest_essay_score integer optional, but required if 'took_sat_essay' is true
      * sats_after_march_essay_date date optional, but required if 'took_sat_essay' is true, e.g."11/27/2020"
-     * future_sat_sitting_months_length integer required question-id-13, min:0 max:3
+     * future_sat_sitting_months_length integer required question-id-13, min:0/max:3
      * The min length of 'future_sat_sitting_months' is 0 and the max length is 3:
      * future_sat_sitting_months array required The min length of 'future_sat_sitting_months' is 0 and the max length is 3, noticed that the value should be in between of January 2020 and December 2021 and in "month year" format, e.g.["06/2021", "07/2021"]
      *
      *
      * == SAT Subject Tests ==
      * This section is required by the time "2"(SAT Subject Tests) is selected in 'tests_taken'.
-     * sats_number integer required This section is required by the time "2"(SAT Subject Tests) is selected in 'tests_taken', min:0 max:10
+     * sats_number integer required This section is required by the time "2"(SAT Subject Tests) is selected in 'tests_taken', min:0/max:10
      * The min length of 'sats' is 0 and the max length is 10 if "2"(SAT Subject Tests) is selected in 'tests_taken':
      *
      * sats.*.taken_month string required The min length of 'sats' is 0 and the max length is 10 if "2"(SAT Subject Tests) is selected in 'tests_taken', e.g."02/2013"
@@ -675,7 +675,7 @@ class ExampleController extends Controller
      *
      * == AP Subject Tests ==
      * This section is required by the time "3"(AP Subject Tests) is selected in 'tests_taken'.
-     * aps_number integer required This section is required by the time "3"(AP Subject Tests) is selected in 'tests_taken', min:0 max:15
+     * aps_number integer required This section is required by the time "3"(AP Subject Tests) is selected in 'tests_taken', min:0/max:15
      * The min length of 'aps' is 0 and the max length is 15 if "3"(AP Subject Tests) is selected in 'tests_taken':
      *
      * aps.*.taken_date date required
@@ -729,7 +729,7 @@ class ExampleController extends Controller
      *
      * == IB Subject Tests ==
      * This section is required by the time "4"(IB Subject Tests) is selected in 'tests_taken'.
-     * ibs_number integer required This section is required by the time "4"(IB Subject Tests) is selected in 'tests_taken', min:0 max:10
+     * ibs_number integer required This section is required by the time "4"(IB Subject Tests) is selected in 'tests_taken', min:0/max:10
      * The min length of 'ibs' is 0 and the max length is 10 if "4"(IB Subject Tests) is selected in 'tests_taken':
      *
      * ibs.*.taken_date date required e.g."11/27/2020"
@@ -740,28 +740,28 @@ class ExampleController extends Controller
      *  296:Akan A: Literature
      *
      * ibs.*.level string required 1:high level 0:standard level
-     * ibs.*.score integer min:1 max:7
+     * ibs.*.score integer min:1/max:7
      *
      *
      * == TOEFL iBT ==
      * This section is required by the time if "5"(TOEFL iBT) is selected in 'tests_taken'.
-     * toefls_number integer required This section is required by the time "5"(TOEFL iBT) is selected in 'tests_taken', min:0 max:10
+     * toefls_number integer required This section is required by the time "5"(TOEFL iBT) is selected in 'tests_taken', min:0/max:10
      *
      * toefls_total_score integer required
      * toefls_total_score_date date required
-     * toefls_highest_reading_score integer required min:0 max:30
+     * toefls_highest_reading_score integer required min:0/max:30
      * toefls_reading_date date required
-     * toefls_highest_speaking_score integer required min:0 max:30
+     * toefls_highest_speaking_score integer required min:0/max:30
      * toefls_speaking_date date required
-     * toefls_highest_listening_score integer required min:0 max:30
+     * toefls_highest_listening_score integer required min:0/max:30
      * toefls_listening_date date required
-     * toefls_highest_writing_score integer required min:0 max:30
+     * toefls_highest_writing_score integer required min:0/max:30
      * toefls_writing_date date required
      *
      *
      * == TOEFL Paper ==
      * This section is required by the time if "6"(TOEFL Paper) is selected in 'tests_taken'.
-     * toefl_papers_number integer required This section is required by the time "6"(TOEFL Paper) is selected in 'tests_taken', min:0 max:5
+     * toefl_papers_number integer required This section is required by the time "6"(TOEFL Paper) is selected in 'tests_taken', min:0/max:5
      *
      * toefl_papers_total_score integer required
      * toefl_papers_total_score_date date required
@@ -777,31 +777,31 @@ class ExampleController extends Controller
      *
      * == PTE Academic Tests ==
      * This section is required by the time if "8"(PTE Academic Tests) is selected in 'tests_taken'.
-     * ptes_number integer required This section is required by the time "8"(PTE Academic Tests) is selected in 'tests_taken', min:0 max:5
+     * ptes_number integer required This section is required by the time "8"(PTE Academic Tests) is selected in 'tests_taken', min:0/max:5
      *
-     * ptes_highest_reading_score integer required min:10 max:90
+     * ptes_highest_reading_score integer required min:10/max:90
      * ptes_reading_date date required
-     * ptes_highest_speaking_score integer required min:10 max:90
+     * ptes_highest_speaking_score integer required min:10/max:90
      * ptes_speaking_date date required
-     * ptes_highest_listening_score integer required min:10 max:90
+     * ptes_highest_listening_score integer required min:10/max:90
      * ptes_listening_date date required
-     * ptes_highest_writing_score integer required min:10 max:90
+     * ptes_highest_writing_score integer required min:10/max:90
      * ptes_writing_date date required
-     * ptes_highest_oral_fluency_score integer required min:10 max:90
+     * ptes_highest_oral_fluency_score integer required min:10/max:90
      * ptes_oral_fluency_date date required
-     * ptes_highest_pronunciation_score integer required min:10 max:90
+     * ptes_highest_pronunciation_score integer required min:10/max:90
      * ptes_pronunciation_date date required
-     * ptes_highest_spelling_score integer required min:10 max:90
+     * ptes_highest_spelling_score integer required min:10/max:90
      * ptes_spelling_date date required
-     * ptes_highest_vocabulary_score integer required min:10 max:90
+     * ptes_highest_vocabulary_score integer required min:10/max:90
      * ptes_vocabulary_date date required
-     * ptes_highest_discourse_score integer required min:10 max:90
+     * ptes_highest_discourse_score integer required min:10/max:90
      * ptes_discourse_date date required
      *
      *
      * == IELTS ==
      * This section is required by the time if "7"(IELTS) is selected in 'tests_taken'.
-     * ielts_number integer required This section is required by the time "7"(IELTS) is selected in 'tests_taken', min:0 max:5
+     * ielts_number integer required This section is required by the time "7"(IELTS) is selected in 'tests_taken', min:0/max:5
      *
      * ielts_overall_score integer required e.g.0, 0.5, 1, 1.5...9
      * ielts_overall_score_date date required
@@ -817,7 +817,7 @@ class ExampleController extends Controller
      *
      * == Senior Secondary Leaving Examinations ==
      * This section is required by the time if 'gave_leaving_exams' is true.
-     * leaving_exams_number integer required This section is required if 'gave_leaving_exams' is true, min:0 max:5
+     * leaving_exams_number integer required This section is required if 'gave_leaving_exams' is true, min:0/max:5
      * The min length of 'leaving_exams' is 0 and the max length is 5 if 'gave_leaving_exams' is true:
      *
      * leaving_exams.*.taken_date date required e.g."11/27/2020"
@@ -883,6 +883,20 @@ class ExampleController extends Controller
      * @bodyParam activities.*.hours_spent_per_week integer required
      * @bodyParam activities.*.weeks_spent_per_yr integer required
      * @bodyParam activities.*.intend_to_participate_similar_in_college boolean required 0:yes,1:no
+     *
+     *
+     * == Personal Essay ==
+     * @bodyParam understand_to_submit_essay boolean required question-id-1828, 1:yes
+     * @bodyParam essay_topic integer question-id-831,
+     * e.g.""
+     *  0:Some students have a background, identity, interest, or talent that is so meaningful they believe their application would be incomplete without it. If this sounds like you, then please share your story.
+     *  1:The lessons we take from obstacles we encounter can be fundamental to later success. Recount a time when you faced a challenge, setback, or failure. How did it affect you, and what did you learn from the experience?
+     *  2:Reflect on a time when you questioned or challenged a belief or idea. What prompted your thinking? What was the outcome?
+     *  3:Describe a problem you've solved or a problem you'd like to solve. It can be an intellectual challenge, a research query, an ethical dilemma-anything that is of personal importance, no matter the scale. Explain its significance to you and what steps you took or could be taken to identify a solution.
+     *  4:Discuss an accomplishment, event, or realization that sparked a period of personal growth and a new understanding of yourself or others.
+     *  5:Describe a topic, idea, or concept you find so engaging that it makes you lose all track of time. Why does it captivate you? What or who do you turn to when you want to learn more?
+     *  6:Share an essay on any topic of your choice. It can be one you've already written, one that responds to a different prompt, or one of your own design.
+     * @bodyParam essay_content string question-id-832, minLength:250/max:650, e.g."<p>asdasdasd</p>
      *
      */
     public function document()
